@@ -1,0 +1,2874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DIGCITY PRESS — Portal Resmi Digital Business Student Society</title>
+<meta name="description" content="DIGCITY PRESS adalah portal berita resmi Digital Business Student Society (DIGCITY) Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor." />
+<meta name="theme-color" content="#0A3D91" />
+<meta property="og:title" content="DIGCITY PRESS" />
+<meta property="og:description" content="Portal berita resmi DIGCITY — GO FIGHT WIN!" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   DESIGN SYSTEM — DIGCITY PRESS
+   ============================================ */
+:root{
+  --blue-900:#062A66;
+  --blue-800:#0A3D91;
+  --blue-700:#1252B8;
+  --blue-600:#1E66D8;
+  --blue-500:#3B82F6;
+  --blue-400:#60A5FA;
+  --blue-300:#93C5FD;
+  --blue-200:#BFDBFE;
+  --blue-100:#DBEAFE;
+  --blue-50:#EFF6FF;
+  --navy:#0B1E3F;
+  --ink:#0F172A;
+  --ink-2:#1E293B;
+  --muted:#64748B;
+  --line:#E2E8F0;
+  --bg:#FFFFFF;
+  --bg-soft:#F8FAFC;
+  --bg-soft-2:#F1F5F9;
+  --danger:#DC2626;
+  --success:#16A34A;
+  --warning:#F59E0B;
+  --radius:10px;
+  --radius-lg:14px;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+  --shadow:0 4px 14px rgba(15,23,42,.08);
+  --shadow-lg:0 12px 30px rgba(15,23,42,.12);
+  --container:1240px;
+  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
+  --font-serif:'Merriweather',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,textarea,select{font-family:inherit;font-size:14px}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+/* ============================================
+   TOP BAR & NAVBAR
+   ============================================ */
+.topbar{
+  background:var(--navy);
+  color:#cbd5e1;
+  font-size:12px;
+  padding:8px 0;
+}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar .date{display:flex;align-items:center;gap:8px}
+.topbar .socials{display:flex;gap:12px}
+.topbar .socials a:hover{color:#fff}
+
+.navbar{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:100;
+  box-shadow:var(--shadow-sm);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}
+.brand-logo{
+  width:44px;height:44px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue-700),var(--blue-500));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:18px;letter-spacing:-.5px;
+  box-shadow:0 4px 12px rgba(30,102,216,.35);
+}
+.brand-text{line-height:1.1}
+.brand-text .name{font-weight:800;font-size:18px;color:var(--navy);letter-spacing:-.3px}
+.brand-text .tag{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+
+.nav-menu{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-menu a{
+  padding:10px 14px;font-weight:500;font-size:14px;color:var(--ink-2);
+  border-radius:8px;transition:all .2s;position:relative;
+}
+.nav-menu a:hover{color:var(--blue-700);background:var(--blue-50)}
+.nav-menu a.active{color:var(--blue-700)}
+.nav-menu a.active::after{
+  content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
+  background:var(--blue-600);border-radius:2px;
+}
+
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  color:var(--ink-2);transition:all .2s;
+}
+.icon-btn:hover{background:var(--blue-50);color:var(--blue-700)}
+.btn{
+  padding:10px 18px;border-radius:10px;font-weight:600;font-size:14px;
+  display:inline-flex;align-items:center;gap:8px;transition:all .2s;
+}
+.btn-primary{background:var(--blue-700);color:#fff}
+.btn-primary:hover{background:var(--blue-800);transform:translateY(-1px);box-shadow:0 6px 18px rgba(30,102,216,.35)}
+.btn-ghost{color:var(--ink-2);background:transparent}
+.btn-ghost:hover{background:var(--bg-soft-2)}
+.btn-outline{border:1px solid var(--line);background:#fff;color:var(--ink-2)}
+.btn-outline:hover{border-color:var(--blue-500);color:var(--blue-700)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#B91C1C}
+
+.hamburger{display:none;width:40px;height:40px;border-radius:10px;align-items:center;justify-content:center}
+.hamburger:hover{background:var(--blue-50)}
+
+/* ============================================
+   BREAKING NEWS TICKER
+   ============================================ */
+.ticker{
+  background:linear-gradient(90deg,var(--blue-800),var(--blue-600));
+  color:#fff;padding:10px 0;overflow:hidden;
+  display:flex;align-items:center;gap:16px;
+}
+.ticker-label{
+  background:#fff;color:var(--blue-800);padding:4px 12px;border-radius:4px;
+  font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  white-space:nowrap;margin-left:20px;
+}
+.ticker-track{flex:1;overflow:hidden;position:relative}
+.ticker-content{display:flex;gap:40px;white-space:nowrap;animation:scroll 45s linear infinite;padding-left:100%}
+.ticker-content span{font-size:13px;font-weight:500}
+.ticker-content span::before{content:"●";color:var(--blue-200);margin-right:12px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero{padding:40px 0 20px}
+.hero-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px}
+.hero-main{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  background:#111;min-height:480px;cursor:pointer;
+  box-shadow:var(--shadow-lg);
+}
+.hero-main img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s}
+.hero-main:hover img{transform:scale(1.03)}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,26,64,.95) 0%,rgba(6,26,64,.4) 50%,rgba(6,26,64,.1) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:32px;color:#fff;
+}
+.hero-cat{
+  display:inline-block;background:var(--blue-600);color:#fff;padding:5px 12px;
+  border-radius:4px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:14px;align-self:flex-start;
+}
+.hero-title{
+  font-family:var(--font-serif);font-size:34px;line-height:1.2;font-weight:900;
+  margin-bottom:12px;max-width:720px;
+}
+.hero-excerpt{font-size:15px;opacity:.9;max-width:640px;margin-bottom:16px}
+.hero-meta{display:flex;gap:16px;font-size:13px;opacity:.85;align-items:center}
+.hero-meta .dot{width:4px;height:4px;background:#fff;border-radius:50%;opacity:.6}
+
+.hero-side{display:flex;flex-direction:column;gap:16px}
+.side-card{
+  display:flex;gap:14px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px;cursor:pointer;transition:all .2s;
+}
+.side-card:hover{border-color:var(--blue-400);box-shadow:var(--shadow);transform:translateY(-2px)}
+.side-card img{width:110px;height:80px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.side-card-body{flex:1;min-width:0}
+.side-card .cat{font-size:10px;color:var(--blue-700);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.side-card h4{
+  font-family:var(--font-serif);font-size:15px;line-height:1.35;font-weight:700;
+  margin:6px 0 8px;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.side-card .date{font-size:11px;color:var(--muted)}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+.section{padding:50px 0}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;
+  padding-bottom:16px;border-bottom:2px solid var(--ink);position:relative;gap:16px;flex-wrap:wrap;
+}
+.section-head::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:80px;height:2px;background:var(--blue-600);
+}
+.section-title{
+  font-family:var(--font-serif);font-size:28px;font-weight:900;color:var(--navy);
+  letter-spacing:-.5px;
+}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.section-link{font-size:13px;font-weight:600;color:var(--blue-700);display:flex;align-items:center;gap:6px}
+.section-link:hover{color:var(--blue-800)}
+
+/* ============================================
+   ARTICLE CARDS
+   ============================================ */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{
+  background:#fff;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--line);transition:all .3s;cursor:pointer;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-200)}
+.card-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft-2)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-cat{
+  position:absolute;top:12px;left:12px;background:var(--blue-700);color:#fff;
+  padding:4px 10px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+}
+.card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.card-title{
+  font-family:var(--font-serif);font-size:19px;line-height:1.35;font-weight:800;
+  color:var(--ink);margin-bottom:10px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.card:hover .card-title{color:var(--blue-700)}
+.card-excerpt{font-size:13.5px;color:var(--muted);margin-bottom:14px;flex:1;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);
+  padding-top:14px;border-top:1px solid var(--line);}
+.card-meta .author{font-weight:600;color:var(--ink-2)}
+
+/* ============================================
+   HIGHLIGHT KEGIATAN
+   ============================================ */
+.highlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.highlight-item{
+  position:relative;aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;
+  cursor:pointer;box-shadow:var(--shadow-sm);
+}
+.highlight-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.highlight-item:hover img{transform:scale(1.08)}
+.highlight-item::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,26,64,.9),transparent 60%);
+}
+.highlight-info{position:absolute;bottom:0;left:0;right:0;padding:18px;color:#fff;z-index:2}
+.highlight-info .tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--blue-200)}
+.highlight-info h4{font-family:var(--font-serif);font-size:17px;font-weight:700;margin-top:6px;line-height:1.3}
+
+/* ============================================
+   ABOUT / PROFILE SECTION
+   ============================================ */
+.about-section{
+  background:linear-gradient(135deg,var(--blue-50),#fff);
+  border-radius:var(--radius-lg);padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  border:1px solid var(--blue-100);
+}
+.about-text .kicker{
+  font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--blue-700);font-weight:700;margin-bottom:10px;
+}
+.about-text h2{font-family:var(--font-serif);font-size:34px;font-weight:900;color:var(--navy);line-height:1.2;margin-bottom:16px}
+.about-text p{color:var(--ink-2);margin-bottom:14px;font-size:15px}
+.values{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.value-tag{
+  background:#fff;border:1px solid var(--blue-200);color:var(--blue-800);
+  padding:8px 14px;border-radius:20px;font-size:13px;font-weight:600;
+}
+.about-visual{
+  background:linear-gradient(135deg,var(--blue-700),var(--blue-500));
+  border-radius:var(--radius-lg);padding:36px;color:#fff;min-height:320px;
+  display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;
+}
+.about-visual::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:200px;height:200px;
+  background:rgba(255,255,255,.08);border-radius:50%;
+}
+.about-visual::after{
+  content:"";position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;
+  background:rgba(255,255,255,.05);border-radius:50%;
+}
+.about-visual h3{font-family:var(--font-serif);font-size:28px;margin-bottom:12px;position:relative}
+.about-visual p{opacity:.9;margin-bottom:20px;position:relative}
+.jargon{
+  font-family:var(--font-serif);font-size:32px;font-weight:900;letter-spacing:1px;
+  background:#fff;color:var(--blue-800);padding:14px 20px;border-radius:10px;display:inline-block;
+  position:relative;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer{background:var(--navy);color:#cbd5e1;padding:60px 0 0;margin-top:60px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .brand-logo{margin-bottom:16px}
+.footer-brand p{font-size:14px;line-height:1.7;margin-bottom:16px;max-width:340px}
+.footer h5{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.footer ul{list-style:none}
+.footer ul li{margin-bottom:10px}
+.footer ul a{font-size:14px;transition:color .2s}
+.footer ul a:hover{color:var(--blue-300)}
+.social-links{display:flex;gap:10px;margin-top:10px}
+.social-links a{
+  width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;transition:all .2s;
+}
+.social-links a:hover{background:var(--blue-600);color:#fff;transform:translateY(-2px)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding:20px 0;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  font-size:13px;color:#94a3b8;
+}
+
+/* ============================================
+   PAGE: BERITA / LIST
+   ============================================ */
+.page-header{
+  background:linear-gradient(135deg,var(--blue-800),var(--blue-600));
+  color:#fff;padding:50px 0 60px;position:relative;overflow:hidden;
+}
+.page-header::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.1) 0%,transparent 40%),
+                   radial-gradient(circle at 80% 70%,rgba(255,255,255,.08) 0%,transparent 40%);
+}
+.page-header .container{position:relative}
+.page-header .kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-bottom:10px}
+.page-header h1{font-family:var(--font-serif);font-size:42px;font-weight:900;margin-bottom:10px}
+.page-header p{opacity:.9;max-width:640px}
+.breadcrumb{font-size:13px;margin-top:14px;opacity:.85}
+.breadcrumb a:hover{opacity:1;text-decoration:underline}
+
+.filter-bar{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:20px;margin-top:-30px;position:relative;z-index:5;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:12px;align-items:end;
+}
+.filter-bar .field label{display:block;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.filter-bar input,.filter-bar select{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;
+  transition:border-color .2s;
+}
+.filter-bar input:focus,.filter-bar select:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px var(--blue-100)}
+
+.articles-list{display:flex;flex-direction:column;gap:20px;margin-top:30px}
+.article-row{
+  display:grid;grid-template-columns:280px 1fr auto;gap:24px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  transition:all .2s;cursor:pointer;
+}
+.article-row:hover{border-color:var(--blue-400);box-shadow:var(--shadow);transform:translateX(4px)}
+.article-row img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px}
+.article-row .content h3{font-family:var(--font-serif);font-size:20px;font-weight:800;line-height:1.3;margin-bottom:8px}
+.article-row .content h3:hover{color:var(--blue-700)}
+.article-row .content .meta{display:flex;gap:12px;font-size:12px;color:var(--muted);margin-bottom:10px;flex-wrap:wrap}
+.article-row .content .meta .cat{color:var(--blue-700);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.article-row .content p{font-size:14px;color:var(--ink-2);line-height:1.6;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.article-row .arrow{align-self:center;color:var(--muted);font-size:22px}
+
+.pagination{display:flex;justify-content:center;gap:6px;margin-top:40px}
+.pagination button{
+  min-width:40px;height:40px;border-radius:8px;border:1px solid var(--line);
+  background:#fff;font-weight:600;color:var(--ink-2);transition:all .2s;
+}
+.pagination button:hover:not(:disabled){border-color:var(--blue-500);color:var(--blue-700)}
+.pagination button.active{background:var(--blue-700);color:#fff;border-color:var(--blue-700)}
+.pagination button:disabled{opacity:.4;cursor:not-allowed}
+
+.empty-state{
+  text-align:center;padding:60px 20px;background:var(--bg-soft);border-radius:var(--radius-lg);
+  border:2px dashed var(--line);
+}
+.empty-state .icon{font-size:48px;margin-bottom:12px;opacity:.5}
+.empty-state h3{font-family:var(--font-serif);font-size:20px;margin-bottom:6px}
+.empty-state p{color:var(--muted);font-size:14px}
+
+/* ============================================
+   PAGE: DETAIL ARTICLE
+   ============================================ */
+.article-detail{padding:40px 0 60px}
+.article-detail-grid{display:grid;grid-template-columns:1fr 340px;gap:48px}
+.article-header{margin-bottom:30px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.article-header .cat-badge{
+  display:inline-block;background:var(--blue-100);color:var(--blue-800);
+  padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;
+}
+.article-header h1{
+  font-family:var(--font-serif);font-size:42px;font-weight:900;line-height:1.2;
+  color:var(--navy);margin-bottom:16px;letter-spacing:-.5px;
+}
+.article-header .subtitle{font-size:18px;color:var(--muted);font-style:italic;margin-bottom:20px;line-height:1.5}
+.article-meta-row{
+  display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);
+  padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.article-meta-row .item{display:flex;align-items:center;gap:6px}
+.article-meta-row .item strong{color:var(--ink-2)}
+
+.featured-image{margin:30px 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.featured-image img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.featured-image figcaption{padding:12px 16px;background:var(--bg-soft);font-size:12px;color:var(--muted);font-style:italic;text-align:center}
+
+.article-body{font-family:var(--font-serif);font-size:17px;line-height:1.8;color:var(--ink-2)}
+.article-body p{margin-bottom:18px}
+.article-body h2{font-size:26px;font-weight:800;color:var(--navy);margin:32px 0 14px;font-family:var(--font-serif)}
+.article-body h3{font-size:21px;font-weight:700;color:var(--navy);margin:26px 0 12px}
+.article-body blockquote{
+  border-left:4px solid var(--blue-600);background:var(--blue-50);
+  padding:20px 24px;margin:24px 0;border-radius:0 10px 10px 0;font-style:italic;
+  font-size:19px;color:var(--ink);
+}
+.article-body blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--muted);font-style:normal;font-weight:600}
+.article-body ul,.article-body ol{margin:16px 0 16px 24px}
+.article-body li{margin-bottom:8px}
+.article-body a{color:var(--blue-700);text-decoration:underline}
+.article-body figure{margin:24px 0;border-radius:10px;overflow:hidden;background:var(--bg-soft)}
+.article-body figure img{width:100%}
+.article-body figure figcaption{padding:10px 14px;font-size:12px;color:var(--muted);font-style:italic;text-align:center;font-family:var(--font-sans)}
+
+.article-tags{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.article-tags .label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:6px}
+.article-tags a{
+  background:var(--bg-soft-2);color:var(--ink-2);padding:6px 12px;border-radius:20px;
+  font-size:12px;font-weight:600;transition:all .2s;
+}
+.article-tags a:hover{background:var(--blue-100);color:var(--blue-800)}
+
+.share-bar{
+  margin-top:24px;padding:18px;background:var(--bg-soft);border-radius:var(--radius);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.share-bar .label{font-weight:700;font-size:13px;color:var(--ink-2)}
+.share-btn{
+  padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;color:#fff;
+  display:inline-flex;align-items:center;gap:6px;transition:all .2s;
+}
+.share-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.share-btn.wa{background:#25D366}
+.share-btn.fb{background:#1877F2}
+.share-btn.tw{background:#000}
+
+.sidebar{position:sticky;top:100px;align-self:start}
+.side-widget{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:22px;margin-bottom:24px;
+}
+.side-widget h4{
+  font-family:var(--font-serif);font-size:17px;font-weight:800;color:var(--navy);
+  margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--ink);position:relative;
+}
+.side-widget h4::after{
+  content:"";position:absolute;left:0;bottom:-2px;width:50px;height:2px;background:var(--blue-600);
+}
+.related-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.related-item:last-child{border-bottom:none}
+.related-item img{width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.related-item h5{font-family:var(--font-serif);font-size:14px;font-weight:700;line-height:1.35;margin-bottom:4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.related-item:hover h5{color:var(--blue-700)}
+.related-item .date{font-size:11px;color:var(--muted)}
+
+/* ============================================
+   PAGE: KEGIATAN
+   ============================================ */
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.event-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;
+  transition:all .3s;cursor:pointer;
+}
+.event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300)}
+.event-poster{aspect-ratio:4/5;overflow:hidden;background:var(--bg-soft-2);position:relative}
+.event-poster img{width:100%;height:100%;object-fit:cover}
+.event-poster .badge{
+  position:absolute;top:14px;left:14px;background:rgba(255,255,255,.95);color:var(--blue-800);
+  padding:6px 12px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+}
+.event-body{padding:20px}
+.event-body h3{font-family:var(--font-serif);font-size:18px;font-weight:800;line-height:1.3;margin-bottom:10px}
+.event-body p{font-size:13.5px;color:var(--muted);margin-bottom:14px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.event-meta{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--ink-2);padding-top:14px;border-top:1px solid var(--line)}
+.event-meta span{display:flex;align-items:center;gap:6px}
+
+/* ============================================
+   PAGE: DIVISI
+   ============================================ */
+.divisions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
+.division-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;
+  transition:all .3s;cursor:pointer;position:relative;overflow:hidden;
+}
+.division-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue-700),var(--blue-400));
+}
+.division-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-300)}
+.division-icon{
+  width:64px;height:64px;border-radius:14px;
+  background:linear-gradient(135deg,var(--blue-100),var(--blue-50));
+  display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px;
+}
+.division-card h3{font-family:var(--font-serif);font-size:22px;font-weight:800;margin-bottom:4px;color:var(--navy)}
+.division-card .abbr{font-size:12px;color:var(--blue-700);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.division-card p{font-size:14px;color:var(--ink-2);line-height:1.6;margin-bottom:16px}
+.division-card ul{list-style:none;margin-bottom:16px}
+.division-card ul li{font-size:13px;color:var(--ink-2);padding:6px 0;padding-left:20px;position:relative}
+.division-card ul li::before{content:"▸";position:absolute;left:0;color:var(--blue-600);font-weight:700}
+
+/* ============================================
+   PAGE: TENTANG
+   ============================================ */
+.about-hero{
+  background:linear-gradient(135deg,var(--navy),var(--blue-800));
+  color:#fff;padding:70px 0;text-align:center;position:relative;overflow:hidden;
+}
+.about-hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 30% 50%,rgba(59,130,246,.3) 0%,transparent 50%);
+}
+.about-hero .container{position:relative}
+.about-hero h1{font-family:var(--font-serif);font-size:48px;font-weight:900;margin-bottom:14px}
+.about-hero p{font-size:17px;opacity:.9;max-width:640px;margin:0 auto}
+
+.about-content{padding:50px 0}
+.about-block{margin-bottom:50px}
+.about-block h2{font-family:var(--font-serif);font-size:28px;font-weight:800;color:var(--navy);margin-bottom:16px;
+  padding-bottom:10px;border-bottom:2px solid var(--ink);position:relative;display:inline-block;}
+.about-block h2::after{content:"";position:absolute;left:0;bottom:-2px;width:50px;height:2px;background:var(--blue-600)}
+.about-block p{font-size:15px;color:var(--ink-2);line-height:1.8;margin-bottom:12px}
+
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.vm-card{
+  background:var(--bg-soft);border-radius:var(--radius-lg);padding:28px;border:1px solid var(--line);
+}
+.vm-card h3{font-family:var(--font-serif);font-size:20px;color:var(--blue-800);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.vm-card p,.vm-card li{font-size:14px;color:var(--ink-2);line-height:1.7}
+.vm-card ul{list-style:none;margin-top:10px}
+.vm-card ul li{padding:6px 0 6px 22px;position:relative}
+.vm-card ul li::before{content:"✓";position:absolute;left:0;color:var(--blue-600);font-weight:700}
+
+.structure-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:24px}
+.struct-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;
+  transition:all .2s;
+}
+.struct-card:hover{border-color:var(--blue-400);box-shadow:var(--shadow)}
+.struct-avatar{
+  width:80px;height:80px;border-radius:50%;margin:0 auto 12px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-400));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px;
+}
+.struct-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.struct-card .role{font-size:12px;color:var(--blue-700);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+/* ============================================
+   ADMIN DASHBOARD
+   ============================================ */
+.admin-layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;background:var(--bg-soft)}
+.admin-sidebar{
+  background:var(--navy);color:#cbd5e1;padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto;
+}
+.admin-sidebar .brand{padding:0 20px 24px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:16px}
+.admin-sidebar .brand .name{color:#fff}
+.admin-sidebar .brand .tag{color:#94a3b8}
+.admin-menu{list-style:none}
+.admin-menu li a{
+  display:flex;align-items:center;gap:12px;padding:12px 20px;font-size:14px;font-weight:500;
+  color:#cbd5e1;transition:all .2s;border-left:3px solid transparent;
+}
+.admin-menu li a:hover{background:rgba(255,255,255,.05);color:#fff}
+.admin-menu li a.active{background:rgba(59,130,246,.15);color:#fff;border-left-color:var(--blue-500)}
+.admin-menu .section-label{
+  padding:16px 20px 8px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:#64748b;font-weight:700;
+}
+
+.admin-main{padding:0}
+.admin-topbar{
+  background:#fff;border-bottom:1px solid var(--line);padding:14px 30px;
+  display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50;
+}
+.admin-topbar h2{font-size:18px;font-weight:700;color:var(--navy)}
+.admin-topbar .user-info{display:flex;align-items:center;gap:12px}
+.user-avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--blue-600);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+.user-info .name{font-size:13px;font-weight:600}
+.user-info .role{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+.admin-content{padding:30px}
+
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:30px}
+.stat-card{
+  background:#fff;border-radius:var(--radius-lg);padding:22px;border:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.stat-card::before{
+  content:"";position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;
+  background:var(--blue-50);transform:translate(20px,-20px);
+}
+.stat-card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin-bottom:8px}
+.stat-card .value{font-size:32px;font-weight:800;color:var(--navy);font-family:var(--font-serif)}
+.stat-card .change{font-size:12px;margin-top:6px;display:flex;align-items:center;gap:4px}
+.stat-card .change.up{color:var(--success)}
+.stat-card .change.down{color:var(--danger)}
+.stat-card .icon{
+  position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-400));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:20px;z-index:2;
+}
+
+.admin-card{
+  background:#fff;border-radius:var(--radius-lg);border:1px solid var(--line);
+  margin-bottom:24px;overflow:hidden;
+}
+.admin-card-head{
+  padding:18px 22px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.admin-card-head h3{font-size:16px;font-weight:700;color:var(--navy)}
+.admin-card-body{padding:22px}
+
+.table{width:100%;border-collapse:collapse}
+.table th{
+  text-align:left;padding:12px 14px;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--muted);
+  background:var(--bg-soft);border-bottom:1px solid var(--line);
+}
+.table td{padding:14px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:middle}
+.table tr:last-child td{border-bottom:none}
+.table tr:hover td{background:var(--bg-soft)}
+
+.badge{
+  display:inline-block;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.badge-draft{background:#F1F5F9;color:#64748B}
+.badge-review{background:#FEF3C7;color:#92400E}
+.badge-revision{background:#FED7AA;color:#9A3412}
+.badge-approved{background:#DBEAFE;color:#1E40AF}
+.badge-published{background:#D1FAE5;color:#065F46}
+.badge-archived{background:#E5E7EB;color:#374151}
+
+.action-btns{display:flex;gap:6px}
+.action-btn{
+  width:32px;height:32px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--bg-soft);color:var(--ink-2);transition:all .2s;font-size:13px;
+}
+.action-btn:hover{background:var(--blue-100);color:var(--blue-700)}
+.action-btn.danger:hover{background:#FEE2E2;color:var(--danger)}
+
+/* FORMS */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{margin-bottom:18px}
+.form-group.full{grid-column:1/-1}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+.form-group label .req{color:var(--danger)}
+.form-control{
+  width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;
+  background:#fff;transition:all .2s;font-size:14px;
+}
+.form-control:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px var(--blue-100)}
+textarea.form-control{min-height:120px;resize:vertical;font-family:inherit}
+
+/* RICH TEXT EDITOR */
+.editor-toolbar{
+  display:flex;gap:4px;padding:10px;background:var(--bg-soft);border:1px solid var(--line);
+  border-bottom:none;border-radius:8px 8px 0 0;flex-wrap:wrap;
+}
+.editor-toolbar button{
+  width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;
+  color:var(--ink-2);font-size:14px;transition:all .2s;
+}
+.editor-toolbar button:hover{background:var(--blue-100);color:var(--blue-700)}
+.editor-toolbar .sep{width:1px;background:var(--line);margin:4px 6px}
+.editor-area{
+  min-height:380px;padding:20px;border:1px solid var(--line);border-radius:0 0 8px 8px;
+  background:#fff;font-family:var(--font-serif);font-size:16px;line-height:1.7;color:var(--ink);
+}
+.editor-area:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px var(--blue-100)}
+.editor-area h2{font-size:22px;margin:16px 0 10px}
+.editor-area h3{font-size:18px;margin:14px 0 8px}
+.editor-area blockquote{border-left:3px solid var(--blue-500);padding-left:14px;color:var(--muted);font-style:italic;margin:12px 0}
+.editor-area img{max-width:100%;border-radius:8px;margin:10px 0}
+
+/* MODAL */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);
+  z-index:200;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal-backdrop.show{display:flex;animation:fadeIn .2s}
+.modal{
+  background:#fff;border-radius:var(--radius-lg);max-width:520px;width:100%;
+  max-height:90vh;overflow-y:auto;animation:slideUp .3s;
+}
+.modal-head{padding:20px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.modal-head h3{font-size:18px;font-weight:700}
+.modal-body{padding:24px}
+.modal-foot{padding:16px 24px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* TOAST */
+.toast-container{position:fixed;top:20px;right:20px;z-index:300;display:flex;flex-direction:column;gap:10px}
+.toast{
+  background:#fff;border-radius:10px;padding:14px 18px;box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:12px;min-width:280px;border-left:4px solid var(--blue-600);
+  animation:slideIn .3s;
+}
+.toast.success{border-left-color:var(--success)}
+.toast.error{border-left-color:var(--danger)}
+.toast.warning{border-left-color:var(--warning)}
+@keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+
+/* LOGIN */
+.login-page{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--navy),var(--blue-800));padding:20px;position:relative;overflow:hidden;
+}
+.login-page::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 20% 30%,rgba(59,130,246,.25) 0%,transparent 50%),
+                   radial-gradient(circle at 80% 70%,rgba(59,130,246,.2) 0%,transparent 50%);
+}
+.login-card{
+  background:#fff;border-radius:var(--radius-lg);padding:40px;max-width:420px;width:100%;
+  box-shadow:var(--shadow-lg);position:relative;
+}
+.login-card .brand{justify-content:center;margin-bottom:24px}
+.login-card h2{font-family:var(--font-serif);font-size:24px;text-align:center;margin-bottom:6px}
+.login-card .sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:24px}
+.login-card .form-control{padding:12px 14px}
+.login-card .btn{width:100%;justify-content:center;padding:12px}
+.demo-cred{
+  margin-top:20px;padding:14px;background:var(--blue-50);border-radius:8px;font-size:12px;
+  border:1px dashed var(--blue-300);
+}
+.demo-cred strong{color:var(--blue-800)}
+.demo-cred code{background:#fff;padding:2px 6px;border-radius:4px;font-size:11px}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .highlight-grid{grid-template-columns:repeat(2,1fr)}
+  .about-section{grid-template-columns:1fr;padding:36px}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .article-detail-grid{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .filter-bar{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .divisions-grid{grid-template-columns:1fr}
+  .events-grid{grid-template-columns:repeat(2,1fr)}
+  .structure-grid{grid-template-columns:repeat(2,1fr)}
+  .vm-grid{grid-template-columns:1fr}
+  .admin-layout{grid-template-columns:1fr}
+  .admin-sidebar{position:static;height:auto}
+  .admin-sidebar .admin-menu{display:none}
+  .admin-sidebar.open .admin-menu{display:block}
+}
+@media (max-width:720px){
+  .nav-menu{
+    position:fixed;top:70px;left:0;right:0;background:#fff;flex-direction:column;
+    padding:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+    transform:translateY(-120%);transition:transform .3s;align-items:stretch;
+  }
+  .nav-menu.open{transform:translateY(0)}
+  .nav-menu a{padding:12px 14px}
+  .hamburger{display:flex}
+  .hero-title{font-size:24px}
+  .hero-main{min-height:360px}
+  .cards-grid{grid-template-columns:1fr}
+  .highlight-grid{grid-template-columns:1fr 1fr}
+  .article-row{grid-template-columns:1fr}
+  .article-row img{aspect-ratio:16/9}
+  .article-header h1{font-size:28px}
+  .page-header h1{font-size:30px}
+  .filter-bar{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .events-grid{grid-template-columns:1fr}
+  .structure-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .about-hero h1{font-size:32px}
+  .section-title{font-size:22px}
+  .admin-content{padding:16px}
+  .admin-topbar{padding:12px 16px}
+  .admin-topbar h2{font-size:15px}
+  .table{font-size:12px}
+  .table th,.table td{padding:10px 8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PUBLIC SITE ============ -->
+<div id="public-app">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="date" id="topDate">Kamis, 5 November 2026</div>
+      <div class="socials">
+        <a href="#" title="Instagram">IG</a>
+        <a href="#" title="YouTube">YT</a>
+        <a href="#" title="TikTok">TT</a>
+        <a href="#" title="LinkedIn">IN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="brand" onclick="navigate('home')">
+        <div class="brand-logo">DC</div>
+        <div class="brand-text">
+          <div class="name">DIGCITY PRESS</div>
+          <div class="tag">Official News Portal</div>
+        </div>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#/home" data-route="home">Beranda</a></li>
+        <li><a href="#/berita" data-route="berita">Berita</a></li>
+        <li><a href="#/press-release" data-route="press-release">Press Release</a></li>
+        <li><a href="#/kegiatan" data-route="kegiatan">Kegiatan</a></li>
+        <li><a href="#/divisi" data-route="divisi">Divisi</a></li>
+        <li><a href="#/tentang" data-route="tentang">Tentang Kami</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openSearch()" title="Pencarian">🔍</button>
+        <button class="btn btn-primary" onclick="navigate('login')">Masuk Admin</button>
+        <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREAKING NEWS TICKER -->
+  <div class="ticker">
+    <span class="ticker-label">BREAKING</span>
+    <div class="ticker-track">
+      <div class="ticker-content" id="tickerContent"></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="mainContent"></main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-logo">DC</div>
+            <div class="brand-text">
+              <div class="name" style="color:#fff">DIGCITY PRESS</div>
+              <div class="tag">Official News Portal</div>
+            </div>
+          </div>
+          <p>Portal berita resmi Digital Business Student Society (DIGCITY), Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor. Menyajikan informasi, press release, dan dokumentasi kegiatan organisasi.</p>
+          <div class="social-links">
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="YouTube">▶</a>
+            <a href="#" title="TikTok">🎵</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+        <div>
+          <h5>Navigasi</h5>
+          <ul>
+            <li><a href="#/home">Beranda</a></li>
+            <li><a href="#/berita">Berita</a></li>
+            <li><a href="#/press-release">Press Release</a></li>
+            <li><a href="#/kegiatan">Kegiatan</a></li>
+            <li><a href="#/divisi">Divisi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Organisasi</h5>
+          <ul>
+            <li><a href="#/tentang">Tentang DIGCITY</a></li>
+            <li><a href="#/tentang">Visi & Misi</a></li>
+            <li><a href="#/tentang">Struktur Pengurus</a></li>
+            <li><a href="#/divisi">Divisi & Program</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Kontak</h5>
+          <ul>
+            <li>Fakultas Ekonomi dan Bisnis</li>
+            <li>Universitas Ibn Khaldun Bogor</li>
+            <li>Jl. Raya Pajajaran, Bogor</li>
+            <li>press@digcity-uika.org</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 DIGCITY PRESS — Digital Business Student Society. All rights reserved.</div>
+        <div>DIGCITY, GO FIGHT WIN!</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ LOGIN PAGE ============ -->
+<div id="login-page" class="login-page" style="display:none">
+  <div class="login-card">
+    <div class="brand" onclick="navigate('home')" style="cursor:pointer">
+      <div class="brand-logo">DC</div>
+      <div class="brand-text">
+        <div class="name">DIGCITY PRESS</div>
+        <div class="tag">Admin Portal</div>
+      </div>
+    </div>
+    <h2>Masuk Dashboard</h2>
+    <p class="sub">Kelola publikasi dan konten DIGCITY PRESS</p>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" id="loginUser" required placeholder="nama.pengguna" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="loginPass" required placeholder="••••••••" />
+      </div>
+      <button type="submit" class="btn btn-primary">Masuk</button>
+    </form>
+    <div class="demo-cred">
+      <strong>Demo Accounts:</strong><br>
+      Super Admin: <code>admin</code> / <code>admin123</code><br>
+      Editor: <code>editor</code> / <code>editor123</code><br>
+      Penulis: <code>penulis</code> / <code>penulis123</code><br>
+      Kontributor: <code>kontributor</code> / <code>kontributor123</code>
+    </div>
+    <div style="text-align:center;margin-top:16px">
+      <a href="#/home" style="font-size:13px;color:var(--blue-700)">← Kembali ke Beranda</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADMIN DASHBOARD ============ -->
+<div id="admin-app" class="admin-layout" style="display:none">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="brand">
+      <div class="brand-logo">DC</div>
+      <div class="brand-text">
+        <div class="name">DIGCITY CMS</div>
+        <div class="tag">Admin Panel</div>
+      </div>
+    </div>
+    <ul class="admin-menu">
+      <li class="section-label">Utama</li>
+      <li><a href="#/admin/dashboard" data-admin="dashboard">📊 Dashboard</a></li>
+      <li><a href="#/admin/articles" data-admin="articles">📰 Artikel</a></li>
+      <li><a href="#/admin/editor" data-admin="editor">✏️ Editor Baru</a></li>
+      <li class="section-label">Konten</li>
+      <li><a href="#/admin/media" data-admin="media">🖼️ Media</a></li>
+      <li><a href="#/admin/categories" data-admin="categories">🏷️ Kategori</a></li>
+      <li><a href="#/admin/events" data-admin="events">📅 Kegiatan</a></li>
+      <li class="section-label">Pengaturan</li>
+      <li><a href="#/admin/users" data-admin="users">👥 Pengguna</a></li>
+      <li><a href="#/admin/profile" data-admin="profile">🏢 Profil Organisasi</a></li>
+      <li class="section-label">Akun</li>
+      <li><a href="#/home" onclick="logout()">🚪 Keluar</a></li>
+      <li><a href="#/home">🌐 Lihat Situs</a></li>
+    </ul>
+  </aside>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="hamburger" onclick="document.getElementById('adminSidebar').classList.toggle('open')" style="display:none" id="adminMenuBtn">☰</button>
+        <h2 id="adminTitle">Dashboard</h2>
+      </div>
+      <div class="user-info">
+        <div>
+          <div class="name" id="adminUserName">Admin</div>
+          <div class="role" id="adminUserRole">Super Admin</div>
+        </div>
+        <div class="user-avatar" id="adminUserAvatar">A</div>
+      </div>
+    </div>
+    <div class="admin-content" id="adminContent"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal" id="modalBox">
+    <div class="modal-head">
+      <h3 id="modalTitle">Judul</h3>
+      <button class="icon-btn" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot" id="modalFoot"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ============================================================
+   DIGCITY PRESS — APPLICATION LOGIC
+   ============================================================ */
+
+/* ---------- DATE FORMAT ---------- */
+const MONTHS_ID = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+const DAYS_ID = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+function fmtDate(d){
+  const dt = new Date(d);
+  return `${dt.getDate()} ${MONTHS_ID[dt.getMonth()]} ${dt.getFullYear()}`;
+}
+function fmtDateTime(d){
+  const dt = new Date(d);
+  return `${fmtDate(d)}, ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')} WIB`;
+}
+function fmtDateFull(d){
+  const dt = new Date(d);
+  return `${DAYS_ID[dt.getDay()]}, ${dt.getDate()} ${MONTHS_ID[dt.getMonth()]} ${dt.getFullYear()}`;
+}
+
+/* ---------- DATA LAYER (localStorage) ---------- */
+const DB_KEY = 'digcity_press_db_v1';
+const SESSION_KEY = 'digcity_session_v1';
+
+function seedDemoData(){
+  const now = Date.now();
+  const day = 24*60*60*1000;
+  return {
+    users:[
+      {id:'u1',username:'admin',password:'digcity26',name:'Administrator',email:'admin@digcity.org',role:'super_admin',active:true,created:now-90*day},
+      {id:'u2',username:'editor',password:'editor123',name:'Budi Santoso',email:'editor@digcity.org',role:'editor',active:true,created:now-60*day},
+      {id:'u3',username:'penulis',password:'penulis123',name:'Siti Rahma',email:'penulis@digcity.org',role:'writer',active:true,created:now-45*day},
+      {id:'u4',username:'kontributor',password:'kontributor123',name:'Andi Pratama',email:'kontributor@digcity.org',role:'contributor',active:true,created:now-30*day},
+    ],
+    categories:[
+      {id:'c1',name:'Press Release',slug:'press-release',type:'article',desc:'Siaran pers resmi DIGCITY'},
+      {id:'c2',name:'Kegiatan',slug:'kegiatan',type:'article',desc:'Berita kegiatan organisasi'},
+      {id:'c3',name:'Prestasi',slug:'prestasi',type:'article',desc:'Pencapaian mahasiswa'},
+      {id:'c4',name:'Pengumuman',slug:'pengumuman',type:'article',desc:'Informasi penting'},
+      {id:'c5',name:'Opini',slug:'opini',type:'article',desc:'Tulisan opini'},
+      {id:'c6',name:'Seminar',slug:'seminar',type:'event',desc:'Kategori seminar'},
+      {id:'c7',name:'Company Visit',slug:'company-visit',type:'event',desc:'Kunjungan industri'},
+      {id:'c8',name:'Workshop',slug:'workshop',type:'event',desc:'Pelatihan & workshop'},
+    ],
+    divisions:[
+      {id:'d1',code:'POD',name:'People Organizing Development',icon:'👥',desc:'Divisi yang fokus pada pengembangan sumber daya manusia, kaderisasi, dan pengelolaan organisasi internal DIGCITY.',tasks:['Pengelolaan kader dan anggota','Pelatihan leadership','Organisasi internal','Evaluasi kinerja pengurus'],programs:['Leadership Training','DIGCITY Academy','Rapat Kerja','Pelantikan Pengurus']},
+      {id:'d2',code:'CMI',name:'Creative Media Information',icon:'🎨',desc:'Divisi kreatif yang mengelola media, informasi, dan publikasi digital DIGCITY termasuk DIGCITY PRESS.',tasks:['Produksi konten digital','Desain grafis & multimedia','Pengelolaan media sosial','Dokumentasi kegiatan'],programs:['DIGCITY PRESS','Konten Kreatif','Digital Campaign','Media Training']},
+      {id:'d3',code:'EKRAV',name:'Ekonomi Kreatif',icon:'💡',desc:'Divisi yang mengembangkan jiwa kewirausahaan dan ekonomi kreatif anggota DIGCITY.',tasks:['Pengembangan bisnis mahasiswa','Event ekonomi kreatif','Kolaborasi industri','Program inkubasi'],programs:['DIGCITY Business Day','Startup Weekend','Bazaar Kreatif','Entrepreneur Talk']},
+      {id:'d4',code:'PR',name:'Public Relations',icon:'📢',desc:'Divisi yang mengelola hubungan eksternal, kemitraan, dan citra publik DIGCITY.',tasks:['Hubungan dengan mitra','Sponsorship & partnership','Humas organisasi','Networking eksternal'],programs:['Company Visit','Partnership Program','DIGCITY Expo','Alumni Gathering']},
+    ],
+    articles:[
+      {id:'a1',title:'DIGCITY Sukses Selenggarakan Digital Business Summit 2026 dengan 500+ Peserta',subtitle:'Event terbesar DIGCITY tahun ini menghadirkan pembicara dari Google, Tokopedia, dan Bank Indonesia',excerpt:'Digital Business Summit 2026 menjadi ajang puncak DIGCITY yang menghadirkan insights terkini seputar transformasi digital bisnis di Indonesia.',content:'<p><strong>BOGOR</strong> — Digital Business Student Society (DIGCITY) Fakultas Ekonomi dan Bisnis Universitas Ibn Khaldun Bogor sukses menyelenggarakan Digital Business Summit 2026 pada Sabtu, 26 Oktober 2026 di Auditorium Utama UIKA Bogor.</p><h2>Rangkaian Acara yang Inspiratif</h2><p>Event yang bertemakan "Navigating Digital Frontier" ini dihadiri oleh lebih dari 500 peserta yang terdiri dari mahasiswa, akademisi, dan praktisi industri. Acara dibuka dengan keynote speech dari perwakilan Google Indonesia yang membahas tren AI dalam bisnis digital.</p><blockquote>"Digital Business Summit tahun ini menjadi bukti nyata bahwa kolaborasi antara akademisi dan industri adalah kunci mencetak talenta digital masa depan."<cite>— Dr. Ahmad Fauzi, Dekan FEB UIKA Bogor</cite></blockquote><h2>Tiga Sesi Panel Diskusi</h2><p>Selanjutnya, tiga sesi panel diskusi digelar dengan topik E-Commerce, Digital Marketing, dan Fintech. Setiap sesi menghadirkan praktisi dari Tokopedia, Bank Indonesia, dan startup unicorn Indonesia.</p><figure><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200" alt="Digital Business Summit 2026"><figcaption>Rangkaian acara Digital Business Summit 2026 di Auditorium UIKA Bogor.</figcaption></figure><h2>Dampak dan Harapan</h2><p>Ketua pelaksana, Rina Marlina, menyampaikan bahwa acara ini diharapkan dapat menjadi momentum bagi mahasiswa untuk memahami peluang di era ekonomi digital. "Kami ingin mahasiswa tidak hanya menjadi konsumen teknologi, tetapi juga pencipta solusi digital," ujarnya.</p>',featuredImage:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200',caption:'Digital Business Summit 2026 di Auditorium UIKA Bogor',categoryId:'c1',divisionId:'d2',authorId:'u2',authorName:'Tim Redaksi CMI',status:'published',tags:['summit','digital business','event','uika'],seoTitle:'Digital Business Summit 2026 DIGCITY Sukses Digelar',seoDesc:'DIGCITY sukses selenggarakan Digital Business Summit 2026 dengan 500+ peserta dan pembicara dari Google, Tokopedia, dan BI.',slug:'digital-business-summit-2026',createdAt:now-2*day,publishedAt:now-2*day,updatedAt:now-2*day},
+      {id:'a2',title:'Company Visit DIGCITY ke Kantor Pusat Tokopedia: Mengintip Budaya Kerja Unicorn Indonesia',subtitle:'Rombongan 40 mahasiswa DIGCITY belajar langsung ekosistem e-commerce terbesar',excerpt:'Divisi PR DIGCITY membawa 40 mahasiswa berkunjung ke kantor pusat Tokopedia untuk mempelajari ekosistem e-commerce.',content:'<p><strong>JAKARTA</strong> — Divisi Public Relations DIGCITY menyelenggarakan Company Visit ke kantor pusat Tokopedia di Jakarta pada Rabu, 29 Oktober 2026. Kegiatan ini diikuti oleh 40 mahasiswa terpilih dari berbagai angkatan.</p><h2>Tour Fasilitas dan Sharing Session</h2><p>Rombongan disambut langsung oleh tim HR Tokopedia yang mengajak peserta berkeliling melihat langsung suasana kerja di salah satu unicorn terbesar Indonesia. Dilanjutkan dengan sharing session bersama Product Manager dan Engineering Lead.</p><blockquote>"Pengalaman ini membuka wawasan kami tentang bagaimana sebuah startup unicorn mengelola produk dengan jutaan pengguna."<cite>— Dimas Arya, Peserta Company Visit</cite></blockquote><p>Kegiatan ditutup dengan sesi networking dan foto bersama. DIVISI PR berencana menggelar company visit serupa ke perusahaan teknologi lain pada semester berikutnya.</p>',featuredImage:'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200',caption:'Rombongan DIGCITY di kantor pusat Tokopedia',categoryId:'c2',divisionId:'d4',authorId:'u3',authorName:'Siti Rahma',status:'published',tags:['company visit','tokopedia','pr','kunjungan industri'],slug:'company-visit-tokopedia-2026',createdAt:now-5*day,publishedAt:now-5*day,updatedAt:now-5*day},
+      {id:'a3',title:'Workshop UI/UX Design: Membangun Produk Digital yang User-Centered',subtitle:'Belajar langsung dari Senior Product Designer Tokopedia',excerpt:'CMI DIGCITY menggelar workshop intensif UI/UX Design yang diikuti 80 peserta dari berbagai kampus.',content:'<p><strong>BOGOR</strong> — Creative Media Information (CMI) DIGCITY sukses menggelar Workshop UI/UX Design pada Sabtu, 18 Oktober 2026 di Lab Komputer FEB UIKA Bogor.</p><h2>Materi Komprehensif</h2><p>Workshop yang berlangsung selama 8 jam ini membahas mulai dari user research, wireframing, prototyping, hingga usability testing. Peserta dibimbing langsung oleh Senior Product Designer dari Tokopedia.</p><p>Antusiasme peserta terlihat dari sesi tanya jawab yang aktif dan hasil final project yang dipresentasikan di akhir sesi.</p>',featuredImage:'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200',caption:'Workshop UI/UX Design DIGCITY',categoryId:'c2',divisionId:'d2',authorId:'u3',authorName:'Tim CMI',status:'published',tags:['workshop','ui/ux','design','cmi'],slug:'workshop-ui-ux-design-2026',createdAt:now-10*day,publishedAt:now-10*day,updatedAt:now-10*day},
+      {id:'a4',title:'Mahasiswa DIGCITY Raih Juara 2 Kompetisi Business Plan Nasional',subtitle:'Tim Berkat inovasi di bidang agritech berhasil unggul dari 200+ tim se-Indonesia',excerpt:'Prestasi membanggakan ditorehkan tim mahasiswa DIGCITY pada kompetisi business plan tingkat nasional.',content:'<p><strong>BOGOR</strong> — Kabar membanggakan datang dari tim mahasiswa DIGCITY yang berhasil meraih Juara 2 dalam National Business Plan Competition 2026 yang diselenggarakan di Jakarta.</p><h2>Inovasi Agritech "TaniConnect"</h2><p>Tim yang terdiri dari 4 mahasiswa ini mengangkat topik agritech dengan gagasan aplikasi TaniConnect yang menghubungkan petani langsung dengan konsumen urban. Ide ini dinilai juri memiliki dampak sosial dan potensi bisnis yang tinggi.</p><blockquote>"Ini adalah hasil kerja keras tim selama 3 bulan persiapan. Kami bangga bisa mengharumkan nama UIKA Bogor."<cite>— Fajar Nugroho, Ketua Tim</cite></blockquote>',featuredImage:'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200',caption:'Tim DIGCITY saat penerimaan penghargaan',categoryId:'c3',divisionId:'d3',authorId:'u2',authorName:'Redaksi DIGCITY',status:'published',tags:['prestasi','kompetisi','business plan','agritech'],slug:'juara-2-business-plan-nasional',createdAt:now-15*day,publishedAt:now-15*day,updatedAt:now-15*day},
+      {id:'a5',title:'Pelantikan Pengurus DIGCITY Periode 2026/2027: Era Baru Organisasi',subtitle:'25 pengurus resmi dilantik dengan visi membawa DIGCITY ke tingkat nasional',excerpt:'Prosesi pelantikan pengurus DIGCITY periode 2026/2027 berlangsung khidmat di Auditorium UIKA Bogor.',content:'<p><strong>BOGOR</strong> — Pengurus Digital Business Student Society (DIGCITY) periode 2026/2027 resmi dilantik dalam upacara yang berlangsung di Auditorium UIKA Bogor, Jumat, 3 Oktober 2026.</p><h2>Visi Kepengurusan Baru</h2><p>Ketua Umum terpilih, Muhammad Rizki, menyampaikan visi untuk membawa DIGCITY menjadi himpunan tingkat nasional yang berdampak. "Kami ingin setiap program kerja memberikan nilai nyata bagi anggota dan masyarakat," tegasnya.</p>',featuredImage:'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200',caption:'Pelantikan Pengurus DIGCITY 2026/2027',categoryId:'c2',divisionId:'d1',authorId:'u2',authorName:'Tim POD',status:'published',tags:['pelantikan','pengurus','organisasi'],slug:'pelantikan-pengurus-2026-2027',createdAt:now-25*day,publishedAt:now-25*day,updatedAt:now-25*day},
+      {id:'a6',title:'DIGCITY Bakti Sosial: Berbagi dengan Masyarakat Desa Cisarua',subtitle:'Rangkaian kegiatan sosial sebagai wujud tri dharma perguruan tinggi',excerpt:'Divisi POD dan PR DIGCITY menggelar bakti sosial di Desa Cisarua, Bogor.',content:'<p><strong>BOGOR</strong> — Sebagai wujud komitmen terhadap masyarakat, DIGCITY menggelar bakti sosial di Desa Cisarua pada Minggu, 12 Oktober 2026.</p><p>Kegiatan meliputi pembagian sembako, pelatihan digital marketing untuk UMKM desa, dan bersih-bersih lingkungan.</p>',featuredImage:'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200',caption:'Bakti Sosial DIGCITY di Desa Cisarua',categoryId:'c2',divisionId:'d1',authorId:'u3',authorName:'Tim POD',status:'published',tags:['bakti sosial','csr','desa'],slug:'bakti-sosial-cisarua',createdAt:now-20*day,publishedAt:now-20*day,updatedAt:now-20*day},
+      {id:'a7',title:'Seminar Nasional: Transformasi Digital UMKM di Era Society 5.0',subtitle:'Membahas strategi digitalisasi UMKM bersama praktisi dan akademisi',excerpt:'Seminar nasional DIGCITY membahas transformasi digital UMKM dengan narasumber dari berbagai latar belakang.',content:'<p><strong>BOGOR</strong> — DIGCITY menyelenggarakan Seminar Nasional bertajuk "Transformasi Digital UMKM di Era Society 5.0" pada Sabtu, 4 Oktober 2026.</p>',featuredImage:'https://images.unsplash.com/photo-1591115765373-5f9cf1da241c?w=1200',caption:'Seminar Nasional Transformasi Digital UMKM',categoryId:'c2',divisionId:'d3',authorId:'u2',authorName:'Tim EKRAV',status:'published',tags:['seminar','umkm','digital'],slug:'seminar-transformasi-digital-umkm',createdAt:now-28*day,publishedAt:now-28*day,updatedAt:now-28*day},
+      {id:'a8',title:'Rapat Kerja DIGCITY 2026: Menyusun Program Kerja Strategis',subtitle:'Seluruh divisi memaparkan program kerja untuk satu tahun ke depan',excerpt:'Raker DIGCITY menjadi momentum penyusunan program kerja strategis seluruh divisi.',content:'<p><strong>BOGOR</strong> — Rapat Kerja (Raker) DIGCITY periode 2026/2027 dilaksanakan pada akhir pekan lalu di Villa Bukit Pangrango.</p>',featuredImage:'https://images.unsplash.com/photo-1552581234-26160f608093?w=1200',caption:'Rapat Kerja DIGCITY 2026',categoryId:'c2',divisionId:'d1',authorId:'u3',authorName:'Tim POD',status:'published',tags:['raker','program kerja'],slug:'raker-digcity-2026',createdAt:now-30*day,publishedAt:now-30*day,updatedAt:now-30*day},
+      {id:'a9',title:'DIGCITY Bazaar: Pameran Produk Kreatif Mahasiswa',subtitle:'Ajang unjuk kreativitas mahasiswa di bidang ekonomi kreatif',excerpt:'Bazaar kreatif DIGCITY menampilkan produk-produk inovatif karya mahasiswa.',content:'<p><strong>BOGOR</strong> — EKRAV DIGCITY sukses menggelar DIGCITY Bazaar yang menampilkan produk kreatif mahasiswa.</p>',featuredImage:'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200',caption:'DIGCITY Bazaar 2026',categoryId:'c2',divisionId:'d3',authorId:'u3',authorName:'Tim EKRAV',status:'draft',tags:['bazaar','ekraf'],slug:'digcity-bazaar-2026',createdAt:now-1*day,publishedAt:null,updatedAt:now-1*day},
+      {id:'a10',title:'Pengumuman Seleksi Pengurus Divisi Periode 2027/2028',subtitle:'Pendaftaran dibuka mulai 10 November 2026',excerpt:'DIGCITY membuka seleksi pengurus divisi untuk periode berikutnya.',content:'<p><strong>BOGOR</strong> — DIGCITY mengumumkan pembukaan seleksi pengurus divisi periode 2027/2028.</p>',featuredImage:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200',caption:'Seleksi Pengurus Divisi',categoryId:'c4',divisionId:'d1',authorId:'u2',authorName:'Tim POD',status:'published',tags:['pengumuman','seleksi'],slug:'seleksi-pengurus-divisi-2027',createdAt:now-0*day,publishedAt:now-0*day,updatedAt:now-0*day},
+    ],
+    events:[
+      {id:'e1',title:'Digital Business Summit 2026',poster:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',description:'Event tahunan terbesar DIGCITY yang menghadirkan pembicara dari industri digital.',date:now-2*day,location:'Auditorium UIKA Bogor',organizer:'CMI & PR',categoryId:'c6',articleId:'a1',gallery:['https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600','https://images.unsplash.com/photo-1505373877841-8d25f9d4e202?w=600']},
+      {id:'e2',title:'Company Visit Tokopedia',poster:'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800',description:'Kunjungan industri ke kantor pusat Tokopedia.',date:now-5*day,location:'Kantor Pusat Tokopedia, Jakarta',organizer:'Divisi PR',categoryId:'c7',articleId:'a2',gallery:[]},
+      {id:'e3',title:'Workshop UI/UX Design',poster:'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800',description:'Workshop intensif UI/UX Design bersama praktisi.',date:now-10*day,location:'Lab Komputer FEB UIKA',organizer:'Divisi CMI',categoryId:'c8',articleId:'a3',gallery:[]},
+      {id:'e4',title:'Seminar Nasional UMKM',poster:'https://images.unsplash.com/photo-1591115765373-5f9cf1da241c?w=800',description:'Seminar transformasi digital UMKM.',date:now-28*day,location:'Auditorium UIKA Bogor',organizer:'Divisi EKRAV',categoryId:'c6',articleId:'a7',gallery:[]},
+      {id:'e5',title:'Bakti Sosial Desa Cisarua',poster:'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800',description:'Kegiatan sosial berbagi dengan masyarakat.',date:now-20*day,location:'Desa Cisarua, Bogor',organizer:'POD & PR',categoryId:'c6',articleId:'a6',gallery:[]},
+      {id:'e6',title:'Rapat Kerja DIGCITY 2026',poster:'https://images.unsplash.com/photo-1552581234-26160f608093?w=800',description:'Penyusunan program kerja strategis.',date:now-30*day,location:'Villa Bukit Pangrango',organizer:'Divisi POD',categoryId:'c6',articleId:'a8',gallery:[]},
+    ],
+    media:[],
+    profile:{
+      name:'Digital Business Student Society',
+      shortName:'DIGCITY',
+      jargon:'DIGCITY, GO FIGHT WIN!',
+      values:'Guyub selalu, membumi dan membiru',
+      history:'DIGCITY didirikan sebagai himpunan mahasiswa program studi Bisnis Digital di Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor. Berdiri pada tahun 2020, DIGCITY tumbuh menjadi organisasi yang aktif dalam pengembangan kompetensi mahasiswa di bidang bisnis digital, ekonomi kreatif, dan teknologi.',
+      vision:'Menjadi himpunan mahasiswa bisnis digital yang unggul, inovatif, dan berdampak di tingkat nasional pada tahun 2030.',
+      mission:['Menyelenggarakan program kerja yang mengembangkan kompetensi bisnis digital mahasiswa.','Membangun ekosistem kolaborasi antara mahasiswa, akademisi, dan industri.','Menjadi wadah aspirasi dan pengembangan kreativitas mahasiswa.','Memberikan kontribusi nyata bagi masyarakat melalui program pengabdian.'],
+      philosophy:'Nama DIGCITY merupakan akronim dari Digital City — merepresentasikan visi organisasi untuk membangun ekosistem digital yang hidup, dinamis, dan terhubung. "City" melambangkan ruang kolaborasi yang luas, sementara "Digital" menegaskan fokus pada era transformasi teknologi.',
+      address:'Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor, Jl. Raya Pajajaran, Bogor 16118',
+      email:'press@digcity-uika.org',
+      phone:'+62 812-3456-7890',
+    },
+    structure:[
+      {name:'Muhammad Rizki',role:'Ketua Umum',division:'Pengurus Inti'},
+      {name:'Aisyah Putri',role:'Wakil Ketua',division:'Pengurus Inti'},
+      {name:'Rina Marlina',role:'Sekretaris Umum',division:'Pengurus Inti'},
+      {name:'Dewi Sartika',role:'Bendahara Umum',division:'Pengurus Inti'},
+      {name:'Fajar Nugroho',role:'Koordinator POD',division:'POD'},
+      {name:'Budi Santoso',role:'Koordinator CMI',division:'CMI'},
+      {name:'Andi Pratama',role:'Koordinator EKRAV',division:'EKRAV'},
+      {name:'Siti Rahma',role:'Koordinator PR',division:'PR'},
+    ],
+    activityLog:[],
+  };
+}
+
+function loadDB(){
+  const raw = localStorage.getItem(DB_KEY);
+  if(!raw){
+    const seed = seedDemoData();
+    localStorage.setItem(DB_KEY, JSON.stringify(seed));
+    return seed;
+  }
+  try{return JSON.parse(raw)}catch(e){
+    const seed = seedDemoData();
+    localStorage.setItem(DB_KEY, JSON.stringify(seed));
+    return seed;
+  }
+}
+function saveDB(db){localStorage.setItem(DB_KEY, JSON.stringify(db))}
+function getSession(){const s=localStorage.getItem(SESSION_KEY);return s?JSON.parse(s):null}
+function setSession(u){localStorage.setItem(SESSION_KEY, JSON.stringify(u))}
+function clearSession(){localStorage.removeItem(SESSION_KEY)}
+function logActivity(action,detail){
+  const db=loadDB();
+  const s=getSession();
+  db.activityLog.unshift({id:'l'+Date.now(),userId:s?.id,userName:s?.name||'System',action,detail,at:Date.now()});
+  if(db.activityLog.length>100)db.activityLog=db.activityLog.slice(0,100);
+  saveDB(db);
+}
+
+/* ---------- ROUTER ---------- */
+function navigate(route,params){
+  if(params){
+    location.hash = '#/'+route+'/'+params;
+  } else {
+    location.hash = '#/'+route;
+  }
+}
+function parseRoute(){
+  const hash = location.hash.replace('#/','') || 'home';
+  const parts = hash.split('/');
+  return {page:parts[0],param:parts[1],sub:parts[2]};
+}
+
+function route(){
+  const r = parseRoute();
+  const session = getSession();
+  
+  // Hide all app containers
+  document.getElementById('public-app').style.display='none';
+  document.getElementById('login-page').style.display='none';
+  document.getElementById('admin-app').style.display='none';
+  
+  // Admin routes
+  if(r.page === 'admin'){
+    if(!session){navigate('login');return}
+    document.getElementById('admin-app').style.display='grid';
+    updateAdminUser(session);
+    renderAdmin(r.param||'dashboard');
+    return;
+  }
+  
+  // Login
+  if(r.page === 'login'){
+    if(session){navigate('admin/dashboard');return}
+    document.getElementById('login-page').style.display='flex';
+    return;
+  }
+  
+  // Public routes
+  document.getElementById('public-app').style.display='block';
+  updateActiveNav(r.page);
+  
+  switch(r.page){
+    case 'home':renderHome();break;
+    case 'berita':renderBerita();break;
+    case 'press-release':renderBerita({type:'press'});break;
+    case 'kegiatan':renderKegiatan();break;
+    case 'divisi':renderDivisi();break;
+    case 'tentang':renderTentang();break;
+    case 'artikel':renderArtikel(r.param);break;
+    default:renderHome();
+  }
+  window.scrollTo(0,0);
+}
+
+function updateActiveNav(page){
+  document.querySelectorAll('#navMenu a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.route === page || (page==='artikel' && a.dataset.route==='berita'));
+  });
+}
+
+function toggleMobileMenu(){document.getElementById('navMenu').classList.toggle('open')}
+
+/* ---------- PUBLIC: HOME ---------- */
+function renderHome(){
+  const db = loadDB();
+  const published = db.articles.filter(a=>a.status==='published').sort((a,b)=>b.publishedAt-a.publishedAt);
+  const hero = published[0];
+  const side = published.slice(1,5);
+  const latest = published.slice(0,6);
+  const events = db.events.slice().sort((a,b)=>b.date-a.date).slice(0,4);
+  
+  // Ticker
+  const ticker = published.slice(0,6).map(a=>`<span>${a.title}</span>`).join('');
+  document.getElementById('tickerContent').innerHTML = ticker + ticker;
+  
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-main" onclick="navigate('artikel','${hero.id}')">
+            <img src="${hero.featuredImage}" alt="${hero.title}" onerror="this.src='https://via.placeholder.com/1200x700/0A3D91/ffffff?text=DIGCITY+PRESS'"/>
+            <div class="hero-overlay">
+              <span class="hero-cat">${getCatName(db,hero.categoryId)}</span>
+              <h1 class="hero-title">${hero.title}</h1>
+              <p class="hero-excerpt">${hero.excerpt}</p>
+              <div class="hero-meta">
+                <span>📅 ${fmtDate(hero.publishedAt)}</span>
+                <span class="dot"></span>
+                <span>✍️ ${hero.authorName}</span>
+                <span class="dot"></span>
+                <span>🏢 ${getDivName(db,hero.divisionId)}</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-side">
+            ${side.map(a=>`
+              <div class="side-card" onclick="navigate('artikel','${a.id}')">
+                <img src="${a.featuredImage}" alt="${a.title}" onerror="this.src='https://via.placeholder.com/220x160/0A3D91/ffffff?text=DIGCITY'"/>
+                <div class="side-card-body">
+                  <div class="cat">${getCatName(db,a.categoryId)}</div>
+                  <h4>${a.title}</h4>
+                  <div class="date">${fmtDate(a.publishedAt)}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BERITA TERBARU -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Berita Terbaru</h2>
+            <div class="section-sub">Publikasi terkini dari redaksi DIGCITY PRESS</div>
+          </div>
+          <a href="#/berita" class="section-link">Lihat Semua →</a>
+        </div>
+        <div class="cards-grid">
+          ${latest.map(a=>articleCard(db,a)).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT KEGIATAN -->
+    <section class="section" style="background:var(--bg-soft)">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Highlight Kegiatan</h2>
+            <div class="section-sub">Dokumentasi program kerja dan kegiatan unggulan DIGCITY</div>
+          </div>
+          <a href="#/kegiatan" class="section-link">Lihat Semua →</a>
+        </div>
+        <div class="highlight-grid">
+          ${events.map(e=>`
+            <div class="highlight-item" onclick="navigate('artikel','${e.articleId}')">
+              <img src="${e.poster}" alt="${e.title}" onerror="this.src='https://via.placeholder.com/400x500/0A3D91/ffffff?text=DIGCITY'"/>
+              <div class="highlight-info">
+                <div class="tag">${fmtDate(e.date)}</div>
+                <h4>${e.title}</h4>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- MENGENAL DIGCITY -->
+    <section class="section">
+      <div class="container">
+        <div class="about-section">
+          <div class="about-text">
+            <div class="kicker">Mengenal DIGCITY</div>
+            <h2>Digital Business Student Society</h2>
+            <p>DIGCITY adalah himpunan mahasiswa program studi Bisnis Digital di Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor. Kami bergerak di bidang pengembangan kompetensi bisnis digital, ekonomi kreatif, dan kolaborasi industri.</p>
+            <div class="values">
+              <span class="value-tag">🤝 Guyub Selalu</span>
+              <span class="value-tag">🌱 Membumi</span>
+              <span class="value-tag">💙 Membiru</span>
+            </div>
+            <a href="#/tentang" class="btn btn-primary">Profil Lengkap →</a>
+          </div>
+          <div class="about-visual">
+            <h3>Jargon Kami</h3>
+            <p>Semangat yang menjadi identitas setiap insan DIGCITY</p>
+            <div class="jargon">GO FIGHT WIN!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function articleCard(db,a){
+  return `
+    <article class="card" onclick="navigate('artikel','${a.id}')">
+      <div class="card-img">
+        <img src="${a.featuredImage}" alt="${a.title}" onerror="this.src='https://via.placeholder.com/600x400/0A3D91/ffffff?text=DIGCITY'"/>
+        <span class="card-cat">${getCatName(db,a.categoryId)}</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">${a.title}</h3>
+        <p class="card-excerpt">${a.excerpt}</p>
+        <div class="card-meta">
+          <span class="author">${a.authorName}</span>
+          <span>${fmtDate(a.publishedAt||a.createdAt)}</span>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function getCatName(db,id){return db.categories.find(c=>c.id===id)?.name||'Umum'}
+function getDivName(db,id){return db.divisions.find(d=>d.id===id)?.code||'DIGCITY'}
+
+/* ---------- PUBLIC: BERITA ---------- */
+function renderBerita(opts={}){
+  const db = loadDB();
+  const isPress = opts.type==='press';
+  const title = isPress?'Press Release':'Berita';
+  const subtitle = isPress?'Siaran pers resmi DIGCITY':'Seluruh publikasi dan berita DIGCITY PRESS';
+  
+  let articles = db.articles.filter(a=>a.status==='published');
+  if(isPress) articles = articles.filter(a=>a.categoryId==='c1');
+  articles = articles.sort((a,b)=>b.publishedAt-a.publishedAt);
+  
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <section class="page-header">
+      <div class="container">
+        <div class="kicker">DIGCITY PRESS</div>
+        <h1>${title}</h1>
+        <p>${subtitle}</p>
+        <div class="breadcrumb"><a href="#/home">Beranda</a> / ${title}</div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:20px">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="field">
+            <label>Cari</label>
+            <input type="text" id="fSearch" placeholder="Judul atau kata kunci..." oninput="applyFilters()"/>
+          </div>
+          <div class="field">
+            <label>Kategori</label>
+            <select id="fCat" onchange="applyFilters()">
+              <option value="">Semua Kategori</option>
+              ${db.categories.filter(c=>c.type==='article').map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="field">
+            <label>Divisi</label>
+            <select id="fDiv" onchange="applyFilters()">
+              <option value="">Semua Divisi</option>
+              ${db.divisions.map(d=>`<option value="${d.id}">${d.code} - ${d.name}</option>`).join('')}
+            </select>
+          </div>
+          <div class="field">
+            <label>Tahun</label>
+            <select id="fYear" onchange="applyFilters()">
+              <option value="">Semua Tahun</option>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Urutkan</label>
+            <select id="fSort" onchange="applyFilters()">
+              <option value="newest">Terbaru</option>
+              <option value="oldest">Terlama</option>
+            </select>
+          </div>
+          <button class="btn btn-outline" onclick="resetFilters()">Reset</button>
+        </div>
+        <div id="articlesList" class="articles-list"></div>
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </section>
+  `;
+  
+  if(isPress) document.getElementById('fCat').value='c1';
+  
+  window._articlesAll = articles;
+  window._articlesPage = 1;
+  applyFilters();
+}
+
+function applyFilters(){
+  const q = (document.getElementById('fSearch')?.value||'').toLowerCase();
+  const cat = document.getElementById('fCat')?.value||'';
+  const div = document.getElementById('fDiv')?.value||'';
+  const year = document.getElementById('fYear')?.value||'';
+  const sort = document.getElementById('fSort')?.value||'newest';
+  
+  let list = window._articlesAll.slice();
+  if(q) list = list.filter(a=>a.title.toLowerCase().includes(q)||a.excerpt.toLowerCase().includes(q)||(a.tags||[]).some(t=>t.includes(q)));
+  if(cat) list = list.filter(a=>a.categoryId===cat);
+  if(div) list = list.filter(a=>a.divisionId===div);
+  if(year) list = list.filter(a=>new Date(a.publishedAt).getFullYear().toString()===year);
+  
+  if(sort==='newest') list.sort((a,b)=>b.publishedAt-a.publishedAt);
+  else list.sort((a,b)=>a.publishedAt-b.publishedAt);
+  
+  window._articlesFiltered = list;
+  renderArticlesList();
+}
+
+function resetFilters(){
+  document.getElementById('fSearch').value='';
+  document.getElementById('fCat').value='';
+  document.getElementById('fDiv').value='';
+  document.getElementById('fYear').value='';
+  document.getElementById('fSort').value='newest';
+  applyFilters();
+}
+
+function renderArticlesList(){
+  const db = loadDB();
+  const list = window._articlesFiltered;
+  const perPage = 6;
+  const totalPages = Math.max(1, Math.ceil(list.length/perPage));
+  if(window._articlesPage > totalPages) window._articlesPage = 1;
+  const start = (window._articlesPage-1)*perPage;
+  const pageItems = list.slice(start, start+perPage);
+  
+  const container = document.getElementById('articlesList');
+  if(list.length===0){
+    container.innerHTML = `<div class="empty-state"><div class="icon">📭</div><h3>Tidak ada artikel ditemukan</h3><p>Coba ubah filter atau kata kunci pencarian Anda</p></div>`;
+  } else {
+    container.innerHTML = pageItems.map(a=>`
+      <article class="article-row" onclick="navigate('artikel','${a.id}')">
+        <img src="${a.featuredImage}" alt="${a.title}" onerror="this.src='https://via.placeholder.com/560x350/0A3D91/ffffff?text=DIGCITY'"/>
+        <div class="content">
+          <div class="meta">
+            <span class="cat">${getCatName(db,a.categoryId)}</span>
+            <span>•</span>
+            <span>${getDivName(db,a.divisionId)}</span>
+            <span>•</span>
+            <span>${fmtDate(a.publishedAt)}</span>
+          </div>
+          <h3>${a.title}</h3>
+          <p>${a.excerpt}</p>
+        </div>
+        <div class="arrow">→</div>
+      </article>
+    `).join('');
+  }
+  
+  // Pagination
+  const pag = document.getElementById('pagination');
+  if(totalPages<=1){pag.innerHTML='';return}
+  let html = `<button onclick="goPage(${window._articlesPage-1})" ${window._articlesPage===1?'disabled':''}>‹</button>`;
+  for(let i=1;i<=totalPages;i++){
+    html += `<button class="${i===window._articlesPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  html += `<button onclick="goPage(${window._articlesPage+1})" ${window._articlesPage===totalPages?'disabled':''}>›</button>`;
+  pag.innerHTML = html;
+}
+
+function goPage(p){
+  window._articlesPage = p;
+  renderArticlesList();
+  window.scrollTo({top:document.getElementById('articlesList').offsetTop-100,behavior:'smooth'});
+}
+
+/* ---------- PUBLIC: DETAIL ARTIKEL ---------- */
+function renderArtikel(id){
+  const db = loadDB();
+  const a = db.articles.find(x=>x.id===id);
+  if(!a || a.status!=='published'){
+    document.getElementById('mainContent').innerHTML = `<div class="container" style="padding:60px 20px;text-align:center"><h2>Artikel tidak ditemukan</h2><p style="margin:12px 0;color:var(--muted)">Artikel yang Anda cari tidak tersedia atau belum dipublikasikan.</p><a href="#/berita" class="btn btn-primary">Kembali ke Berita</a></div>`;
+    return;
+  }
+  
+  // Update meta for SEO/OG
+  document.title = `${a.title} — DIGCITY PRESS`;
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if(metaDesc) metaDesc.setAttribute('content', a.seoDesc || a.excerpt);
+  
+  const related = db.articles.filter(x=>x.status==='published' && x.id!==a.id && (x.categoryId===a.categoryId || x.divisionId===a.divisionId)).slice(0,5);
+  
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <section class="article-detail">
+      <div class="container">
+        <div class="article-detail-grid">
+          <article>
+            <div class="article-header">
+              <span class="cat-badge">${getCatName(db,a.categoryId)}</span>
+              <h1>${a.title}</h1>
+              ${a.subtitle?`<p class="subtitle">${a.subtitle}</p>`:''}
+              <div class="article-meta-row">
+                <div class="item">📅 <strong>${fmtDateTime(a.publishedAt)}</strong></div>
+                <div class="item">✍️ <strong>${a.authorName}</strong></div>
+                <div class="item">🏢 <strong>${getDivName(db,a.divisionId)}</strong></div>
+                <div class="item">📍 <strong>Bogor, Jawa Barat</strong></div>
+              </div>
+            </div>
+            
+            <figure class="featured-image">
+              <img src="${a.featuredImage}" alt="${a.title}" onerror="this.src='https://via.placeholder.com/1200x600/0A3D91/ffffff?text=DIGCITY'"/>
+              ${a.caption?`<figcaption>${a.caption}</figcaption>`:''}
+            </figure>
+            
+            <div class="article-body">${a.content}</div>
+            
+            <div class="article-tags">
+              <span class="label">Tag:</span>
+              ${(a.tags||[]).map(t=>`<a href="#/berita" onclick="setTimeout(()=>{document.getElementById('fSearch').value='${t}';applyFilters()},100)">#${t}</a>`).join('')}
+            </div>
+            
+            <div class="share-bar">
+              <span class="label">Bagikan:</span>
+              <a class="share-btn wa" href="https://wa.me/?text=${encodeURIComponent(a.title+' — '+location.href)}" target="_blank">💬 WhatsApp</a>
+              <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}" target="_blank">📘 Facebook</a>
+              <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(a.title)}&url=${encodeURIComponent(location.href)}" target="_blank">🐦 X</a>
+            </div>
+            
+            <div style="margin-top:30px">
+              <a href="#/berita" class="btn btn-outline">← Kembali ke Daftar Berita</a>
+            </div>
+          </article>
+          
+          <aside class="sidebar">
+            <div class="side-widget">
+              <h4>Berita Terkait</h4>
+              ${related.length?related.map(r=>`
+                <div class="related-item" onclick="navigate('artikel','${r.id}')">
+                  <img src="${r.featuredImage}" alt="${r.title}" onerror="this.src='https://via.placeholder.com/160x120/0A3D91/ffffff?text=DC'"/>
+                  <div>
+                    <h5>${r.title}</h5>
+                    <div class="date">${fmtDate(r.publishedAt)}</div>
+                  </div>
+                </div>
+              `).join(''):'<p style="color:var(--muted);font-size:13px">Belum ada berita terkait.</p>'}
+            </div>
+            <div class="side-widget">
+              <h4>Tentang DIGCITY</h4>
+              <p style="font-size:13px;color:var(--ink-2);line-height:1.6;margin-bottom:12px">Digital Business Student Society — Himpunan mahasiswa Bisnis Digital FEB UIKA Bogor.</p>
+              <a href="#/tentang" class="btn btn-outline" style="width:100%;justify-content:center">Pelajari Lebih Lanjut</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- PUBLIC: KEGIATAN ---------- */
+function renderKegiatan(){
+  const db = loadDB();
+  const events = db.events.slice().sort((a,b)=>b.date-a.date);
+  
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <section class="page-header">
+      <div class="container">
+        <div class="kicker">ARSIP KEGIATAN</div>
+        <h1>Kegiatan DIGCITY</h1>
+        <p>Dokumentasi lengkap seluruh program kerja dan kegiatan DIGCITY</p>
+        <div class="breadcrumb"><a href="#/home">Beranda</a> / Kegiatan</div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="events-grid">
+          ${events.map(e=>`
+            <div class="event-card" onclick="${e.articleId?`navigate('artikel','${e.articleId}')`:'void(0)'}">
+              <div class="event-poster">
+                <img src="${e.poster}" alt="${e.title}" onerror="this.src='https://via.placeholder.com/400x500/0A3D91/ffffff?text=DIGCITY'"/>
+                <span class="badge">${getCatName(db,e.categoryId)}</span>
+              </div>
+              <div class="event-body">
+                <h3>${e.title}</h3>
+                <p>${e.description}</p>
+                <div class="event-meta">
+                  <span>📅 ${fmtDate(e.date)}</span>
+                  <span>📍 ${e.location}</span>
+                  <span>🏢 ${e.organizer}</span>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- PUBLIC: DIVISI ---------- */
+function renderDivisi(){
+  const db = loadDB();
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <section class="page-header">
+      <div class="container">
+        <div class="kicker">STRUKTUR ORGANISASI</div>
+        <h1>Divisi DIGCITY</h1>
+        <p>Empat divisi utama yang menggerakkan program kerja DIGCITY</p>
+        <div class="breadcrumb"><a href="#/home">Beranda</a> / Divisi</div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="divisions-grid">
+          ${db.divisions.map(d=>{
+            const articles = db.articles.filter(a=>a.status==='published' && a.divisionId===d.id).slice(0,3);
+            return `
+              <div class="division-card">
+                <div class="division-icon">${d.icon}</div>
+                <h3>${d.name}</h3>
+                <div class="abbr">${d.code}</div>
+                <p>${d.desc}</p>
+                <h4 style="font-size:13px;color:var(--navy);margin:14px 0 8px;font-weight:700">Tugas & Fungsi:</h4>
+                <ul>${d.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>
+                <h4 style="font-size:13px;color:var(--navy);margin:14px 0 8px;font-weight:700">Program Kerja:</h4>
+                <ul>${d.programs.map(p=>`<li>${p}</li>`).join('')}</ul>
+                ${articles.length?`
+                  <h4 style="font-size:13px;color:var(--navy);margin:14px 0 8px;font-weight:700">Publikasi Terbaru:</h4>
+                  <ul>${articles.map(a=>`<li><a href="#/artikel/${a.id}" style="color:var(--blue-700)">${a.title}</a></li>`).join('')}</ul>
+                `:''}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- PUBLIC: TENTANG ---------- */
+function renderTentang(){
+  const db = loadDB();
+  const p = db.profile;
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <section class="about-hero">
+      <div class="container">
+        <h1>${p.name}</h1>
+        <p>${p.shortName} — ${p.values}</p>
+        <div style="margin-top:20px;font-family:var(--font-serif);font-size:28px;font-weight:900">${p.jargon}</div>
+      </div>
+    </section>
+    <section class="about-content">
+      <div class="container">
+        <div class="about-block">
+          <h2>Sejarah & Profil</h2>
+          <p>${p.history}</p>
+        </div>
+        <div class="about-block">
+          <h2>Visi & Misi</h2>
+          <div class="vm-grid">
+            <div class="vm-card">
+              <h3>🎯 Visi</h3>
+              <p>${p.vision}</p>
+            </div>
+            <div class="vm-card">
+              <h3>🚀 Misi</h3>
+              <ul>${p.mission.map(m=>`<li>${m}</li>`).join('')}</ul>
+            </div>
+          </div>
+        </div>
+        <div class="about-block">
+          <h2>Filosofi Nama</h2>
+          <p>${p.philosophy}</p>
+        </div>
+        <div class="about-block">
+          <h2>Struktur Kepengurusan 2026/2027</h2>
+          <div class="structure-grid">
+            ${db.structure.map(s=>`
+              <div class="struct-card">
+                <div class="struct-avatar">${s.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</div>
+                <h4>${s.name}</h4>
+                <div class="role">${s.role}</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:4px">${s.division}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <div class="about-block">
+          <h2>Kontak Resmi</h2>
+          <div class="vm-grid">
+            <div class="vm-card">
+              <h3>📍 Alamat</h3>
+              <p>${p.address}</p>
+            </div>
+            <div class="vm-card">
+              <h3>📧 Kontak</h3>
+              <p>Email: ${p.email}<br>Telepon: ${p.phone}</p>
+              <div class="social-links" style="margin-top:12px">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="YouTube">▶</a>
+                <a href="#" title="TikTok">🎵</a>
+                <a href="#" title="LinkedIn">in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ---------- SEARCH MODAL ---------- */
+function openSearch(){
+  const db = loadDB();
+  openModal('Cari Artikel',`
+    <input type="text" class="form-control" id="globalSearch" placeholder="Ketik kata kunci..." oninput="doGlobalSearch()" autofocus/>
+    <div id="searchResults" style="margin-top:16px;max-height:400px;overflow-y:auto"></div>
+  `,'','');
+  setTimeout(()=>document.getElementById('globalSearch')?.focus(),100);
+}
+function doGlobalSearch(){
+  const q = document.getElementById('globalSearch').value.toLowerCase();
+  const db = loadDB();
+  const results = db.articles.filter(a=>a.status==='published' && (a.title.toLowerCase().includes(q)||a.excerpt.toLowerCase().includes(q))).slice(0,8);
+  const el = document.getElementById('searchResults');
+  if(!q){el.innerHTML='<p style="color:var(--muted);font-size:13px">Mulai ketik untuk mencari...</p>';return}
+  if(results.length===0){el.innerHTML='<p style="color:var(--muted);font-size:13px">Tidak ada hasil.</p>';return}
+  el.innerHTML = results.map(a=>`
+    <div class="related-item" onclick="closeModal();navigate('artikel','${a.id}')">
+      <img src="${a.featuredImage}" alt="" onerror="this.src='https://via.placeholder.com/160x120/0A3D91/ffffff?text=DC'"/>
+      <div>
+        <h5>${a.title}</h5>
+        <div class="date">${fmtDate(a.publishedAt)} • ${getCatName(db,a.categoryId)}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ============================================================
+   ADMIN DASHBOARD
+   ============================================================ */
+function updateAdminUser(session){
+  document.getElementById('adminUserName').textContent = session.name;
+  const roleMap = {super_admin:'Super Admin',editor:'Editor',writer:'Penulis',contributor:'Kontributor'};
+  document.getElementById('adminUserRole').textContent = roleMap[session.role]||session.role;
+  document.getElementById('adminUserAvatar').textContent = session.name[0].toUpperCase();
+}
+
+function renderAdmin(page){
+  const session = getSession();
+  if(!session){navigate('login');return}
+  
+  // Update active menu
+  document.querySelectorAll('.admin-menu a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.admin === page);
+  });
+  
+  const titles = {dashboard:'Dashboard',articles:'Manajemen Artikel',editor:'Editor Artikel',media:'Manajemen Media',categories:'Manajemen Kategori',events:'Manajemen Kegiatan',users:'Manajemen Pengguna',profile:'Profil Organisasi'};
+  document.getElementById('adminTitle').textContent = titles[page]||'Dashboard';
+  
+  // Permission check
+  const canAccess = {
+    dashboard:['super_admin','editor','writer','contributor'],
+    articles:['super_admin','editor','writer','contributor'],
+    editor:['super_admin','editor','writer','contributor'],
+    media:['super_admin','editor','writer'],
+    categories:['super_admin','editor'],
+    events:['super_admin','editor'],
+    users:['super_admin'],
+    profile:['super_admin','editor'],
+  };
+  if(!canAccess[page]?.includes(session.role)){
+    document.getElementById('adminContent').innerHTML = `<div class="empty-state"><div class="icon">🔒</div><h3>Akses Ditolak</h3><p>Anda tidak memiliki izin untuk mengakses halaman ini.</p><a href="#/admin/dashboard" class="btn btn-primary" style="margin-top:16px">Kembali ke Dashboard</a></div>`;
+    return;
+  }
+  
+  switch(page){
+    case 'dashboard':renderAdminDashboard();break;
+    case 'articles':renderAdminArticles();break;
+    case 'editor':renderAdminEditor();break;
+    case 'media':renderAdminMedia();break;
+    case 'categories':renderAdminCategories();break;
+    case 'events':renderAdminEvents();break;
+    case 'users':renderAdminUsers();break;
+    case 'profile':renderAdminProfile();break;
+  }
+}
+
+function renderAdminDashboard(){
+  const db = loadDB();
+  const session = getSession();
+  const articles = db.articles;
+  const total = articles.length;
+  const published = articles.filter(a=>a.status==='published').length;
+  const draft = articles.filter(a=>a.status==='draft').length;
+  const review = articles.filter(a=>a.status==='review').length;
+  const recent = articles.slice().sort((a,b)=>b.updatedAt-a.updatedAt).slice(0,5);
+  
+  // Stats per month (last 6 months)
+  const months = [];
+  for(let i=5;i>=0;i--){
+    const d = new Date();d.setMonth(d.getMonth()-i);
+    months.push({label:MONTHS_ID[d.getMonth()].slice(0,3),count:0});
+  }
+  articles.filter(a=>a.status==='published').forEach(a=>{
+    const d = new Date(a.publishedAt);
+    const diff = (new Date().getFullYear()-d.getFullYear())*12 + (new Date().getMonth()-d.getMonth());
+    if(diff>=0 && diff<6){
+      months[5-diff].count++;
+    }
+  });
+  const maxCount = Math.max(...months.map(m=>m.count),1);
+  
+  document.getElementById('adminContent').innerHTML = `
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon">📰</div>
+        <div class="label">Total Artikel</div>
+        <div class="value">${total}</div>
+        <div class="change up">Semua status</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">✅</div>
+        <div class="label">Terpublikasi</div>
+        <div class="value">${published}</div>
+        <div class="change up">Live di situs</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">📝</div>
+        <div class="label">Draft</div>
+        <div class="value">${draft}</div>
+        <div class="change">Belum dipublikasi</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">⏳</div>
+        <div class="label">Menunggu Review</div>
+        <div class="value">${review}</div>
+        <div class="change">Perlu persetujuan</div>
+      </div>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px">
+      <div class="admin-card">
+        <div class="admin-card-head">
+          <h3>Statistik Publikasi (6 Bulan Terakhir)</h3>
+        </div>
+        <div class="admin-card-body">
+          <div style="display:flex;align-items:flex-end;gap:14px;height:200px;padding:10px 0">
+            ${months.map(m=>`
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px">
+                <div style="font-size:12px;font-weight:700;color:var(--navy)">${m.count}</div>
+                <div style="width:100%;background:linear-gradient(to top,var(--blue-600),var(--blue-400));height:${(m.count/maxCount)*150+10}px;border-radius:6px 6px 0 0;transition:height .5s"></div>
+                <div style="font-size:11px;color:var(--muted);font-weight:600">${m.label}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-head"><h3>Ringkasan Cepat</h3></div>
+        <div class="admin-card-body">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="padding:12px;background:var(--bg-soft);border-radius:8px">
+              <div style="font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600">Kategori</div>
+              <div style="font-size:22px;font-weight:800;color:var(--navy)">${db.categories.length}</div>
+            </div>
+            <div style="padding:12px;background:var(--bg-soft);border-radius:8px">
+              <div style="font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600">Kegiatan</div>
+              <div style="font-size:22px;font-weight:800;color:var(--navy)">${db.events.length}</div>
+            </div>
+            <div style="padding:12px;background:var(--bg-soft);border-radius:8px">
+              <div style="font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600">Pengguna</div>
+              <div style="font-size:22px;font-weight:800;color:var(--navy)">${db.users.length}</div>
+            </div>
+            <div style="padding:12px;background:var(--bg-soft);border-radius:8px">
+              <div style="font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600">Divisi</div>
+              <div style="font-size:22px;font-weight:800;color:var(--navy)">${db.divisions.length}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Artikel Terbaru</h3>
+        <a href="#/admin/articles" class="btn btn-outline" style="padding:6px 12px;font-size:12px">Lihat Semua</a>
+      </div>
+      <div class="admin-card-body" style="padding:0">
+        <table class="table">
+          <thead>
+            <tr><th>Judul</th><th>Status</th><th>Kategori</th><th>Divisi</th><th>Tanggal</th></tr>
+          </thead>
+          <tbody>
+            ${recent.map(a=>`
+              <tr>
+                <td><strong style="color:var(--navy)">${a.title.slice(0,50)}${a.title.length>50?'...':''}</strong></td>
+                <td><span class="badge badge-${a.status}">${statusLabel(a.status)}</span></td>
+                <td>${getCatName(db,a.categoryId)}</td>
+                <td>${getDivName(db,a.divisionId)}</td>
+                <td>${fmtDate(a.updatedAt)}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+    ${session.role==='super_admin'?`
+    <div class="admin-card">
+      <div class="admin-card-head"><h3>Log Aktivitas</h3></div>
+      <div class="admin-card-body" style="padding:0">
+        <table class="table">
+          <thead><tr><th>Waktu</th><th>Pengguna</th><th>Aksi</th><th>Detail</th></tr></thead>
+          <tbody>
+            ${db.activityLog.slice(0,10).map(l=>`
+              <tr>
+                <td style="font-size:12px">${fmtDateTime(l.at)}</td>
+                <td><strong>${l.userName}</strong></td>
+                <td>${l.action}</td>
+                <td style="font-size:12px;color:var(--muted)">${l.detail||'-'}</td>
+              </tr>
+            `).join('')||'<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:20px">Belum ada aktivitas</td></tr>'}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    `:''}
+  `;
+}
+
+function statusLabel(s){
+  const map = {draft:'Draft',review:'Review',revision:'Revisi',approved:'Disetujui',published:'Published',archived:'Archived'};
+  return map[s]||s;
+}
+
+/* ---------- ADMIN: ARTICLES ---------- */
+function renderAdminArticles(){
+  const db = loadDB();
+  const session = getSession();
+  let articles = db.articles.slice().sort((a,b)=>b.updatedAt-a.updatedAt);
+  
+  // Filter by role
+  if(session.role==='contributor') articles = articles.filter(a=>a.authorId===session.id);
+  if(session.role==='writer') articles = articles.filter(a=>a.authorId===session.id || ['review','approved','published'].includes(a.status));
+  
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Semua Artikel (${articles.length})</h3>
+        <div style="display:flex;gap:8px">
+          <select class="form-control" id="afStatus" onchange="renderArticlesTable()" style="width:auto;padding:8px 12px">
+            <option value="">Semua Status</option>
+            <option value="draft">Draft</option>
+            <option value="review">Review</option>
+            <option value="revision">Revisi</option>
+            <option value="approved">Disetujui</option>
+            <option value="published">Published</option>
+            <option value="archived">Archived</option>
+          </select>
+          <a href="#/admin/editor" class="btn btn-primary" style="padding:8px 14px;font-size:13px">+ Artikel Baru</a>
+        </div>
+      </div>
+      <div class="admin-card-body" style="padding:0;overflow-x:auto">
+        <table class="table" id="articlesTable">
+          <thead>
+            <tr>
+              <th>Judul</th>
+              <th>Kategori</th>
+              <th>Divisi</th>
+              <th>Penulis</th>
+              <th>Status</th>
+              <th>Tanggal</th>
+              <th style="text-align:right">Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  `;
+  window._adminArticles = articles;
+  renderArticlesTable();
+}
+
+function renderArticlesTable(){
+  const db = loadDB();
+  const session = getSession();
+  const status = document.getElementById('afStatus').value;
+  let list = window._adminArticles;
+  if(status) list = list.filter(a=>a.status===status);
+  
+  const tbody = document.querySelector('#articlesTable tbody');
+  if(list.length===0){
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:30px;color:var(--muted)">Tidak ada artikel</td></tr>';
+    return;
+  }
+  tbody.innerHTML = list.map(a=>{
+    const canEdit = session.role==='super_admin' || (session.role==='editor') || (session.role==='writer' && a.authorId===session.id);
+    const canDelete = session.role==='super_admin' || session.role==='editor';
+    return `
+      <tr>
+        <td><strong style="color:var(--navy)">${a.title.slice(0,50)}${a.title.length>50?'...':''}</strong></td>
+        <td>${getCatName(db,a.categoryId)}</td>
+        <td>${getDivName(db,a.divisionId)}</td>
+        <td style="font-size:12px">${a.authorName}</td>
+        <td><span class="badge badge-${a.status}">${statusLabel(a.status)}</span></td>
+        <td style="font-size:12px">${fmtDate(a.updatedAt)}</td>
+        <td style="text-align:right">
+          <div class="action-btns" style="justify-content:flex-end">
+            ${a.status==='published'?`<button class="action-btn" onclick="window.open('#/artikel/${a.id}','_blank')" title="Lihat">👁</button>`:''}
+            ${canEdit?`<button class="action-btn" onclick="editArticle('${a.id}')" title="Edit">✏️</button>`:''}
+            ${canDelete?`<button class="action-btn danger" onclick="deleteArticle('${a.id}')" title="Hapus">🗑</button>`:''}
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function editArticle(id){navigate('admin/editor/'+id)}
+function deleteArticle(id){
+  openModal('Hapus Artikel',`<p>Apakah Anda yakin ingin menghapus artikel ini? Tindakan ini tidak dapat dibatalkan.</p>`,
+    `<button class="btn btn-ghost" onclick="closeModal()">Batal</button><button class="btn btn-danger" onclick="confirmDeleteArticle('${id}')">Hapus</button>`);
+}
+function confirmDeleteArticle(id){
+  const db = loadDB();
+  db.articles = db.articles.filter(a=>a.id!==id);
+  saveDB(db);
+  logActivity('Hapus Artikel',`ID: ${id}`);
+  closeModal();
+  toast('Artikel berhasil dihapus','success');
+  renderAdminArticles();
+}
+
+/* ---------- ADMIN: EDITOR ---------- */
+function renderAdminEditor(id){
+  const db = loadDB();
+  const session = getSession();
+  const article = id ? db.articles.find(a=>a.id===id) : null;
+  const isEdit = !!article;
+  
+  // Permission
+  if(article && session.role==='contributor'){
+    document.getElementById('adminContent').innerHTML = `<div class="empty-state"><div class="icon">🔒</div><h3>Akses Ditolak</h3><p>Kontributor hanya dapat membuat artikel baru.</p></div>`;
+    return;
+  }
+  
+  document.getElementById('adminTitle').textContent = isEdit?'Edit Artikel':'Artikel Baru';
+  
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>${isEdit?'Edit':'Buat'} Artikel</h3>
+        <a href="#/admin/articles" class="btn btn-outline" style="padding:6px 12px;font-size:12px">← Kembali</a>
+      </div>
+      <div class="admin-card-body">
+        <form id="articleForm" onsubmit="saveArticle(event,'${id||''}')">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Judul <span class="req">*</span></label>
+              <input type="text" class="form-control" id="af_title" required value="${article?.title||''}" placeholder="Judul artikel yang informatif" oninput="autoSlug()"/>
+            </div>
+            <div class="form-group full">
+              <label>Subjudul / Ringkasan</label>
+              <input type="text" class="form-control" id="af_subtitle" value="${article?.subtitle||''}" placeholder="Subjudul atau ringkasan singkat"/>
+            </div>
+            <div class="form-group full">
+              <label>Excerpt / Ringkasan Berita <span class="req">*</span></label>
+              <textarea class="form-control" id="af_excerpt" required placeholder="Ringkasan 1-2 kalimat...">${article?.excerpt||''}</textarea>
+            </div>
+            <div class="form-group">
+              <label>Kategori <span class="req">*</span></label>
+              <select class="form-control" id="af_category" required>
+                <option value="">Pilih Kategori</option>
+                ${db.categories.filter(c=>c.type==='article').map(c=>`<option value="${c.id}" ${article?.categoryId===c.id?'selected':''}>${c.name}</option>`).join('')}
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Divisi <span class="req">*</span></label>
+              <select class="form-control" id="af_division" required>
+                <option value="">Pilih Divisi</option>
+                ${db.divisions.map(d=>`<option value="${d.id}" ${article?.divisionId===d.id?'selected':''}>${d.code} - ${d.name}</option>`).join('')}
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Penulis</label>
+              <input type="text" class="form-control" id="af_author" value="${article?.authorName||session.name}" placeholder="Nama penulis/tim"/>
+            </div>
+            <div class="form-group">
+              <label>Tags (pisahkan koma)</label>
+              <input type="text" class="form-control" id="af_tags" value="${(article?.tags||[]).join(', ')}" placeholder="tag1, tag2, tag3"/>
+            </div>
+            <div class="form-group full">
+              <label>Slug URL</label>
+              <input type="text" class="form-control" id="af_slug" value="${article?.slug||''}" placeholder="slug-url-artikel"/>
+            </div>
+            <div class="form-group full">
+              <label>Featured Image URL</label>
+              <div style="display:flex;gap:8px">
+                <input type="text" class="form-control" id="af_image" value="${article?.featuredImage||''}" placeholder="https://... atau upload di bawah"/>
+                <button type="button" class="btn btn-outline" onclick="document.getElementById('af_image_file').click()">Upload</button>
+                <input type="file" id="af_image_file" accept="image/*" style="display:none" onchange="uploadImageToField(event,'af_image')"/>
+              </div>
+              ${article?.featuredImage?`<img src="${article.featuredImage}" style="max-width:200px;margin-top:10px;border-radius:8px" onerror="this.style.display='none'"/>`:''}
+            </div>
+            <div class="form-group full">
+              <label>Caption Foto Utama</label>
+              <input type="text" class="form-control" id="af_caption" value="${article?.caption||''}" placeholder="Keterangan foto"/>
+            </div>
+            <div class="form-group">
+              <label>SEO Title</label>
+              <input type="text" class="form-control" id="af_seoTitle" value="${article?.seoTitle||''}" placeholder="Override judul untuk SEO"/>
+            </div>
+            <div class="form-group">
+              <label>Meta Description</label>
+              <input type="text" class="form-control" id="af_seoDesc" value="${article?.seoDesc||''}" placeholder="Deskripsi untuk SEO (max 160 char)"/>
+            </div>
+            <div class="form-group full">
+              <label>Konten Artikel <span class="req">*</span></label>
+              <div class="editor-toolbar">
+                <button type="button" onclick="execCmd('bold')" title="Bold"><b>B</b></button>
+                <button type="button" onclick="execCmd('italic')" title="Italic"><i>I</i></button>
+                <button type="button" onclick="execCmd('underline')" title="Underline"><u>U</u></button>
+                <div class="sep"></div>
+                <button type="button" onclick="execCmd('formatBlock','<h2>')" title="Heading 2">H2</button>
+                <button type="button" onclick="execCmd('formatBlock','<h3>')" title="Heading 3">H3</button>
+                <button type="button" onclick="execCmd('formatBlock','<p>')" title="Paragraph">¶</button>
+                <div class="sep"></div>
+                <button type="button" onclick="execCmd('insertUnorderedList')" title="Bullet List">•</button>
+                <button type="button" onclick="execCmd('insertOrderedList')" title="Numbered List">1.</button>
+                <button type="button" onclick="execCmd('formatBlock','<blockquote>')" title="Quote">❝</button>
+                <div class="sep"></div>
+                <button type="button" onclick="insertLink()" title="Link">🔗</button>
+                <button type="button" onclick="document.getElementById('content_image_file').click()" title="Insert Image">🖼</button>
+                <input type="file" id="content_image_file" accept="image/*" style="display:none" onchange="insertImage(event)"/>
+              </div>
+              <div class="editor-area" id="af_content" contenteditable="true">${article?.content||'<p>Tulis konten artikel di sini...</p>'}</div>
+            </div>
+            <div class="form-group full">
+              <label>Catatan Revisi (untuk editor)</label>
+              <textarea class="form-control" id="af_notes" placeholder="Catatan tambahan untuk editor...">${article?.notes||''}</textarea>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)">
+            <button type="submit" name="action" value="draft" class="btn btn-outline">💾 Simpan Draft</button>
+            <button type="submit" name="action" value="review" class="btn btn-outline">📤 Kirim untuk Review</button>
+            ${session.role==='super_admin'||session.role==='editor'?`
+              <button type="submit" name="action" value="approved" class="btn btn-outline">✓ Setujui</button>
+              <button type="submit" name="action" value="published" class="btn btn-primary">🚀 Terbitkan</button>
+            `:''}
+            ${isEdit?`<button type="button" class="btn btn-ghost" onclick="previewArticle('${id}')">👁 Preview</button>`:''}
+          </div>
+        </form>
+      </div>
+    </div>
+  `;
+}
+
+function autoSlug(){
+  const title = document.getElementById('af_title').value;
+  const slug = title.toLowerCase().replace(/[^a-z0-9\s]/g,'').trim().replace(/\s+/g,'-');
+  const slugField = document.getElementById('af_slug');
+  if(!slugField.dataset.manual) slugField.value = slug;
+}
+document.addEventListener('input',e=>{
+  if(e.target.id==='af_slug') e.target.dataset.manual='1';
+});
+
+function execCmd(cmd,val=null){document.execCommand(cmd,false,val)}
+function insertLink(){
+  const url = prompt('Masukkan URL:');
+  if(url) document.execCommand('createLink',false,url);
+}
+function uploadImageToField(e,fieldId){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {document.getElementById(fieldId).value = ev.target.result};
+  reader.readAsDataURL(file);
+}
+function insertImage(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const caption = prompt('Caption gambar (opsional):','') || '';
+    const html = caption 
+      ? `<figure><img src="${ev.target.result}" alt="${caption}"/><figcaption>${caption}</figcaption></figure>`
+      : `<figure><img src="${ev.target.result}"/></figure>`;
+    document.execCommand('insertHTML',false,html);
+  };
+  reader.readAsDataURL(file);
+}
+
+function saveArticle(e,id){
+  e.preventDefault();
+  const action = e.submitter.value;
+  const db = loadDB();
+  const session = getSession();
+  const now = Date.now();
+  
+  const data = {
+    title:document.getElementById('af_title').value.trim(),
+    subtitle:document.getElementById('af_subtitle').value.trim(),
+    excerpt:document.getElementById('af_excerpt').value.trim(),
+    categoryId:document.getElementById('af_category').value,
+    divisionId:document.getElementById('af_division').value,
+    authorName:document.getElementById('af_author').value.trim()||session.name,
+    tags:document.getElementById('af_tags').value.split(',').map(t=>t.trim()).filter(Boolean),
+    slug:document.getElementById('af_slug').value.trim() || document.getElementById('af_title').value.toLowerCase().replace(/[^a-z0-9\s]/g,'').trim().replace(/\s+/g,'-'),
+    featuredImage:document.getElementById('af_image').value.trim(),
+    caption:document.getElementById('af_caption').value.trim(),
+    seoTitle:document.getElementById('af_seoTitle').value.trim(),
+    seoDesc:document.getElementById('af_seoDesc').value.trim(),
+    content:document.getElementById('af_content').innerHTML,
+    notes:document.getElementById('af_notes').value.trim(),
+    status:action,
+    updatedAt:now,
+  };
+  
+  if(id){
+    const idx = db.articles.findIndex(a=>a.id===id);
+    db.articles[idx] = {...db.articles[idx],...data};
+    if(action==='published' && !db.articles[idx].publishedAt) db.articles[idx].publishedAt = now;
+    logActivity('Update Artikel',data.title);
+  } else {
+    const newArticle = {
+      id:'a'+now,
+      authorId:session.id,
+      createdAt:now,
+      publishedAt: action==='published'?now:null,
+      ...data
+    };
+    db.articles.unshift(newArticle);
+    id = newArticle.id;
+    logActivity('Buat Artikel',data.title);
+  }
+  
+  saveDB(db);
+  const msg = {draft:'Draft tersimpan',review:'Dikirim untuk review',approved:'Artikel disetujui',published:'Artikel diterbitkan'}[action];
+  toast(msg,'success');
+  setTimeout(()=>navigate('admin/articles'),600);
+}
+
+function previewArticle(id){
+  window.open('#/artikel/'+id,'_blank');
+}
+
+/* ---------- ADMIN: MEDIA ---------- */
+function renderAdminMedia(){
+  const db = loadDB();
+  const media = db.media.slice().sort((a,b)=>b.uploadedAt-a.uploadedAt);
+  
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Media Library (${media.length})</h3>
+        <button class="btn btn-primary" style="padding:8px 14px;font-size:13px" onclick="document.getElementById('mediaUpload').click()">+ Upload Media</button>
+        <input type="file" id="mediaUpload" accept="image/*" multiple style="display:none" onchange="uploadMedia(event)"/>
+      </div>
+      <div class="admin-card-body">
+        ${media.length===0?`
+          <div class="empty-state">
+            <div class="icon">🖼️</div>
+            <h3>Belum ada media</h3>
+            <p>Upload foto, poster, atau dokumentasi kegiatan</p>
+          </div>
+        `:`
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px">
+            ${media.map(m=>`
+              <div style="background:var(--bg-soft);border-radius:10px;overflow:hidden;border:1px solid var(--line)">
+                <div style="aspect-ratio:1;overflow:hidden;background:#000">
+                  <img src="${m.url}" alt="${m.caption||''}" style="width:100%;height:100%;object-fit:cover"/>
+                </div>
+                <div style="padding:10px">
+                  <div style="font-size:11px;color:var(--muted);margin-bottom:4px">${fmtDate(m.uploadedAt)}</div>
+                  <div style="font-size:12px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.caption||'Tanpa caption'}</div>
+                  <button class="action-btn danger" style="margin-top:6px;width:100%" onclick="deleteMedia('${m.id}')">🗑 Hapus</button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `}
+      </div>
+    </div>
+  `;
+}
+
+function uploadMedia(e){
+  const files = Array.from(e.target.files);
+  const db = loadDB();
+  let processed = 0;
+  files.forEach(file=>{
+    const reader = new FileReader();
+    reader.onload = ev=>{
+      db.media.unshift({
+        id:'m'+Date.now()+Math.random(),
+        url:ev.target.result,
+        caption:file.name.replace(/\.[^.]+$/,''),
+        uploadedAt:Date.now(),
+        uploadedBy:getSession().id
+      });
+      processed++;
+      if(processed===files.length){
+        saveDB(db);
+        logActivity('Upload Media',`${files.length} file`);
+        toast(`${files.length} media berhasil diupload`,'success');
+        renderAdminMedia();
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function deleteMedia(id){
+  if(!confirm('Hapus media ini?')) return;
+  const db = loadDB();
+  db.media = db.media.filter(m=>m.id!==id);
+  saveDB(db);
+  logActivity('Hapus Media',id);
+  toast('Media dihapus','success');
+  renderAdminMedia();
+}
+
+/* ---------- ADMIN: CATEGORIES ---------- */
+function renderAdminCategories(){
+  const db = loadDB();
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Kategori (${db.categories.length})</h3>
+        <button class="btn btn-primary" style="padding:8px 14px;font-size:13px" onclick="editCategory()">+ Kategori Baru</button>
+      </div>
+      <div class="admin-card-body" style="padding:0;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Nama</th><th>Slug</th><th>Tipe</th><th>Deskripsi</th><th style="text-align:right">Aksi</th></tr></thead>
+          <tbody>
+            ${db.categories.map(c=>`
+              <tr>
+                <td><strong>${c.name}</strong></td>
+                <td style="font-size:12px;color:var(--muted)">${c.slug}</td>
+                <td><span class="badge badge-${c.type==='article'?'published':'approved'}">${c.type}</span></td>
+                <td style="font-size:13px">${c.desc||'-'}</td>
+                <td style="text-align:right">
+                  <div class="action-btns" style="justify-content:flex-end">
+                    <button class="action-btn" onclick="editCategory('${c.id}')">✏️</button>
+                    <button class="action-btn danger" onclick="deleteCategory('${c.id}')">🗑</button>
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function editCategory(id){
+  const db = loadDB();
+  const cat = id?db.categories.find(c=>c.id===id):null;
+  openModal(cat?'Edit Kategori':'Kategori Baru',`
+    <div class="form-group">
+      <label>Nama Kategori <span class="req">*</span></label>
+      <input type="text" class="form-control" id="cat_name" value="${cat?.name||''}" required/>
+    </div>
+    <div class="form-group">
+      <label>Slug</label>
+      <input type="text" class="form-control" id="cat_slug" value="${cat?.slug||''}"/>
+    </div>
+    <div class="form-group">
+      <label>Tipe</label>
+      <select class="form-control" id="cat_type">
+        <option value="article" ${cat?.type==='article'?'selected':''}>Artikel</option>
+        <option value="event" ${cat?.type==='event'?'selected':''}>Kegiatan</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Deskripsi</label>
+      <textarea class="form-control" id="cat_desc">${cat?.desc||''}</textarea>
+    </div>
+  `,
+  `<button class="btn btn-ghost" onclick="closeModal()">Batal</button><button class="btn btn-primary" onclick="saveCategory('${id||''}')">Simpan</button>`);
+}
+
+function saveCategory(id){
+  const db = loadDB();
+  const data = {
+    name:document.getElementById('cat_name').value.trim(),
+    slug:document.getElementById('cat_slug').value.trim() || document.getElementById('cat_name').value.toLowerCase().replace(/\s+/g,'-'),
+    type:document.getElementById('cat_type').value,
+    desc:document.getElementById('cat_desc').value.trim(),
+  };
+  if(!data.name){toast('Nama wajib diisi','error');return}
+  if(id){
+    const idx = db.categories.findIndex(c=>c.id===id);
+    db.categories[idx] = {...db.categories[idx],...data};
+  } else {
+    db.categories.push({id:'c'+Date.now(),...data});
+  }
+  saveDB(db);
+  logActivity(id?'Update Kategori':'Buat Kategori',data.name);
+  closeModal();
+  toast('Kategori tersimpan','success');
+  renderAdminCategories();
+}
+
+function deleteCategory(id){
+  if(!confirm('Hapus kategori ini?')) return;
+  const db = loadDB();
+  db.categories = db.categories.filter(c=>c.id!==id);
+  saveDB(db);
+  logActivity('Hapus Kategori',id);
+  toast('Kategori dihapus','success');
+  renderAdminCategories();
+}
+
+/* ---------- ADMIN: EVENTS ---------- */
+function renderAdminEvents(){
+  const db = loadDB();
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Kegiatan (${db.events.length})</h3>
+        <button class="btn btn-primary" style="padding:8px 14px;font-size:13px" onclick="editEvent()">+ Kegiatan Baru</button>
+      </div>
+      <div class="admin-card-body" style="padding:0;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Nama</th><th>Tanggal</th><th>Lokasi</th><th>Penyelenggara</th><th style="text-align:right">Aksi</th></tr></thead>
+          <tbody>
+            ${db.events.map(e=>`
+              <tr>
+                <td><strong>${e.title}</strong></td>
+                <td style="font-size:12px">${fmtDate(e.date)}</td>
+                <td style="font-size:12px">${e.location}</td>
+                <td style="font-size:12px">${e.organizer}</td>
+                <td style="text-align:right">
+                  <div class="action-btns" style="justify-content:flex-end">
+                    <button class="action-btn" onclick="editEvent('${e.id}')">✏️</button>
+                    <button class="action-btn danger" onclick="deleteEvent('${e.id}')">🗑</button>
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function editEvent(id){
+  const db = loadDB();
+  const ev = id?db.events.find(e=>e.id===id):null;
+  openModal(ev?'Edit Kegiatan':'Kegiatan Baru',`
+    <div class="form-group">
+      <label>Nama Kegiatan <span class="req">*</span></label>
+      <input type="text" class="form-control" id="ev_title" value="${ev?.title||''}" required/>
+    </div>
+    <div class="form-group">
+      <label>Deskripsi</label>
+      <textarea class="form-control" id="ev_desc">${ev?.description||''}</textarea>
+    </div>
+    <div class="form-group">
+      <label>Tanggal</label>
+      <input type="date" class="form-control" id="ev_date" value="${ev?new Date(ev.date).toISOString().slice(0,10):new Date().toISOString().slice(0,10)}"/>
+    </div>
+    <div class="form-group">
+      <label>Lokasi</label>
+      <input type="text" class="form-control" id="ev_loc" value="${ev?.location||''}"/>
+    </div>
+    <div class="form-group">
+      <label>Penyelenggara</label>
+      <input type="text" class="form-control" id="ev_org" value="${ev?.organizer||''}"/>
+    </div>
+    <div class="form-group">
+      <label>Kategori</label>
+      <select class="form-control" id="ev_cat">
+        ${db.categories.filter(c=>c.type==='event').map(c=>`<option value="${c.id}" ${ev?.categoryId===c.id?'selected':''}>${c.name}</option>`).join('')}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Poster URL</label>
+      <input type="text" class="form-control" id="ev_poster" value="${ev?.poster||''}"/>
+    </div>
+    <div class="form-group">
+      <label>Artikel Terkait (ID)</label>
+      <input type="text" class="form-control" id="ev_article" value="${ev?.articleId||''}" placeholder="a1234567..."/>
+    </div>
+  `,
+  `<button class="btn btn-ghost" onclick="closeModal()">Batal</button><button class="btn btn-primary" onclick="saveEvent('${id||''}')">Simpan</button>`);
+}
+
+function saveEvent(id){
+  const db = loadDB();
+  const data = {
+    title:document.getElementById('ev_title').value.trim(),
+    description:document.getElementById('ev_desc').value.trim(),
+    date:new Date(document.getElementById('ev_date').value).getTime(),
+    location:document.getElementById('ev_loc').value.trim(),
+    organizer:document.getElementById('ev_org').value.trim(),
+    categoryId:document.getElementById('ev_cat').value,
+    poster:document.getElementById('ev_poster').value.trim(),
+    articleId:document.getElementById('ev_article').value.trim(),
+  };
+  if(!data.title){toast('Nama wajib diisi','error');return}
+  if(id){
+    const idx = db.events.findIndex(e=>e.id===id);
+    db.events[idx] = {...db.events[idx],...data};
+  } else {
+    db.events.push({id:'e'+Date.now(),gallery:[],...data});
+  }
+  saveDB(db);
+  logActivity(id?'Update Kegiatan':'Buat Kegiatan',data.title);
+  closeModal();
+  toast('Kegiatan tersimpan','success');
+  renderAdminEvents();
+}
+
+function deleteEvent(id){
+  if(!confirm('Hapus kegiatan ini?')) return;
+  const db = loadDB();
+  db.events = db.events.filter(e=>e.id!==id);
+  saveDB(db);
+  logActivity('Hapus Kegiatan',id);
+  toast('Kegiatan dihapus','success');
+  renderAdminEvents();
+}
+
+/* ---------- ADMIN: USERS ---------- */
+function renderAdminUsers(){
+  const db = loadDB();
+  const roleMap = {super_admin:'Super Admin',editor:'Editor',writer:'Penulis',contributor:'Kontributor'};
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Pengguna (${db.users.length})</h3>
+        <button class="btn btn-primary" style="padding:8px 14px;font-size:13px" onclick="editUser()">+ Pengguna Baru</button>
+      </div>
+      <div class="admin-card-body" style="padding:0;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Nama</th><th>Username</th><th>Email</th><th>Role</th><th>Status</th><th style="text-align:right">Aksi</th></tr></thead>
+          <tbody>
+            ${db.users.map(u=>`
+              <tr>
+                <td><strong>${u.name}</strong></td>
+                <td style="font-size:12px">${u.username}</td>
+                <td style="font-size:12px">${u.email}</td>
+                <td><span class="badge badge-published">${roleMap[u.role]}</span></td>
+                <td><span class="badge badge-${u.active?'published':'draft'}">${u.active?'Aktif':'Nonaktif'}</span></td>
+                <td style="text-align:right">
+                  <div class="action-btns" style="justify-content:flex-end">
+                    <button class="action-btn" onclick="editUser('${u.id}')">✏️</button>
+                    ${u.username!=='admin'?`<button class="action-btn danger" onclick="deleteUser('${u.id}')">🗑</button>`:''}
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function editUser(id){
+  const db = loadDB();
+  const u = id?db.users.find(x=>x.id===id):null;
+  openModal(u?'Edit Pengguna':'Pengguna Baru',`
+    <div class="form-group">
+      <label>Nama Lengkap <span class="req">*</span></label>
+      <input type="text" class="form-control" id="u_name" value="${u?.name||''}" required/>
+    </div>
+    <div class="form-group">
+      <label>Username <span class="req">*</span></label>
+      <input type="text" class="form-control" id="u_username" value="${u?.username||''}" required/>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" id="u_email" value="${u?.email||''}"/>
+    </div>
+    <div class="form-group">
+      <label>Password ${u?'(kosongkan jika tidak diubah)':'<span class="req">*</span>'}</label>
+      <input type="password" class="form-control" id="u_password" ${u?'':'required'}/>
+    </div>
+    <div class="form-group">
+      <label>Role</label>
+      <select class="form-control" id="u_role">
+        <option value="super_admin" ${u?.role==='super_admin'?'selected':''}>Super Admin</option>
+        <option value="editor" ${u?.role==='editor'?'selected':''}>Editor</option>
+        <option value="writer" ${u?.role==='writer'?'selected':''}>Penulis</option>
+        <option value="contributor" ${u?.role==='contributor'?'selected':''}>Kontributor</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Status</label>
+      <select class="form-control" id="u_active">
+        <option value="1" ${u?.active!==false?'selected':''}>Aktif</option>
+        <option value="0" ${u?.active===false?'selected':''}>Nonaktif</option>
+      </select>
+    </div>
+  `,
+  `<button class="btn btn-ghost" onclick="closeModal()">Batal</button><button class="btn btn-primary" onclick="saveUser('${id||''}')">Simpan</button>`);
+}
+
+function saveUser(id){
+  const db = loadDB();
+  const data = {
+    name:document.getElementById('u_name').value.trim(),
+    username:document.getElementById('u_username').value.trim(),
+    email:document.getElementById('u_email').value.trim(),
+    role:document.getElementById('u_role').value,
+    active:document.getElementById('u_active').value==='1',
+  };
+  const password = document.getElementById('u_password').value;
+  if(!data.name || !data.username){toast('Nama & username wajib','error');return}
+  if(id){
+    const idx = db.users.findIndex(u=>u.id===id);
+    db.users[idx] = {...db.users[idx],...data};
+    if(password) db.users[idx].password = password;
+  } else {
+    if(!password){toast('Password wajib untuk pengguna baru','error');return}
+    if(db.users.some(u=>u.username===data.username)){toast('Username sudah digunakan','error');return}
+    db.users.push({id:'u'+Date.now(),password,created:Date.now(),...data});
+  }
+  saveDB(db);
+  logActivity(id?'Update Pengguna':'Buat Pengguna',data.name);
+  closeModal();
+  toast('Pengguna tersimpan','success');
+  renderAdminUsers();
+}
+
+function deleteUser(id){
+  if(!confirm('Hapus pengguna ini?')) return;
+  const db = loadDB();
+  db.users = db.users.filter(u=>u.id!==id);
+  saveDB(db);
+  logActivity('Hapus Pengguna',id);
+  toast('Pengguna dihapus','success');
+  renderAdminUsers();
+}
+
+/* ---------- ADMIN: PROFILE ---------- */
+function renderAdminProfile(){
+  const db = loadDB();
+  const p = db.profile;
+  document.getElementById('adminContent').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-card-head"><h3>Profil Organisasi</h3></div>
+      <div class="admin-card-body">
+        <form onsubmit="saveProfile(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nama Organisasi</label>
+              <input type="text" class="form-control" id="p_name" value="${p.name}"/>
+            </div>
+            <div class="form-group">
+              <label>Nama Singkat</label>
+              <input type="text" class="form-control" id="p_short" value="${p.shortName}"/>
+            </div>
+            <div class="form-group">
+              <label>Jargon</label>
+              <input type="text" class="form-control" id="p_jargon" value="${p.jargon}"/>
+            </div>
+            <div class="form-group">
+              <label>Nilai Identitas</label>
+              <input type="text" class="form-control" id="p_values" value="${p.values}"/>
+            </div>
+            <div class="form-group full">
+              <label>Email</label>
+              <input type="email" class="form-control" id="p_email" value="${p.email}"/>
+            </div>
+            <div class="form-group full">
+              <label>Telepon</label>
+              <input type="text" class="form-control" id="p_phone" value="${p.phone}"/>
+            </div>
+            <div class="form-group full">
+              <label>Alamat</label>
+              <textarea class="form-control" id="p_address">${p.address}</textarea>
+            </div>
+            <div class="form-group full">
+              <label>Sejarah</label>
+              <textarea class="form-control" id="p_history" style="min-height:100px">${p.history}</textarea>
+            </div>
+            <div class="form-group full">
+              <label>Visi</label>
+              <textarea class="form-control" id="p_vision">${p.vision}</textarea>
+            </div>
+            <div class="form-group full">
+              <label>Misi (satu per baris)</label>
+              <textarea class="form-control" id="p_mission" style="min-height:120px">${p.mission.join('\n')}</textarea>
+            </div>
+            <div class="form-group full">
+              <label>Filosofi Nama</label>
+              <textarea class="form-control" id="p_philosophy" style="min-height:100px">${p.philosophy}</textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:20px">💾 Simpan Profil</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="admin-card">
+      <div class="admin-card-head">
+        <h3>Struktur Kepengurusan</h3>
+        <button class="btn btn-outline" style="padding:6px 12px;font-size:12px" onclick="editStructure()">+ Tambah</button>
+      </div>
+      <div class="admin-card-body" style="padding:0;overflow-x:auto">
+        <table class="table">
+          <thead><tr><th>Nama</th><th>Jabatan</th><th>Divisi</th><th style="text-align:right">Aksi</th></tr></thead>
+          <tbody>
+            ${db.structure.map((s,i)=>`
+              <tr>
+                <td><strong>${s.name}</strong></td>
+                <td>${s.role}</td>
+                <td>${s.division}</td>
+                <td style="text-align:right">
+                  <div class="action-btns" style="justify-content:flex-end">
+                    <button class="action-btn" onclick="editStructure(${i})">✏️</button>
+                    <button class="action-btn danger" onclick="deleteStructure(${i})">🗑</button>
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+}
+
+function saveProfile(e){
+  e.preventDefault();
+  const db = loadDB();
+  db.profile = {
+    ...db.profile,
+    name:document.getElementById('p_name').value,
+    shortName:document.getElementById('p_short').value,
+    jargon:document.getElementById('p_jargon').value,
+    values:document.getElementById('p_values').value,
+    email:document.getElementById('p_email').value,
+    phone:document.getElementById('p_phone').value,
+    address:document.getElementById('p_address').value,
+    history:document.getElementById('p_history').value,
+    vision:document.getElementById('p_vision').value,
+    mission:document.getElementById('p_mission').value.split('\n').map(s=>s.trim()).filter(Boolean),
+    philosophy:document.getElementById('p_philosophy').value,
+  };
+  saveDB(db);
+  logActivity('Update Profil Organisasi','');
+  toast('Profil tersimpan','success');
+}
+
+function editStructure(idx){
+  const db = loadDB();
+  const s = typeof idx==='number'?db.structure[idx]:null;
+  openModal(s?'Edit Pengurus':'Tambah Pengurus',`
+    <div class="form-group"><label>Nama</label><input type="text" class="form-control" id="s_name" value="${s?.name||''}"/></div>
+    <div class="form-group"><label>Jabatan</label><input type="text" class="form-control" id="s_role" value="${s?.role||''}"/></div>
+    <div class="form-group"><label>Divisi</label><input type="text" class="form-control" id="s_div" value="${s?.division||''}"/></div>
+  `,
+  `<button class="btn btn-ghost" onclick="closeModal()">Batal</button><button class="btn btn-primary" onclick="saveStructure(${typeof idx==='number'?idx:'null'})">Simpan</button>`);
+}
+
+function saveStructure(idx){
+  const db = loadDB();
+  const data = {
+    name:document.getElementById('s_name').value.trim(),
+    role:document.getElementById('s_role').value.trim(),
+    division:document.getElementById('s_div').value.trim(),
+  };
+  if(!data.name){toast('Nama wajib','error');return}
+  if(idx!==null && idx!==undefined){
+    db.structure[idx] = data;
+  } else {
+    db.structure.push(data);
+  }
+  saveDB(db);
+  closeModal();
+  toast('Pengurus tersimpan','success');
+  renderAdminProfile();
+}
+
+function deleteStructure(idx){
+  if(!confirm('Hapus pengurus ini?')) return;
+  const db = loadDB();
+  db.structure.splice(idx,1);
+  saveDB(db);
+  renderAdminProfile();
+}
+
+/* ---------- AUTH ---------- */
+function handleLogin(e){
+  e.preventDefault();
+  const username = document.getElementById('loginUser').value.trim();
+  const password = document.getElementById('loginPass').value;
+  const db = loadDB();
+  const user = db.users.find(u=>u.username===username && u.password===password);
+  if(!user){toast('Username atau password salah','error');return}
+  if(!user.active){toast('Akun nonaktif','error');return}
+  setSession(user);
+  logActivity('Login',user.username);
+  toast(`Selamat datang, ${user.name}!`,'success');
+  setTimeout(()=>navigate('admin/dashboard'),500);
+}
+
+function logout(){
+  const s = getSession();
+  if(s) logActivity('Logout',s.username);
+  clearSession();
+  toast('Anda telah keluar','success');
+  navigate('home');
+}
+
+/* ---------- MODAL & TOAST ---------- */
+function openModal(title,body,foot){
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalFoot').innerHTML = foot||'';
+  document.getElementById('modalBackdrop').classList.add('show');
+}
+function closeModal(){document.getElementById('modalBackdrop').classList.remove('show')}
+document.getElementById('modalBackdrop').addEventListener('click',e=>{
+  if(e.target.id==='modalBackdrop') closeModal();
+});
+
+function toast(msg,type='info'){
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  const icon = {success:'✓',error:'✕',warning:'⚠',info:'ℹ'}[type]||'ℹ';
+  el.innerHTML = `<div style="width:28px;height:28px;border-radius:50%;background:var(--${type==='success'?'success':type==='error'?'danger':type==='warning'?'warning':'blue-600'});color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">${icon}</div><div style="flex:1;font-size:14px">${msg}</div>`;
+  document.getElementById('toastContainer').appendChild(el);
+  setTimeout(()=>{el.style.opacity='0';el.style.transform='translateX(100%)';el.style.transition='all .3s';setTimeout(()=>el.remove(),300)},3000);
+}
+
+/* ---------- INIT ---------- */
+document.getElementById('topDate').textContent = fmtDateFull(new Date());
+loadDB(); // ensure seeded
+window.addEventListener('hashchange',route);
+route();
+
+// Responsive admin menu button
+function checkAdminMenuBtn(){
+  const btn = document.getElementById('adminMenuBtn');
+  if(btn) btn.style.display = window.innerWidth<=1024?'flex':'none';
+}
+window.addEventListener('resize',checkAdminMenuBtn);
+checkAdminMenuBtn();
+</script>
+</body>
+</html>
