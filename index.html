@@ -4,57 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DIGCITY PRESS — Portal Resmi Digital Business Student Society</title>
-<meta name="description" content="DIGCITY PRESS adalah portal portal berita resmi Digital Business Student Society — GO FIGHT WIN!" />
-<meta name="theme-color" content="#0A3D91" />
-<meta property="og:title" content="DIGCITY PRESS" />
-<meta property="og:description" content="Portal berita resmi DIGCITY — GO FIGHT WIN!" />
-<meta property="og:type" content="website" />
+<meta name="description" content="Portal berita resmi DIGCITY PRESS — Digital Business Student Society UIKA Bogor" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-/* ============== DESIGN SYSTEM — DIGCITY PRESS ============== */
 :root{
-  --blue-900:#062A66;
-  --blue-800:#0A3D91;
-  --blue-700:#1252B8;
-  --blue-600:#1E66D8;
-  --blue-500:#3B82F6;
-  --blue-400:#60A5FA;
-  --blue-300:#93C5FD;
-  --blue-200:#BFDBFE;
-  --blue-100:#DBEAFE;
-  --blue-50:#EFF6FF;
-  --navy:#0B1E3F;
-  --ink:#0F172A;
-  --ink-2:#1E293B;
-  --muted:#64748B;
-  --line:#E2E8F0;
-  --bg:#FFFFFF;
-  --bg-soft:#F8FAFC;
-  --bg-soft-2:#F1F5F9;
-  --danger:#DC2626;
-  --success:#16A34A;
-  --warning:#F59E0B;
-  --font-sans:'Inter',system-ui,-apple-system,sans-serif;
-  --font-serif:'Merriweather',Georgia,serif;
-  --shadow-sm:0 1px 2px rgba(15,23,42,.06);
-  --shadow:0 4px 12px rgba(15,23,42,.08);
-  --shadow-lg:0 10px 30px rgba(15,23,42,.12);
+  --blue-900:#062A66;--blue-800:#0A3D91;--blue-700:#1252B8;--blue-600:#1E66D8;
+  --blue-500:#3B82F6;--blue-100:#DBEAFE;--blue-50:#EFF6FF;
+  --navy:#0B1E3F;--ink:#0F172A;--muted:#64748B;--line:#E2E8F0;
+  --bg:#fff;--bg-soft:#F8FAFC;--danger:#DC2626;--success:#16A34A;
+  --font-sans:'Inter',sans-serif;--font-serif:'Merriweather',serif;
+  --shadow:0 4px 12px rgba(15,23,42,.08);--shadow-lg:0 10px 30px rgba(15,23,42,.12);
   --radius:12px;
-  --radius-sm:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-sans);color:var(--ink);background:var(--bg);line-height:1.6}
 a{color:var(--blue-700);text-decoration:none}
 a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 input,textarea,select{font-family:inherit;font-size:inherit}
-
-/* ============== LAYOUT ============== */
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .section{padding:60px 0}
 .section-header{margin-bottom:40px}
@@ -62,109 +32,90 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .section-header p{color:var(--muted);font-size:16px}
 .section-header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--blue-700);text-transform:uppercase;margin-bottom:8px}
 
-/* ============== HEADER / NAVBAR ============== */
+/* TOPBAR */
 .topbar{background:var(--navy);color:#fff;font-size:13px}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;padding:10px 20px}
-.topbar .date{opacity:.85}
-.topbar .socials{display:flex;gap:14px}
-.topbar .socials a{color:#fff;opacity:.8}
-.topbar .socials a:hover{opacity:1;text-decoration:none}
+.topbar .socials a{color:#fff;margin-left:14px;opacity:.8}
 
-.navbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm)}
+/* NAVBAR */
+.navbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .navbar .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand-logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
-.brand-text h1{font-size:20px;color:var(--navy);font-weight:800;letter-spacing:-.5px}
+.brand-text h1{font-size:20px;color:var(--navy);font-weight:800}
 .brand-text p{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
 .nav-menu{display:flex;gap:6px;align-items:center}
-.nav-menu a{padding:10px 14px;color:var(--ink-2);font-weight:500;font-size:14px;border-radius:8px;transition:all .2s}
-.nav-menu a:hover{background:var(--blue-50);color:var(--blue-700);text-decoration:none}
-.nav-menu a.active{background:var(--blue-100);color:var(--blue-700)}
-.nav-cta{background:var(--blue-700)!important;color:#fff!important;padding:10px 18px!important;font-weight:600!important}
-.nav-cta:hover{background:var(--blue-800)!important}
-.menu-toggle{display:none;font-size:24px;color:var(--navy)}
+.nav-menu a{padding:10px 14px;color:var(--ink);font-weight:500;font-size:14px;border-radius:8px}
+.nav-menu a:hover{background:var(--blue-50);text-decoration:none}
+.nav-cta{background:var(--blue-700)!important;color:#fff!important;padding:10px 18px!important;font-weight:600!important;cursor:pointer!important}
+.nav-cta:hover{background:var(--blue-800)!important;text-decoration:none!important}
 
-/* ============== BREAKING NEWS ============== */
+/* BREAKING */
 .breaking{background:var(--blue-700);color:#fff;padding:10px 0;overflow:hidden}
 .breaking .container{display:flex;align-items:center;gap:16px}
-.breaking-label{background:#fff;color:var(--blue-700);padding:4px 12px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:1.5px;flex-shrink:0}
+.breaking-label{background:#fff;color:var(--blue-700);padding:4px 12px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:1.5px}
 .breaking-ticker{flex:1;white-space:nowrap;overflow:hidden}
 .breaking-ticker span{display:inline-block;animation:ticker 30s linear infinite;padding-left:100%}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 
-/* ============== HERO ============== */
-.hero{background:linear-gradient(135deg,var(--blue-900) 0%,var(--blue-700) 100%);color:#fff;padding:80px 0;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);border-radius:50%}
-.hero .container{position:relative;z-index:1}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--blue-900),var(--blue-700));color:#fff;padding:80px 0}
 .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-.hero-content .tag{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.hero-content h2{font-family:var(--font-serif);font-size:44px;line-height:1.15;margin-bottom:18px;font-weight:900}
-.hero-content p{font-size:17px;opacity:.9;margin-bottom:28px;line-height:1.7}
+.hero-content .tag{display:inline-block;background:rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:20px}
+.hero-content h2{font-family:var(--font-serif);font-size:44px;line-height:1.15;margin-bottom:18px}
+.hero-content p{font-size:17px;opacity:.9;margin-bottom:28px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;transition:all .2s;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s}
 .btn-primary{background:#fff;color:var(--blue-700)}
 .btn-primary:hover{background:var(--blue-50);text-decoration:none}
 .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
 .btn-ghost:hover{background:rgba(255,255,255,.1);text-decoration:none}
 .btn-blue{background:var(--blue-700);color:#fff}
 .btn-blue:hover{background:var(--blue-800);text-decoration:none}
-.hero-visual{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:30px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:14px;opacity:.9}
+.hero-visual{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:30px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:14px}
 
-/* ============== CARDS / BERITA ============== */
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+/* CARDS */
+.news-grid,.highlight-grid,.division-grid,.structure-grid{display:grid;gap:24px}
+.news-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+.highlight-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.division-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.structure-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-200)}
-.card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue-200),var(--blue-400));position:relative;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover}
-.card-img .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;opacity:.6}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue-100),var(--blue-400));display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
 .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
-.card-meta{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--muted);margin-bottom:10px}
-.card-meta .cat{color:var(--blue-700);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.card-title{font-family:var(--font-serif);font-size:19px;color:var(--navy);margin-bottom:10px;line-height:1.35;font-weight:700}
-.card-excerpt{color:var(--ink-2);font-size:14px;line-height:1.6;margin-bottom:14px;flex:1}
-.card-footer{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
+.card-meta{font-size:12px;color:var(--muted);margin-bottom:10px}
+.card-meta .cat{color:var(--blue-700);font-weight:700;text-transform:uppercase}
+.card-title{font-family:var(--font-serif);font-size:19px;color:var(--navy);margin-bottom:10px;line-height:1.35}
+.card-excerpt{color:var(--ink);font-size:14px;line-height:1.6;margin-bottom:14px;flex:1}
+.card-footer{font-size:12px;color:var(--muted);padding-top:12px;border-top:1px solid var(--line)}
 
-/* ============== HIGHLIGHT / KEGIATAN ============== */
-.highlight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.highlight-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:all .25s}
-.highlight-card:hover{box-shadow:var(--shadow);border-color:var(--blue-200)}
-.highlight-card .icon{width:48px;height:48px;border-radius:12px;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
-.highlight-card h3{font-size:17px;color:var(--navy);margin-bottom:8px;font-weight:700}
-.highlight-card p{color:var(--muted);font-size:14px;line-height:1.6}
+.highlight-card,.division-card,.person-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:all .25s}
+.highlight-card:hover,.division-card:hover,.person-card:hover{box-shadow:var(--shadow);border-color:var(--blue-100)}
+.highlight-card .icon,.division-card .icon-big{font-size:32px;margin-bottom:12px}
+.highlight-card h3,.division-card h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+.highlight-card p,.division-card p{color:var(--muted);font-size:14px}
 .highlight-card .date{display:block;margin-top:12px;font-size:12px;color:var(--blue-700);font-weight:600}
+.division-card .code{display:inline-block;background:var(--blue-100);color:var(--blue-700);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;margin-bottom:14px}
+.person-card{text-align:center}
+.person-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--blue-400),var(--blue-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;margin:0 auto 14px}
+.person-card h4{font-size:16px;color:var(--navy);margin-bottom:4px}
+.person-card .role{font-size:13px;color:var(--blue-700);font-weight:600}
+.person-card .div{font-size:12px;color:var(--muted)}
 
-/* ============== PROFIL DIGCITY ============== */
+/* PROFILE */
 .profile-section{background:var(--bg-soft)}
 .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .profile-content h2{font-family:var(--font-serif);font-size:32px;color:var(--navy);margin-bottom:16px}
-.profile-content .jargon{display:inline-block;background:var(--blue-700);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px;letter-spacing:1px}
-.profile-content p{color:var(--ink-2);line-height:1.8;margin-bottom:16px}
+.profile-content .jargon{display:inline-block;background:var(--blue-700);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px}
+.profile-content p{color:var(--ink);line-height:1.8;margin-bottom:16px}
 .profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.stat{background:#fff;padding:20px;border-radius:var(--radius-sm);text-align:center;border:1px solid var(--line)}
+.stat{background:#fff;padding:20px;border-radius:8px;text-align:center;border:1px solid var(--line)}
 .stat .num{font-size:28px;font-weight:800;color:var(--blue-700);display:block}
-.stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase}
 .profile-visual{background:linear-gradient(135deg,var(--blue-100),var(--blue-300));border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--blue-800);font-size:18px;font-weight:600;text-align:center;padding:40px}
 
-/* ============== DIVISI ============== */
-.division-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.division-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:all .25s}
-.division-card:hover{box-shadow:var(--shadow);border-color:var(--blue-200);transform:translateY(-2px)}
-.division-card .code{display:inline-block;background:var(--blue-100);color:var(--blue-700);padding:4px 10px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:14px}
-.division-card h3{font-size:18px;color:var(--navy);margin-bottom:8px;font-weight:700}
-.division-card .icon-big{font-size:32px;margin-bottom:12px}
-.division-card p{color:var(--muted);font-size:14px;line-height:1.6}
-
-/* ============== STRUKTUR ============== */
-.structure-section{background:var(--bg-soft)}
-.structure-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-.person-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;transition:all .25s}
-.person-card:hover{box-shadow:var(--shadow);border-color:var(--blue-200)}
-.person-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--blue-400),var(--blue-700));color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;margin:0 auto 14px}
-.person-card h4{font-size:16px;color:var(--navy);margin-bottom:4px;font-weight:700}
-.person-card .role{font-size:13px;color:var(--blue-700);font-weight:600;margin-bottom:4px}
-.person-card .div{font-size:12px;color:var(--muted)}
-
-/* ============== FOOTER ============== */
+/* FOOTER */
 .footer{background:var(--navy);color:#fff;padding:60px 0 20px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .footer h4{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;color:var(--blue-300)}
@@ -172,97 +123,83 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .footer a:hover{color:#fff;text-decoration:none}
 .footer ul{list-style:none}
 .footer ul li{margin-bottom:8px}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.6);flex-wrap:wrap;gap:12px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);flex-wrap:wrap;gap:12px}
 
-/* ============== LOGIN MODAL ============== */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
-.modal-overlay.active{display:flex}
+.modal-overlay.active{display:flex!important}
 .modal{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:32px;box-shadow:var(--shadow-lg);position:relative}
-.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted)}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);cursor:pointer}
 .modal h3{font-family:var(--font-serif);font-size:24px;color:var(--navy);margin-bottom:8px}
 .modal p.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
 .form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:13px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;transition:border-color .2s;background:#fff}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px var(--blue-100)}
-.form-group textarea{min-height:120px;resize:vertical;font-family:inherit}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--blue-500)}
+.form-group textarea{min-height:100px;resize:vertical}
 .btn-full{width:100%;justify-content:center;padding:14px}
 .form-hint{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
 
-/* ============== TOAST ============== */
+/* TOAST */
 .toast-container{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px}
-.toast{background:#fff;border-left:4px solid var(--blue-700);padding:14px 18px;border-radius:10px;box-shadow:var(--shadow-lg);min-width:280px;max-width:360px;font-size:14px;animation:slideIn .3s ease}
+.toast{background:#fff;border-left:4px solid var(--blue-700);padding:14px 18px;border-radius:10px;box-shadow:var(--shadow-lg);min-width:260px;font-size:14px;animation:slideIn .3s}
 .toast.success{border-left-color:var(--success)}
 .toast.error{border-left-color:var(--danger)}
-.toast.warning{border-left-color:var(--warning)}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* ============== ADMIN PANEL ============== */
+/* ADMIN */
 .admin-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
 .admin-sidebar{background:var(--navy);color:#fff;padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
 .admin-sidebar .brand-sm{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px}
-.admin-sidebar .brand-sm h3{font-size:16px;font-weight:700}
-.admin-sidebar .brand-sm p{font-size:11px;opacity:.7;margin-top:2px}
+.admin-sidebar .brand-sm h3{font-size:16px}
+.admin-sidebar .brand-sm p{font-size:11px;opacity:.7}
 .admin-menu{list-style:none}
-.admin-menu li{}
-.admin-menu a{display:flex;align-items:center;gap:10px;padding:12px 20px;color:rgba(255,255,255,.8);font-size:14px;transition:all .2s;border-left:3px solid transparent}
+.admin-menu a{display:flex;align-items:center;gap:10px;padding:12px 20px;color:rgba(255,255,255,.8);font-size:14px;border-left:3px solid transparent}
 .admin-menu a:hover{background:rgba(255,255,255,.05);color:#fff;text-decoration:none}
 .admin-menu a.active{background:rgba(59,130,246,.15);color:#fff;border-left-color:var(--blue-400)}
 .admin-menu .section-label{padding:16px 20px 8px;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);font-weight:700}
-.admin-main{background:var(--bg-soft);padding:32px;overflow-x:auto}
+.admin-main{background:var(--bg-soft);padding:32px}
 .admin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:16px}
 .admin-header h2{font-family:var(--font-serif);font-size:26px;color:var(--navy)}
 .admin-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:20px}
-.admin-card h3{font-size:18px;color:var(--navy);margin-bottom:16px;font-weight:700}
+.admin-card h3{font-size:18px;color:var(--navy);margin-bottom:16px}
 .data-table{width:100%;border-collapse:collapse;font-size:14px}
 .data-table th,.data-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
-.data-table th{background:var(--bg-soft);font-weight:600;color:var(--ink-2);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
-.data-table tr:hover{background:var(--bg-soft)}
-.badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.data-table th{background:var(--bg-soft);font-weight:600;font-size:12px;text-transform:uppercase}
+.badge{display:inline-block;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700}
 .badge-blue{background:var(--blue-100);color:var(--blue-700)}
 .badge-green{background:#DCFCE7;color:#166534}
 .badge-red{background:#FEE2E2;color:#991B1B}
-.badge-gray{background:var(--bg-soft-2);color:var(--muted)}
-.action-btns{display:flex;gap:6px}
-.action-btn{padding:6px 10px;border-radius:6px;font-size:12px;font-weight:600;transition:all .2s}
+.badge-gray{background:var(--bg-soft);color:var(--muted)}
+.action-btn{padding:6px 10px;border-radius:6px;font-size:12px;font-weight:600;margin-right:4px}
 .action-btn.edit{background:var(--blue-100);color:var(--blue-700)}
 .action-btn.delete{background:#FEE2E2;color:#991B1B}
-.action-btn:hover{opacity:.8}
 
-/* ============== RESPONSIVE ============== */
 @media (max-width:900px){
   .hero-grid,.profile-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
-  .nav-menu.open{display:flex}
-  .menu-toggle{display:block}
+  .nav-menu{display:none}
   .admin-layout{grid-template-columns:1fr}
-  .admin-sidebar{position:fixed;left:-260px;z-index:100;transition:left .3s;width:240px}
+  .admin-sidebar{position:fixed;left:-260px;z-index:100;width:240px}
   .admin-sidebar.open{left:0}
-}
-@media (max-width:600px){
-  .hero-content h2{font-size:30px}
-  .section-header h2{font-size:24px}
-  .footer-grid{grid-template-columns:1fr}
-  .profile-stats{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ============== TOPBAR ============== -->
+<!-- TOPBAR -->
 <div class="topbar">
   <div class="container">
-    <div class="date" id="topbarDate">Memuat tanggal...</div>
+    <div id="topbarDate">Memuat...</div>
     <div class="socials">
-      <a href="#" title="Instagram">📷 Instagram</a>
-      <a href="#" title="Twitter">🐦 Twitter</a>
-      <a href="#" title="YouTube">📺 YouTube</a>
+      <a href="#">📷 Instagram</a>
+      <a href="#">🐦 Twitter</a>
+      <a href="#">📺 YouTube</a>
     </div>
   </div>
 </div>
 
-<!-- ============== NAVBAR ============== -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="brand">
@@ -272,140 +209,113 @@ input,textarea,select{font-family:inherit;font-size:inherit}
         <p>Official News Portal</p>
       </div>
     </div>
-    <button class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('open')">☰</button>
-    <div class="nav-menu" id="navMenu">
-      <a href="#beranda" class="active">Beranda</a>
+    <div class="nav-menu">
+      <a href="#beranda">Beranda</a>
       <a href="#berita">Berita</a>
-      <a href="#press-release">Press Release</a>
       <a href="#kegiatan">Kegiatan</a>
       <a href="#divisi">Divisi</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#" class="nav-cta" onclick="openLoginModal();return false;">Masuk Admin</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#" id="btnLogin" class="nav-cta">🔐 Masuk Admin</a>
     </div>
   </div>
 </nav>
 
-<!-- ============== BREAKING NEWS ============== -->
+<!-- BREAKING -->
 <div class="breaking">
   <div class="container">
     <div class="breaking-label">BREAKING</div>
-    <div class="breaking-ticker">
-      <span id="breakingText">Memuat berita terkini...</span>
-    </div>
+    <div class="breaking-ticker"><span id="breakingText">Memuat...</span></div>
   </div>
 </div>
 
-<!-- ============== MAIN CONTENT (Public View) ============== -->
+<!-- PUBLIC VIEW -->
 <div id="publicView">
 
-<!-- HERO -->
 <section class="hero" id="beranda">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         <span class="tag">📰 Portal Berita Resmi</span>
         <h2 id="heroTitle">Selamat Datang di DIGCITY PRESS</h2>
-        <p id="heroDesc">Portal berita resmi Digital Business Student Society (DIGCITY) — menyajikan informasi terkini seputar kegiatan, prestasi, dan pengembangan mahasiswa Bisnis Digital UIKA Bogor.</p>
+        <p id="heroDesc">Portal berita resmi Digital Business Student Society — menyajikan informasi terkini.</p>
         <div class="hero-btns">
           <a href="#berita" class="btn btn-primary">📖 Baca Berita</a>
           <a href="#tentang" class="btn btn-ghost">Tentang DIGCITY →</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div>📱💻<br>Digital Business<br>Student Society</div>
-      </div>
+      <div class="hero-visual">📱💻<br>Digital Business<br>Student Society</div>
     </div>
   </div>
 </section>
 
-<!-- BERITA TERBARU -->
 <section class="section" id="berita">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Berita Terbaru</span>
-      <h2>Update Terkini dari DIGCITY</h2>
-      <p>Berita, prestasi, dan informasi terbaru dari mahasiswa Bisnis Digital</p>
+      <h2>Update Terkini</h2>
+      <p>Berita dan informasi terbaru dari DIGCITY</p>
     </div>
-    <div class="news-grid" id="newsGrid">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat berita...</div>
-    </div>
+    <div class="news-grid" id="newsGrid"><div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat...</div></div>
   </div>
 </section>
 
-<!-- HIGHLIGHT KEGIATAN -->
 <section class="section" id="kegiatan" style="background:var(--bg-soft)">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Highlight</span>
       <h2>Kegiatan Unggulan</h2>
-      <p>Program kerja dan event terbaru dari DIVISI DIGCITY</p>
+      <p>Program kerja dan event terbaru</p>
     </div>
-    <div class="highlight-grid" id="highlightGrid">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat kegiatan...</div>
-    </div>
+    <div class="highlight-grid" id="highlightGrid"><div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat...</div></div>
   </div>
 </section>
 
-<!-- PROFIL DIGCITY -->
 <section class="section profile-section" id="tentang">
   <div class="container">
     <div class="profile-grid">
       <div class="profile-content">
         <span class="jargon" id="profileJargon">DIGCITY, GO FIGHT WIN!</span>
         <h2 id="profileName">Tentang DIGCITY</h2>
-        <p id="profileHistory">Memuat profil...</p>
-        <p id="profileVision"><strong>Visi:</strong> <span id="profileVisionText">-</span></p>
+        <p id="profileHistory">Memuat...</p>
+        <p><strong>Visi:</strong> <span id="profileVision">-</span></p>
         <div class="profile-stats">
-          <div class="stat"><span class="num" id="statMembers">4</span><span class="lbl">Divisi</span></div>
+          <div class="stat"><span class="num" id="statDiv">4</span><span class="lbl">Divisi</span></div>
           <div class="stat"><span class="num" id="statNews">0</span><span class="lbl">Berita</span></div>
-          <div class="stat"><span class="num" id="statEvents">0</span><span class="lbl">Kegiatan</span></div>
+          <div class="stat"><span class="num" id="statEv">0</span><span class="lbl">Kegiatan</span></div>
         </div>
       </div>
-      <div class="profile-visual">
-        🎓<br>DIGCITY<br>Digital Business<br>Student Society<br>UIKA Bogor
-      </div>
+      <div class="profile-visual">🎓<br>DIGCITY<br>Digital Business<br>Student Society</div>
     </div>
   </div>
 </section>
 
-<!-- DIVISI -->
 <section class="section" id="divisi">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Struktur Organisasi</span>
+      <span class="eyebrow">Struktur</span>
       <h2>4 Divisi DIGCITY</h2>
-      <p>Divisi yang menjalankan program kerja untuk mengembangkan kompetensi mahasiswa</p>
     </div>
-    <div class="division-grid" id="divisionGrid">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat divisi...</div>
-    </div>
+    <div class="division-grid" id="divisionGrid"><div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat...</div></div>
   </div>
 </section>
 
-<!-- STRUKTUR PENGURUS -->
-<section class="section structure-section">
+<section class="section" style="background:var(--bg-soft)">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Pengurus Inti</span>
+      <span class="eyebrow">Pengurus</span>
       <h2>Struktur Organisasi</h2>
-      <p>Pengurus inti DIGCITY periode aktif</p>
     </div>
-    <div class="structure-grid" id="structureGrid">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat struktur...</div>
-    </div>
+    <div class="structure-grid" id="structureGrid"><div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Memuat...</div></div>
   </div>
 </section>
 
-</div><!-- end publicView -->
+</div>
 
-<!-- ============== ADMIN PANEL ============== -->
+<!-- ADMIN VIEW -->
 <div id="adminView" style="display:none">
 <div class="admin-layout">
-  <aside class="admin-sidebar" id="adminSidebar">
-    <div class="brand-sm">
-      <h3>DIGCITY PRESS</h3>
-      <p>Admin Panel</p>
-    </div>
+  <aside class="admin-sidebar">
+    <div class="brand-sm"><h3>DIGCITY PRESS</h3><p>Admin Panel</p></div>
     <div class="section-label">UTAMA</div>
     <ul class="admin-menu">
       <li><a href="#" data-page="dashboard" class="active">📊 Dashboard</a></li>
@@ -414,122 +324,85 @@ input,textarea,select{font-family:inherit;font-size:inherit}
     <ul class="admin-menu">
       <li><a href="#" data-page="articles">📝 Artikel</a></li>
       <li><a href="#" data-page="editor">✏️ Editor Baru</a></li>
-      <li><a href="#" data-page="media">🖼️ Media</a></li>
       <li><a href="#" data-page="categories">🏷️ Kategori</a></li>
       <li><a href="#" data-page="events">📅 Kegiatan</a></li>
     </ul>
     <div class="section-label">PENGATURAN</div>
     <ul class="admin-menu">
       <li><a href="#" data-page="users">👥 Pengguna</a></li>
-      <li><a href="#" data-page="profile">🏢 Profil Organisasi</a></li>
+      <li><a href="#" data-page="profile">🏢 Profil</a></li>
       <li><a href="#" data-page="structure">👔 Struktur</a></li>
     </ul>
     <div class="section-label">AKUN</div>
     <ul class="admin-menu">
-      <li><a href="#" onclick="doLogout();return false;">🚪 Keluar</a></li>
-      <li><a href="#beranda" onclick="showPublic();return false;">🌐 Lihat Situs</a></li>
+      <li><a href="#" id="btnLogout">🚪 Keluar</a></li>
+      <li><a href="#" id="btnViewSite">🌐 Lihat Situs</a></li>
     </ul>
   </aside>
-  <main class="admin-main" id="adminMain">
-    <!-- Admin content rendered here -->
-  </main>
+  <main class="admin-main" id="adminMain"></main>
 </div>
 </div>
 
-<!-- ============== LOGIN MODAL ============== -->
+<!-- LOGIN MODAL -->
 <div class="modal-overlay" id="loginModal">
   <div class="modal">
-    <button class="modal-close" onclick="closeLoginModal()">✕</button>
+    <div class="modal-close" id="btnCloseModal">✕</div>
     <h3>Masuk Admin</h3>
     <p class="sub">Login ke panel admin DIGCITY PRESS</p>
-    <form onsubmit="handleLogin(event)">
-      <div class="form-group">
-        <label>Username</label>
-        <input type="text" id="loginUser" required placeholder="Masukkan username" />
-      </div>
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" id="loginPass" required placeholder="Masukkan password" />
-      </div>
+    <form id="loginForm">
+      <div class="form-group"><label>Username</label><input type="text" id="loginUser" required placeholder="admin" /></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPass" required placeholder="admin123" /></div>
       <button type="submit" class="btn btn-blue btn-full">🔐 Masuk</button>
       <p class="form-hint">Demo: admin / admin123</p>
     </form>
   </div>
 </div>
 
-<!-- ============== TOAST CONTAINER ============== -->
 <div class="toast-container" id="toastContainer"></div>
 
-<!-- ============== FOOTER ============== -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="brand" style="margin-bottom:16px">
           <div class="brand-logo">DC</div>
-          <div class="brand-text">
-            <h1 style="color:#fff">DIGCITY PRESS</h1>
-            <p style="color:rgba(255,255,255,.6)">Official News Portal</p>
-          </div>
+          <div class="brand-text"><h1 style="color:#fff">DIGCITY PRESS</h1><p style="color:rgba(255,255,255,.6)">Official News Portal</p></div>
         </div>
-        <p id="footerDesc">Portal berita resmi Digital Business Student Society (DIGCITY) — Fakultas Ekonomi dan Bisnis, Universitas Ibn Khaldun Bogor.</p>
+        <p id="footerDesc">Portal berita resmi DIGCITY — FEB UIKA Bogor.</p>
       </div>
-      <div>
-        <h4>Navigasi</h4>
-        <ul>
-          <li><a href="#beranda">Beranda</a></li>
-          <li><a href="#berita">Berita</a></li>
-          <li><a href="#kegiatan">Kegiatan</a></li>
-          <li><a href="#tentang">Tentang Kami</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kategori</h4>
-        <ul id="footerCategories">
-          <li>Press Release</li>
-          <li>Berita</li>
-          <li>Prestasi</li>
-          <li>Pengumuman</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontak</h4>
-        <ul>
-          <li>📧 press@digcity-uika.org</li>
-          <li>📱 +62 812-3456-7890</li>
-          <li>📍 FEB UIKA Bogor</li>
-        </ul>
-      </div>
+      <div><h4>Navigasi</h4><ul><li><a href="#beranda">Beranda</a></li><li><a href="#berita">Berita</a></li><li><a href="#kegiatan">Kegiatan</a></li><li><a href="#tentang">Tentang</a></li></ul></div>
+      <div><h4>Kategori</h4><ul id="footerCats"><li>Press Release</li><li>Berita</li><li>Prestasi</li></ul></div>
+      <div><h4>Kontak</h4><ul><li>📧 press@digcity-uika.org</li><li>📱 +62 812-3456-7890</li><li>📍 FEB UIKA Bogor</li></ul></div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 DIGCITY PRESS. All rights reserved.</div>
+      <div>© 2026 DIGCITY PRESS</div>
       <div>Powered by Netlify + Supabase</div>
     </div>
   </div>
 </footer>
 
 <script>
-// ============== SUPABASE CONFIG ==============
-const SUPABASE_URL = 'https://yjbhrcucyzlepswnsxut.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_CsDnbyuF60ccRkasOXrAZA_4BQgEfoA';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+// ============ SUPABASE ============
+const SB_URL = 'https://yjbhrcucyzlepswnsxut.supabase.co';
+const SB_KEY = 'sb_publishable_CsDnbyuF60ccRkasOXrAZA_4BQgEfoA';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
-// ============== STATE ==============
-let DB = { articles:[], categories:[], divisions:[], users:[], events:[], media:[], profile:{}, structure:[], activityLog:[] };
+let DB = { articles:[], categories:[], divisions:[], users:[], events:[], profile:{}, structure:[] };
 let session = null;
 let currentPage = 'dashboard';
 
-// ============== TOAST ==============
-function toast(msg,type='info'){
+// ============ TOAST ============
+function toast(msg, type='info'){
   const c = document.getElementById('toastContainer');
   const t = document.createElement('div');
   t.className = 'toast ' + type;
   t.textContent = msg;
   c.appendChild(t);
-  setTimeout(()=>t.remove(),3500);
+  setTimeout(()=>t.remove(), 3500);
 }
 
-// ============== DATE ==============
+// ============ DATE ============
 function setDate(){
   const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
   const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
@@ -537,73 +410,50 @@ function setDate(){
   document.getElementById('topbarDate').textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-// ============== LOAD DATA FROM SUPABASE ==============
+// ============ LOAD DB ============
 async function loadDB(){
   try {
-    const [articlesR, categoriesR, divisionsR, usersR, eventsR, mediaR, profileR, structureR] = await Promise.all([
-      supabase.from('articles').select('*').order('created_at',{ascending:false}),
-      supabase.from('categories').select('*'),
-      supabase.from('divisions').select('*'),
-      supabase.from('users').select('*'),
-      supabase.from('events').select('*').order('date',{ascending:false}),
-      supabase.from('media').select('*').order('uploaded_at',{ascending:false}),
-      supabase.from('organization_profile').select('*').single(),
-      supabase.from('structure').select('*')
+    const [a,c,d,u,e,p,s] = await Promise.all([
+      sb.from('articles').select('*').order('created_at',{ascending:false}),
+      sb.from('categories').select('*'),
+      sb.from('divisions').select('*'),
+      sb.from('users').select('*'),
+      sb.from('events').select('*').order('created_at',{ascending:false}),
+      sb.from('organization_profile').select('*').limit(1).single(),
+      sb.from('structure').select('*')
     ]);
     DB = {
-      articles: articlesR.data || [],
-      categories: categoriesR.data || [],
-      divisions: divisionsR.data || [],
-      users: usersR.data || [],
-      events: eventsR.data || [],
-      media: mediaR.data || [],
-      profile: profileR.data || {},
-      structure: structureR.data || [],
-      activityLog: []
+      articles: a.data||[], categories: c.data||[], divisions: d.data||[],
+      users: u.data||[], events: e.data||[], 
+      profile: p.data||{}, structure: s.data||[]
     };
-  } catch(e) {
-    console.error('Load error:', e);
-    toast('Gagal memuat data','error');
-  }
+  } catch(err){ console.error(err); toast('Gagal load data','error'); }
 }
 
-// ============== ACTIVITY LOG ==============
-async function logActivity(action, detail){
-  if(!session) return;
-  try {
-    await supabase.from('activity_logs').insert([{
-      user_id: session.id,
-      user_name: session.name,
-      action: action,
-      detail: detail
-    }]);
-  } catch(e){ console.error('Log error:', e); }
+// ============ SESSION ============
+function getSession(){ const s=localStorage.getItem('dc_session'); return s?JSON.parse(s):null; }
+function setSession(u){ session=u; localStorage.setItem('dc_session',JSON.stringify(u)); }
+function clearSession(){ session=null; localStorage.removeItem('dc_session'); }
+
+// ============ MODAL ============
+function openModal(){ 
+  const m = document.getElementById('loginModal');
+  m.classList.add('active');
+  m.style.display = 'flex';
+}
+function closeModal(){
+  const m = document.getElementById('loginModal');
+  m.classList.remove('active');
+  m.style.display = 'none';
 }
 
-// ============== SESSION ==============
-function getSession(){
-  const s = localStorage.getItem('digcity_session');
-  return s ? JSON.parse(s) : null;
-}
-function setSession(user){
-  session = user;
-  localStorage.setItem('digcity_session', JSON.stringify(user));
-}
-function clearSession(){
-  session = null;
-  localStorage.removeItem('digcity_session');
-}
-
-// ============== LOGIN ==============
-function openLoginModal(){ document.getElementById('loginModal').classList.add('active'); }
-function closeLoginModal(){ document.getElementById('loginModal').classList.remove('active'); }
-
-async function handleLogin(e){
+// ============ LOGIN ============
+async function doLogin(e){
   e.preventDefault();
   const username = document.getElementById('loginUser').value.trim();
   const password = document.getElementById('loginPass').value;
   
-  const { data: user, error } = await supabase
+  const { data: user, error } = await sb
     .from('users')
     .select('*')
     .eq('username', username)
@@ -617,489 +467,340 @@ async function handleLogin(e){
   }
   
   setSession(user);
-  await logActivity('Login', user.username);
   toast(`Selamat datang, ${user.name}!`,'success');
-  closeLoginModal();
-  setTimeout(()=>showAdmin(),500);
+  closeModal();
+  setTimeout(showAdmin, 500);
 }
 
 function doLogout(){
-  if(session) logActivity('Logout', session.username);
   clearSession();
   showPublic();
   toast('Berhasil keluar','success');
 }
 
-// ============== VIEW SWITCHING ==============
+// ============ VIEWS ============
 function showPublic(){
   document.getElementById('publicView').style.display = 'block';
   document.getElementById('adminView').style.display = 'none';
   renderPublic();
 }
 function showAdmin(){
-  if(!session){ openLoginModal(); return; }
+  if(!session){ openModal(); return; }
   document.getElementById('publicView').style.display = 'none';
   document.getElementById('adminView').style.display = 'block';
-  renderAdminPage(currentPage);
+  renderPage(currentPage);
 }
 
-// ============== RENDER PUBLIC ==============
+// ============ RENDER PUBLIC ============
 async function renderPublic(){
   await loadDB();
   
   // Profile
-  if(DB.profile.name){
+  if(DB.profile && DB.profile.name){
     document.getElementById('profileName').textContent = DB.profile.name;
     document.getElementById('profileJargon').textContent = DB.profile.jargon || 'DIGCITY, GO FIGHT WIN!';
     document.getElementById('profileHistory').textContent = DB.profile.history || '';
-    document.getElementById('profileVisionText').textContent = DB.profile.vision || '';
-    document.getElementById('footerDesc').textContent = `Portal berita resmi ${DB.profile.name} — ${DB.profile.address || ''}`;
+    document.getElementById('profileVision').textContent = DB.profile.vision || '';
+    document.getElementById('footerDesc').textContent = `Portal berita resmi ${DB.profile.name} — ${DB.profile.address||''}`;
   }
   
   // Stats
   document.getElementById('statNews').textContent = DB.articles.length;
-  document.getElementById('statEvents').textContent = DB.events.length;
-  document.getElementById('statMembers').textContent = DB.divisions.length;
+  document.getElementById('statEv').textContent = DB.events.length;
+  document.getElementById('statDiv').textContent = DB.divisions.length;
   
-  // Breaking news
+  // Breaking
   const latest = DB.articles.find(a=>a.status==='published');
   document.getElementById('breakingText').textContent = latest 
-    ? `🔥 ${latest.title} — ${latest.excerpt || ''}` 
-    : 'Selamat datang di DIGCITY PRESS — Portal Berita Resmi Digital Business Student Society';
+    ? `🔥 ${latest.title}` 
+    : 'Selamat datang di DIGCITY PRESS — Portal Berita Resmi';
   
-  // News grid
+  // News
   const newsGrid = document.getElementById('newsGrid');
   const published = DB.articles.filter(a=>a.status==='published').slice(0,6);
-  if(published.length === 0){
-    newsGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada berita yang dipublish.</div>';
+  if(published.length===0){
+    newsGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada berita.</div>';
   } else {
     newsGrid.innerHTML = published.map(a=>{
       const cat = DB.categories.find(c=>c.id===a.category_id);
-      return `
-        <article class="card">
-          <div class="card-img">
-            ${a.featured_image ? `<img src="${a.featured_image}" alt="${a.title}">` : '<div class="placeholder">📰</div>'}
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="cat">${cat?cat.name:'Umum'}</span>
-              <span>•</span>
-              <span>${a.author_name || 'Admin'}</span>
-            </div>
-            <h3 class="card-title">${a.title}</h3>
-            <p class="card-excerpt">${a.excerpt || a.subtitle || ''}</p>
-            <div class="card-footer">
-              <span>${new Date(a.published_at || a.created_at).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}</span>
-              <span>📖 Baca</span>
-            </div>
-          </div>
-        </article>`;
+      return `<article class="card">
+        <div class="card-img">${a.featured_image?`<img src="${a.featured_image}" style="width:100%;height:100%;object-fit:cover">`:'📰'}</div>
+        <div class="card-body">
+          <div class="card-meta"><span class="cat">${cat?cat.name:'Umum'}</span> • ${a.author_name||'Admin'}</div>
+          <h3 class="card-title">${a.title}</h3>
+          <p class="card-excerpt">${a.excerpt||a.subtitle||''}</p>
+          <div class="card-footer">${new Date(a.published_at||a.created_at).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}</div>
+        </div>
+      </article>`;
     }).join('');
   }
   
-  // Highlights (events)
+  // Events
   const hlGrid = document.getElementById('highlightGrid');
   const events = DB.events.slice(0,4);
-  if(events.length === 0){
-    hlGrid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada kegiatan.</div>';
-  } else {
-    hlGrid.innerHTML = events.map(ev=>`
-      <div class="highlight-card">
-        <div class="icon">📅</div>
-        <h3>${ev.title}</h3>
-        <p>${ev.description || ''}</p>
-        <span class="date">${ev.date ? new Date(ev.date).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}) : ''} ${ev.location?'• '+ev.location:''}</span>
-      </div>
-    `).join('');
-  }
+  hlGrid.innerHTML = events.length===0 
+    ? '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada kegiatan.</div>'
+    : events.map(ev=>`<div class="highlight-card"><div class="icon">📅</div><h3>${ev.title}</h3><p>${ev.description||''}</p><span class="date">${ev.date?new Date(ev.date).toLocaleDateString('id-ID'):'-'}</span></div>`).join('');
   
   // Divisions
-  const divGrid = document.getElementById('divisionGrid');
-  divGrid.innerHTML = DB.divisions.map(d=>`
-    <div class="division-card">
-      <span class="code">${d.code}</span>
-      <div class="icon-big">${d.icon || '📌'}</div>
-      <h3>${d.name}</h3>
-      <p>${d.description || ''}</p>
-    </div>
+  document.getElementById('divisionGrid').innerHTML = DB.divisions.map(d=>`
+    <div class="division-card"><span class="code">${d.code}</span><div class="icon-big">${d.icon||'📌'}</div><h3>${d.name}</h3><p>${d.description||''}</p></div>
   `).join('');
   
   // Structure
-  const stGrid = document.getElementById('structureGrid');
-  stGrid.innerHTML = DB.structure.map(s=>{
-    const initials = s.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
-    return `
-      <div class="person-card">
-        <div class="person-avatar">${initials}</div>
-        <h4>${s.name}</h4>
-        <div class="role">${s.role}</div>
-        <div class="div">${s.division || ''}</div>
-      </div>`;
+  document.getElementById('structureGrid').innerHTML = DB.structure.map(s=>{
+    const init = s.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
+    return `<div class="person-card"><div class="person-avatar">${init}</div><h4>${s.name}</h4><div class="role">${s.role}</div><div class="div">${s.division||''}</div></div>`;
   }).join('');
   
-  // Footer categories
-  const fc = document.getElementById('footerCategories');
-  fc.innerHTML = DB.categories.slice(0,4).map(c=>`<li>${c.name}</li>`).join('');
+  // Footer cats
+  document.getElementById('footerCats').innerHTML = DB.categories.slice(0,4).map(c=>`<li>${c.name}</li>`).join('');
 }
 
-// ============== ADMIN PAGES ==============
-function renderAdminPage(page){
+// ============ ADMIN PAGES ============
+function renderPage(page){
   currentPage = page;
-  document.querySelectorAll('.admin-menu a').forEach(a=>{
-    a.classList.toggle('active', a.dataset.page === page);
-  });
-  const main = document.getElementById('adminMain');
+  document.querySelectorAll('.admin-menu a').forEach(a=>a.classList.toggle('active', a.dataset.page===page));
+  const m = document.getElementById('adminMain');
   
-  switch(page){
-    case 'dashboard': renderDashboard(main); break;
-    case 'articles': renderArticles(main); break;
-    case 'editor': renderEditor(main); break;
-    case 'media': renderMedia(main); break;
-    case 'categories': renderCategories(main); break;
-    case 'events': renderEvents(main); break;
-    case 'users': renderUsers(main); break;
-    case 'profile': renderProfile(main); break;
-    case 'structure': renderStructure(main); break;
+  if(page==='dashboard'){
+    m.innerHTML = `<div class="admin-header"><h2>Dashboard</h2><div>Halo, <strong>${session.name}</strong> (${session.role})</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px">
+        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">${DB.articles.length}</div><div style="color:var(--muted);font-size:13px">Artikel</div></div>
+        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--success)">${DB.articles.filter(a=>a.status==='published').length}</div><div style="color:var(--muted);font-size:13px">Published</div></div>
+        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--navy)">${DB.users.length}</div><div style="color:var(--muted);font-size:13px">Pengguna</div></div>
+        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">${DB.events.length}</div><div style="color:var(--muted);font-size:13px">Kegiatan</div></div>
+      </div>
+      <div class="admin-card"><h3>Selamat datang!</h3><p style="color:var(--muted)">Gunakan menu sidebar untuk mengelola konten. Semua perubahan tersimpan otomatis ke database.</p></div>`;
+  }
+  
+  else if(page==='articles'){
+    m.innerHTML = `<div class="admin-header"><h2>Artikel</h2><button class="btn btn-blue" onclick="renderPage('editor')">+ Artikel Baru</button></div>
+      <div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>KATEGORI</th><th>STATUS</th><th>TANGGAL</th><th>AKSI</th></tr></thead><tbody>
+      ${DB.articles.length===0?'<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Belum ada artikel</td></tr>':''}
+      ${DB.articles.map(a=>{
+        const cat = DB.categories.find(c=>c.id===a.category_id);
+        const badge = a.status==='published'?'<span class="badge badge-green">PUBLISHED</span>':a.status==='draft'?'<span class="badge badge-gray">DRAFT</span>':'<span class="badge badge-blue">REVIEW</span>';
+        return `<tr><td><strong>${a.title}</strong></td><td>${cat?cat.name:'-'}</td><td>${badge}</td><td>${new Date(a.created_at).toLocaleDateString('id-ID')}</td><td><button class="action-btn edit" onclick="editArticle('${a.id}')">✏️</button><button class="action-btn delete" onclick="deleteArticle('${a.id}')">🗑️</button></td></tr>`;
+      }).join('')}
+      </tbody></table></div>`;
+  }
+  
+  else if(page==='editor'){
+    m.innerHTML = `<div class="admin-header"><h2>Artikel Baru</h2><button class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="renderPage('articles')">← Kembali</button></div>
+      <form id="articleForm" class="admin-card">
+        <div class="form-group"><label>Judul *</label><input type="text" id="af_title" required /></div>
+        <div class="form-group"><label>Subtitle</label><input type="text" id="af_subtitle" /></div>
+        <div class="form-group"><label>Excerpt</label><textarea id="af_excerpt" rows="2"></textarea></div>
+        <div class="form-group"><label>Konten *</label><textarea id="af_content" rows="10" required></textarea></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group"><label>Kategori</label><select id="af_cat">${DB.categories.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></div>
+          <div class="form-group"><label>Divisi</label><select id="af_div">${DB.divisions.map(d=>`<option value="${d.id}">${d.name}</option>`).join('')}</select></div>
+        </div>
+        <div class="form-group"><label>URL Gambar</label><input type="text" id="af_img" placeholder="https://..." /></div>
+        <div class="form-group"><label>Penulis</label><input type="text" id="af_author" value="${session.name}" /></div>
+        <div style="display:flex;gap:10px;margin-top:20px">
+          <button type="button" class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="saveArticle('draft')">💾 Draft</button>
+          <button type="button" class="btn btn-blue" onclick="saveArticle('published')">🚀 Publish</button>
+        </div>
+      </form>`;
+  }
+  
+  else if(page==='categories'){
+    m.innerHTML = `<div class="admin-header"><h2>Kategori</h2></div>
+      <div class="admin-card"><h3>Tambah Kategori</h3>
+        <div style="display:grid;grid-template-columns:2fr 2fr 1fr auto;gap:10px;align-items:end">
+          <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="cat_name" /></div>
+          <div class="form-group" style="margin:0"><label>Slug</label><input type="text" id="cat_slug" /></div>
+          <div class="form-group" style="margin:0"><label>Tipe</label><select id="cat_type"><option value="article">Article</option><option value="event">Event</option></select></div>
+          <button class="btn btn-blue" onclick="addCategory()" style="height:42px">+ Tambah</button>
+        </div>
+      </div>
+      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>SLUG</th><th>TIPE</th><th>AKSI</th></tr></thead><tbody>
+      ${DB.categories.map(c=>`<tr><td><strong>${c.name}</strong></td><td>${c.slug}</td><td><span class="badge badge-blue">${c.type}</span></td><td><button class="action-btn delete" onclick="deleteCategory('${c.id}')">🗑️</button></td></tr>`).join('')}
+      </tbody></table></div>`;
+  }
+  
+  else if(page==='events'){
+    m.innerHTML = `<div class="admin-header"><h2>Kegiatan</h2></div>
+      <div class="admin-card"><h3>Tambah Kegiatan</h3>
+        <div class="form-group"><label>Judul</label><input type="text" id="ev_title" /></div>
+        <div class="form-group"><label>Deskripsi</label><textarea id="ev_desc" rows="3"></textarea></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group"><label>Tanggal</label><input type="datetime-local" id="ev_date" /></div>
+          <div class="form-group"><label>Lokasi</label><input type="text" id="ev_loc" /></div>
+        </div>
+        <button class="btn btn-blue" onclick="addEvent()">+ Tambah</button>
+      </div>
+      <div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>TANGGAL</th><th>LOKASI</th><th>AKSI</th></tr></thead><tbody>
+      ${DB.events.length===0?'<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted)">Belum ada kegiatan</td></tr>':''}
+      ${DB.events.map(e=>`<tr><td><strong>${e.title}</strong></td><td>${e.date?new Date(e.date).toLocaleDateString('id-ID'):'-'}</td><td>${e.location||'-'}</td><td><button class="action-btn delete" onclick="deleteEvent('${e.id}')">🗑️</button></td></tr>`).join('')}
+      </tbody></table></div>`;
+  }
+  
+  else if(page==='users'){
+    m.innerHTML = `<div class="admin-header"><h2>Pengguna</h2></div>
+      <div class="admin-card"><h3>Tambah Pengguna</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group"><label>Nama</label><input type="text" id="u_name" /></div>
+          <div class="form-group"><label>Username</label><input type="text" id="u_user" /></div>
+          <div class="form-group"><label>Password</label><input type="text" id="u_pass" /></div>
+          <div class="form-group"><label>Email</label><input type="email" id="u_email" /></div>
+          <div class="form-group"><label>Role</label><select id="u_role"><option value="contributor">Contributor</option><option value="writer">Writer</option><option value="editor">Editor</option><option value="super_admin">Super Admin</option></select></div>
+        </div>
+        <button class="btn btn-blue" onclick="addUser()">+ Tambah</button>
+      </div>
+      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>USERNAME</th><th>ROLE</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody>
+      ${DB.users.map(u=>`<tr><td><strong>${u.name}</strong></td><td>${u.username}</td><td><span class="badge badge-blue">${u.role}</span></td><td><span class="badge ${u.active?'badge-green':'badge-red'}">${u.active?'AKTIF':'NONAKTIF'}</span></td><td><button class="action-btn delete" onclick="deleteUser('${u.id}')">🗑️</button></td></tr>`).join('')}
+      </tbody></table></div>`;
+  }
+  
+  else if(page==='profile'){
+    const p = DB.profile||{};
+    m.innerHTML = `<div class="admin-header"><h2>Profil Organisasi</h2></div>
+      <form id="profileForm" class="admin-card">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group"><label>Nama</label><input type="text" id="p_name" value="${p.name||''}" /></div>
+          <div class="form-group"><label>Nama Singkat</label><input type="text" id="p_short" value="${p.short_name||''}" /></div>
+          <div class="form-group"><label>Jargon</label><input type="text" id="p_jargon" value="${p.jargon||''}" /></div>
+          <div class="form-group"><label>Email</label><input type="email" id="p_email" value="${p.email||''}" /></div>
+          <div class="form-group"><label>Telepon</label><input type="text" id="p_phone" value="${p.phone||''}" /></div>
+          <div class="form-group"><label>Alamat</label><input type="text" id="p_addr" value="${p.address||''}" /></div>
+        </div>
+        <div class="form-group"><label>Values</label><textarea id="p_val" rows="2">${p.values||''}</textarea></div>
+        <div class="form-group"><label>Sejarah</label><textarea id="p_hist" rows="4">${p.history||''}</textarea></div>
+        <div class="form-group"><label>Visi</label><textarea id="p_vis" rows="3">${p.vision||''}</textarea></div>
+        <button type="submit" class="btn btn-blue">💾 Simpan</button>
+      </form>`;
+    document.getElementById('profileForm').onsubmit = saveProfile;
+  }
+  
+  else if(page==='structure'){
+    m.innerHTML = `<div class="admin-header"><h2>Struktur Organisasi</h2></div>
+      <div class="admin-card"><h3>Tambah Anggota</h3>
+        <div style="display:grid;grid-template-columns:2fr 2fr 2fr auto;gap:10px;align-items:end">
+          <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="s_name" /></div>
+          <div class="form-group" style="margin:0"><label>Jabatan</label><input type="text" id="s_role" /></div>
+          <div class="form-group" style="margin:0"><label>Divisi</label><input type="text" id="s_div" /></div>
+          <button class="btn btn-blue" onclick="addStructure()" style="height:42px">+ Tambah</button>
+        </div>
+      </div>
+      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>JABATAN</th><th>DIVISI</th><th>AKSI</th></tr></thead><tbody>
+      ${DB.structure.map(s=>`<tr><td><strong>${s.name}</strong></td><td>${s.role}</td><td>${s.division||'-'}</td><td><button class="action-btn delete" onclick="deleteStructure('${s.id}')">🗑️</button></td></tr>`).join('')}
+      </tbody></table></div>`;
   }
 }
 
-function renderDashboard(m){
-  m.innerHTML = `
-    <div class="admin-header">
-      <h2>Dashboard</h2>
-      <div>Selamat datang, <strong>${session.name}</strong> (${session.role})</div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px">
-      <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">${DB.articles.length}</div><div style="color:var(--muted);font-size:13px">Total Artikel</div></div>
-      <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--success)">${DB.articles.filter(a=>a.status==='published').length}</div><div style="color:var(--muted);font-size:13px">Dipublish</div></div>
-      <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--warning)">${DB.events.length}</div><div style="color:var(--muted);font-size:13px">Kegiatan</div></div>
-      <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--navy)">${DB.users.length}</div><div style="color:var(--muted);font-size:13px">Pengguna</div></div>
-    </div>
-    <div class="admin-card">
-      <h3>Selamat datang di Panel Admin DIGCITY PRESS!</h3>
-      <p style="color:var(--muted);line-height:1.7">Gunakan menu di sidebar untuk mengelola konten website. Semua perubahan akan tersimpan otomatis ke database dan langsung terlihat oleh pengunjung website.</p>
-    </div>`;
-}
-
-function renderArticles(m){
-  m.innerHTML = `
-    <div class="admin-header">
-      <h2>Manajemen Artikel</h2>
-      <button class="btn btn-blue" onclick="renderAdminPage('editor')">+ Artikel Baru</button>
-    </div>
-    <div class="admin-card">
-      <table class="data-table">
-        <thead><tr><th>JUDUL</th><th>KATEGORI</th><th>STATUS</th><th>TANGGAL</th><th>AKSI</th></tr></thead>
-        <tbody>
-          ${DB.articles.length===0?'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:30px">Belum ada artikel</td></tr>':''}
-          ${DB.articles.map(a=>{
-            const cat = DB.categories.find(c=>c.id===a.category_id);
-            const statusBadge = a.status==='published'?'<span class="badge badge-green">PUBLISHED</span>':a.status==='draft'?'<span class="badge badge-gray">DRAFT</span>':'<span class="badge badge-blue">REVIEW</span>';
-            return `<tr>
-              <td><strong>${a.title}</strong><br><small style="color:var(--muted)">${a.author_name||''}</small></td>
-              <td>${cat?cat.name:'-'}</td>
-              <td>${statusBadge}</td>
-              <td>${new Date(a.created_at).toLocaleDateString('id-ID')}</td>
-              <td class="action-btns">
-                <button class="action-btn edit" onclick="editArticle('${a.id}')">✏️ Edit</button>
-                <button class="action-btn delete" onclick="deleteArticle('${a.id}')">🗑️</button>
-              </td>
-            </tr>`;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>`;
-}
-
-async function deleteArticle(id){
-  if(!confirm('Hapus artikel ini?')) return;
-  const { error } = await supabase.from('articles').delete().eq('id', id);
-  if(error){ toast('Gagal hapus','error'); return; }
-  await logActivity('Delete Article', id);
-  toast('Artikel dihapus','success');
-  await loadDB();
-  renderAdminPage('articles');
-}
-
-function editArticle(id){
-  const a = DB.articles.find(x=>x.id===id);
-  if(!a) return;
-  renderEditor(document.getElementById('adminMain'), a);
-}
-
-function renderEditor(m, article=null){
-  const isEdit = !!article;
-  m.innerHTML = `
-    <div class="admin-header">
-      <h2>${isEdit?'Edit Artikel':'Artikel Baru'}</h2>
-      <button class="btn btn-ghost" style="color:var(--ink);border:1px solid var(--line)" onclick="renderAdminPage('articles')">← Kembali</button>
-    </div>
-    <form onsubmit="saveArticle(event,'${article?.id||''}')" class="admin-card">
-      <div class="form-group"><label>Judul *</label><input type="text" id="af_title" value="${article?.title||''}" required /></div>
-      <div class="form-group"><label>Subtitle</label><input type="text" id="af_subtitle" value="${article?.subtitle||''}" /></div>
-      <div class="form-group"><label>Excerpt (ringkasan)</label><textarea id="af_excerpt" rows="2">${article?.excerpt||''}</textarea></div>
-      <div class="form-group"><label>Konten *</label><textarea id="af_content" rows="10" required>${article?.content||''}</textarea></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div class="form-group"><label>Kategori</label>
-          <select id="af_category">${DB.categories.map(c=>`<option value="${c.id}" ${article?.category_id===c.id?'selected':''}>${c.name}</option>`).join('')}</select>
-        </div>
-        <div class="form-group"><label>Divisi</label>
-          <select id="af_division">${DB.divisions.map(d=>`<option value="${d.id}" ${article?.division_id===d.id?'selected':''}>${d.name}</option>`).join('')}</select>
-        </div>
-      </div>
-      <div class="form-group"><label>URL Gambar Featured</label><input type="text" id="af_image" value="${article?.featured_image||''}" placeholder="https://..." /></div>
-      <div class="form-group"><label>Caption Gambar</label><input type="text" id="af_caption" value="${article?.caption||''}" /></div>
-      <div class="form-group"><label>Penulis</label><input type="text" id="af_author" value="${article?.author_name||session.name}" /></div>
-      <div class="form-group"><label>SEO Title</label><input type="text" id="af_seo_title" value="${article?.seo_title||''}" /></div>
-      <div class="form-group"><label>SEO Description</label><textarea id="af_seo_desc" rows="2">${article?.seo_desc||''}</textarea></div>
-      <div style="display:flex;gap:10px;margin-top:20px">
-        <button type="submit" name="status" value="draft" class="btn btn-ghost" style="color:var(--ink);border:1px solid var(--line)">💾 Simpan Draft</button>
-        <button type="submit" name="status" value="review" class="btn btn-ghost" style="color:var(--ink);border:1px solid var(--line)">👁️ Kirim Review</button>
-        <button type="submit" name="status" value="published" class="btn btn-blue">🚀 Publish</button>
-      </div>
-    </form>`;
-}
-
-async function saveArticle(e, id){
-  e.preventDefault();
-  const status = e.submitter.value;
+// ============ CRUD FUNCTIONS ============
+async function saveArticle(status){
   const data = {
     title: document.getElementById('af_title').value.trim(),
     subtitle: document.getElementById('af_subtitle').value.trim(),
     excerpt: document.getElementById('af_excerpt').value.trim(),
     content: document.getElementById('af_content').value,
-    category_id: document.getElementById('af_category').value || null,
-    division_id: document.getElementById('af_division').value || null,
-    featured_image: document.getElementById('af_image').value.trim(),
-    caption: document.getElementById('af_caption').value.trim(),
-    author_name: document.getElementById('af_author').value.trim() || session.name,
-    seo_title: document.getElementById('af_seo_title').value.trim(),
-    seo_desc: document.getElementById('af_seo_desc').value.trim(),
+    category_id: document.getElementById('af_cat').value||null,
+    division_id: document.getElementById('af_div').value||null,
+    featured_image: document.getElementById('af_img').value.trim(),
+    author_name: document.getElementById('af_author').value.trim()||session.name,
     status: status,
+    author_id: session.id,
+    created_at: new Date().toISOString(),
+    published_at: status==='published'?new Date().toISOString():null,
     updated_at: new Date().toISOString()
   };
-  
-  let error;
-  if(id){
-    ({ error } = await supabase.from('articles').update(data).eq('id', id));
-  } else {
-    data.author_id = session.id;
-    data.created_at = new Date().toISOString();
-    data.published_at = status==='published' ? new Date().toISOString() : null;
-    ({ error } = await supabase.from('articles').insert([data]));
-  }
-  
-  if(error){ toast('Gagal simpan: '+error.message,'error'); return; }
-  await logActivity(status==='published'?'Publish Article':'Save Article', data.title);
+  if(!data.title){ toast('Judul wajib','error'); return; }
+  const { error } = await sb.from('articles').insert([data]);
+  if(error){ toast('Gagal: '+error.message,'error'); return; }
   toast('Artikel tersimpan!','success');
   await loadDB();
-  setTimeout(()=>renderAdminPage('articles'),600);
+  renderPage('articles');
 }
 
-function renderMedia(m){
-  m.innerHTML = `
-    <div class="admin-header"><h2>Media Library</h2></div>
-    <div class="admin-card">
-      <div class="form-group"><label>Upload Gambar (URL)</label>
-        <input type="text" id="media_url" placeholder="https://..." />
-      </div>
-      <div class="form-group"><label>Caption</label>
-        <input type="text" id="media_caption" placeholder="Deskripsi gambar" />
-      </div>
-      <button class="btn btn-blue" onclick="addMedia()">+ Tambah Media</button>
-    </div>
-    <div class="admin-card">
-      <h3>Daftar Media (${DB.media.length})</h3>
-      ${DB.media.length===0?'<p style="color:var(--muted)">Belum ada media</p>':''}
-      ${DB.media.map(m=>`<div style="display:flex;gap:12px;padding:12px;border-bottom:1px solid var(--line);align-items:center">
-        <img src="${m.url}" style="width:80px;height:60px;object-fit:cover;border-radius:8px" onerror="this.style.display='none'">
-        <div style="flex:1"><div style="font-size:13px;color:var(--muted);word-break:break-all">${m.url}</div><div style="font-size:12px;color:var(--muted)">${m.caption||''}</div></div>
-        <button class="action-btn delete" onclick="deleteMedia('${m.id}')">🗑️</button>
-      </div>`).join('')}
-    </div>`;
+function editArticle(id){
+  const a = DB.articles.find(x=>x.id===id);
+  if(!a) return;
+  renderPage('editor');
+  setTimeout(()=>{
+    document.getElementById('af_title').value = a.title||'';
+    document.getElementById('af_subtitle').value = a.subtitle||'';
+    document.getElementById('af_excerpt').value = a.excerpt||'';
+    document.getElementById('af_content').value = a.content||'';
+    document.getElementById('af_img').value = a.featured_image||'';
+    document.getElementById('af_author').value = a.author_name||'';
+  },100);
 }
 
-async function addMedia(){
-  const url = document.getElementById('media_url').value.trim();
-  const caption = document.getElementById('media_caption').value.trim();
-  if(!url){ toast('URL wajib diisi','error'); return; }
-  const { error } = await supabase.from('media').insert([{ url, caption, uploaded_by: session.id }]);
-  if(error){ toast('Gagal tambah','error'); return; }
-  await logActivity('Add Media', url);
-  toast('Media ditambahkan','success');
+async function deleteArticle(id){
+  if(!confirm('Hapus artikel?')) return;
+  await sb.from('articles').delete().eq('id',id);
+  toast('Artikel dihapus','success');
   await loadDB();
-  renderAdminPage('media');
-}
-
-async function deleteMedia(id){
-  if(!confirm('Hapus media ini?')) return;
-  await supabase.from('media').delete().eq('id', id);
-  await loadDB();
-  renderAdminPage('media');
-}
-
-function renderCategories(m){
-  m.innerHTML = `
-    <div class="admin-header"><h2>Kategori</h2></div>
-    <div class="admin-card">
-      <h3>Tambah Kategori</h3>
-      <div style="display:grid;grid-template-columns:2fr 2fr 1fr 3fr auto;gap:10px;align-items:end">
-        <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="cat_name" /></div>
-        <div class="form-group" style="margin:0"><label>Slug</label><input type="text" id="cat_slug" /></div>
-        <div class="form-group" style="margin:0"><label>Tipe</label><select id="cat_type"><option value="article">Article</option><option value="event">Event</option></select></div>
-        <div class="form-group" style="margin:0"><label>Deskripsi</label><input type="text" id="cat_desc" /></div>
-        <button class="btn btn-blue" onclick="addCategory()" style="height:42px">+ Tambah</button>
-      </div>
-    </div>
-    <div class="admin-card">
-      <table class="data-table">
-        <thead><tr><th>NAMA</th><th>SLUG</th><th>TIPE</th><th>DESKRIPSI</th><th>AKSI</th></tr></thead>
-        <tbody>${DB.categories.map(c=>`<tr><td><strong>${c.name}</strong></td><td>${c.slug}</td><td><span class="badge badge-blue">${c.type}</span></td><td>${c.description||'-'}</td><td><button class="action-btn delete" onclick="deleteCategory('${c.id}')">🗑️</button></td></tr>`).join('')}</tbody>
-      </table>
-    </div>`;
+  renderPage('articles');
 }
 
 async function addCategory(){
   const name = document.getElementById('cat_name').value.trim();
   const slug = document.getElementById('cat_slug').value.trim();
   const type = document.getElementById('cat_type').value;
-  const description = document.getElementById('cat_desc').value.trim();
-  if(!name || !slug){ toast('Nama & slug wajib','error'); return; }
-  const { error } = await supabase.from('categories').insert([{ name, slug, type, description }]);
-  if(error){ toast('Gagal: '+error.message,'error'); return; }
+  if(!name||!slug){ toast('Nama & slug wajib','error'); return; }
+  const { error } = await sb.from('categories').insert([{name,slug,type}]);
+  if(error){ toast('Gagal','error'); return; }
   toast('Kategori ditambahkan','success');
   await loadDB();
-  renderAdminPage('categories');
+  renderPage('categories');
 }
 
 async function deleteCategory(id){
-  if(!confirm('Hapus kategori?')) return;
-  await supabase.from('categories').delete().eq('id', id);
+  if(!confirm('Hapus?')) return;
+  await sb.from('categories').delete().eq('id',id);
   await loadDB();
-  renderAdminPage('categories');
-}
-
-function renderEvents(m){
-  m.innerHTML = `
-    <div class="admin-header"><h2>Kegiatan / Events</h2></div>
-    <div class="admin-card">
-      <h3>Tambah Kegiatan</h3>
-      <div class="form-group"><label>Judul</label><input type="text" id="ev_title" /></div>
-      <div class="form-group"><label>Deskripsi</label><textarea id="ev_desc" rows="3"></textarea></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div class="form-group"><label>Tanggal</label><input type="datetime-local" id="ev_date" /></div>
-        <div class="form-group"><label>Lokasi</label><input type="text" id="ev_location" /></div>
-      </div>
-      <div class="form-group"><label>Penyelenggara</label><input type="text" id="ev_organizer" /></div>
-      <div class="form-group"><label>URL Poster</label><input type="text" id="ev_poster" /></div>
-      <button class="btn btn-blue" onclick="addEvent()">+ Tambah Kegiatan</button>
-    </div>
-    <div class="admin-card">
-      <table class="data-table">
-        <thead><tr><th>JUDUL</th><th>TANGGAL</th><th>LOKASI</th><th>AKSI</th></tr></thead>
-        <tbody>${DB.events.length===0?'<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:20px">Belum ada kegiatan</td></tr>':''}${DB.events.map(e=>`<tr><td><strong>${e.title}</strong></td><td>${e.date?new Date(e.date).toLocaleDateString('id-ID'):'-'}</td><td>${e.location||'-'}</td><td><button class="action-btn delete" onclick="deleteEvent('${e.id}')">🗑️</button></td></tr>`).join('')}</tbody>
-      </table>
-    </div>`;
+  renderPage('categories');
 }
 
 async function addEvent(){
   const data = {
     title: document.getElementById('ev_title').value.trim(),
     description: document.getElementById('ev_desc').value.trim(),
-    date: document.getElementById('ev_date').value ? new Date(document.getElementById('ev_date').value).toISOString() : null,
-    location: document.getElementById('ev_location').value.trim(),
-    organizer: document.getElementById('ev_organizer').value.trim(),
-    poster: document.getElementById('ev_poster').value.trim()
+    date: document.getElementById('ev_date').value?new Date(document.getElementById('ev_date').value).toISOString():null,
+    location: document.getElementById('ev_loc').value.trim()
   };
   if(!data.title){ toast('Judul wajib','error'); return; }
-  const { error } = await supabase.from('events').insert([data]);
-  if(error){ toast('Gagal: '+error.message,'error'); return; }
-  await logActivity('Add Event', data.title);
+  const { error } = await sb.from('events').insert([data]);
+  if(error){ toast('Gagal','error'); return; }
   toast('Kegiatan ditambahkan','success');
   await loadDB();
-  renderAdminPage('events');
+  renderPage('events');
 }
 
 async function deleteEvent(id){
-  if(!confirm('Hapus kegiatan?')) return;
-  await supabase.from('events').delete().eq('id', id);
+  if(!confirm('Hapus?')) return;
+  await sb.from('events').delete().eq('id',id);
   await loadDB();
-  renderAdminPage('events');
-}
-
-function renderUsers(m){
-  m.innerHTML = `
-    <div class="admin-header"><h2>Manajemen Pengguna</h2></div>
-    <div class="admin-card">
-      <h3>Tambah Pengguna</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div class="form-group"><label>Nama</label><input type="text" id="u_name" /></div>
-        <div class="form-group"><label>Username</label><input type="text" id="u_username" /></div>
-        <div class="form-group"><label>Password</label><input type="text" id="u_password" /></div>
-        <div class="form-group"><label>Email</label><input type="email" id="u_email" /></div>
-        <div class="form-group"><label>Role</label>
-          <select id="u_role">
-            <option value="contributor">Contributor</option>
-            <option value="writer">Writer</option>
-            <option value="editor">Editor</option>
-            <option value="super_admin">Super Admin</option>
-          </select>
-        </div>
-      </div>
-      <button class="btn btn-blue" onclick="addUser()">+ Tambah Pengguna</button>
-    </div>
-    <div class="admin-card">
-      <table class="data-table">
-        <thead><tr><th>NAMA</th><th>USERNAME</th><th>EMAIL</th><th>ROLE</th><th>STATUS</th><th>AKSI</th></tr></thead>
-        <tbody>${DB.users.map(u=>`<tr><td><strong>${u.name}</strong></td><td>${u.username}</td><td>${u.email||'-'}</td><td><span class="badge badge-blue">${u.role.toUpperCase()}</span></td><td><span class="badge ${u.active?'badge-green':'badge-red'}">${u.active?'AKTIF':'NONAKTIF'}</span></td><td><button class="action-btn delete" onclick="deleteUser('${u.id}')">🗑️</button></td></tr>`).join('')}</tbody>
-      </table>
-    </div>`;
+  renderPage('events');
 }
 
 async function addUser(){
   const data = {
     name: document.getElementById('u_name').value.trim(),
-    username: document.getElementById('u_username').value.trim(),
-    password_hash: document.getElementById('u_password').value,
+    username: document.getElementById('u_user').value.trim(),
+    password_hash: document.getElementById('u_pass').value,
     email: document.getElementById('u_email').value.trim(),
     role: document.getElementById('u_role').value,
     active: true
   };
-  if(!data.name || !data.username || !data.password_hash){ toast('Nama, username, password wajib','error'); return; }
-  const { error } = await supabase.from('users').insert([data]);
+  if(!data.name||!data.username||!data.password_hash){ toast('Nama, username, password wajib','error'); return; }
+  const { error } = await sb.from('users').insert([data]);
   if(error){ toast('Gagal: '+error.message,'error'); return; }
-  await logActivity('Add User', data.username);
   toast('Pengguna ditambahkan','success');
   await loadDB();
-  renderAdminPage('users');
+  renderPage('users');
 }
 
 async function deleteUser(id){
   if(!confirm('Hapus pengguna?')) return;
-  await supabase.from('users').delete().eq('id', id);
+  await sb.from('users').delete().eq('id',id);
   await loadDB();
-  renderAdminPage('users');
-}
-
-function renderProfile(m){
-  const p = DB.profile;
-  m.innerHTML = `
-    <div class="admin-header"><h2>Profil Organisasi</h2></div>
-    <form onsubmit="saveProfile(event)" class="admin-card">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-        <div class="form-group"><label>Nama Lengkap</label><input type="text" id="p_name" value="${p.name||''}" /></div>
-        <div class="form-group"><label>Nama Singkat</label><input type="text" id="p_short" value="${p.short_name||''}" /></div>
-        <div class="form-group"><label>Jargon</label><input type="text" id="p_jargon" value="${p.jargon||''}" /></div>
-        <div class="form-group"><label>Email</label><input type="email" id="p_email" value="${p.email||''}" /></div>
-        <div class="form-group"><label>Telepon</label><input type="text" id="p_phone" value="${p.phone||''}" /></div>
-        <div class="form-group"><label>Alamat</label><input type="text" id="p_address" value="${p.address||''}" /></div>
-      </div>
-      <div class="form-group"><label>Values</label><textarea id="p_values" rows="2">${p.values||''}</textarea></div>
-      <div class="form-group"><label>Sejarah</label><textarea id="p_history" rows="4">${p.history||''}</textarea></div>
-      <div class="form-group"><label>Visi</label><textarea id="p_vision" rows="3">${p.vision||''}</textarea></div>
-      <div class="form-group"><label>Filosofi</label><textarea id="p_philosophy" rows="3">${p.philosophy||''}</textarea></div>
-      <button type="submit" class="btn btn-blue">💾 Simpan Profil</button>
-    </form>`;
+  renderPage('users');
 }
 
 async function saveProfile(e){
@@ -1110,37 +811,16 @@ async function saveProfile(e){
     jargon: document.getElementById('p_jargon').value.trim(),
     email: document.getElementById('p_email').value.trim(),
     phone: document.getElementById('p_phone').value.trim(),
-    address: document.getElementById('p_address').value.trim(),
-    values: document.getElementById('p_values').value.trim(),
-    history: document.getElementById('p_history').value.trim(),
-    vision: document.getElementById('p_vision').value.trim(),
-    philosophy: document.getElementById('p_philosophy').value.trim()
+    address: document.getElementById('p_addr').value.trim(),
+    values: document.getElementById('p_val').value.trim(),
+    history: document.getElementById('p_hist').value.trim(),
+    vision: document.getElementById('p_vis').value.trim()
   };
-  const { error } = await supabase.from('organization_profile').update(data).eq('id', DB.profile.id);
-  if(error){ toast('Gagal: '+error.message,'error'); return; }
-  await logActivity('Update Profile', data.name);
+  if(!DB.profile.id){ toast('Profil belum ada di DB','error'); return; }
+  const { error } = await sb.from('organization_profile').update(data).eq('id', DB.profile.id);
+  if(error){ toast('Gagal','error'); return; }
   toast('Profil disimpan!','success');
   await loadDB();
-}
-
-function renderStructure(m){
-  m.innerHTML = `
-    <div class="admin-header"><h2>Struktur Organisasi</h2></div>
-    <div class="admin-card">
-      <h3>Tambah Anggota</h3>
-      <div style="display:grid;grid-template-columns:2fr 2fr 2fr auto;gap:10px;align-items:end">
-        <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="s_name" /></div>
-        <div class="form-group" style="margin:0"><label>Jabatan</label><input type="text" id="s_role" /></div>
-        <div class="form-group" style="margin:0"><label>Divisi</label><input type="text" id="s_div" /></div>
-        <button class="btn btn-blue" onclick="addStructure()" style="height:42px">+ Tambah</button>
-      </div>
-    </div>
-    <div class="admin-card">
-      <table class="data-table">
-        <thead><tr><th>NAMA</th><th>JABATAN</th><th>DIVISI</th><th>AKSI</th></tr></thead>
-        <tbody>${DB.structure.map(s=>`<tr><td><strong>${s.name}</strong></td><td>${s.role}</td><td>${s.division||'-'}</td><td><button class="action-btn delete" onclick="deleteStructure('${s.id}')">🗑️</button></td></tr>`).join('')}</tbody>
-      </table>
-    </div>`;
 }
 
 async function addStructure(){
@@ -1149,42 +829,91 @@ async function addStructure(){
     role: document.getElementById('s_role').value.trim(),
     division: document.getElementById('s_div').value.trim()
   };
-  if(!data.name || !data.role){ toast('Nama & jabatan wajib','error'); return; }
-  const { error } = await supabase.from('structure').insert([data]);
-  if(error){ toast('Gagal: '+error.message,'error'); return; }
-  await logActivity('Add Structure', data.name);
+  if(!data.name||!data.role){ toast('Nama & jabatan wajib','error'); return; }
+  const { error } = await sb.from('structure').insert([data]);
+  if(error){ toast('Gagal','error'); return; }
   toast('Anggota ditambahkan','success');
   await loadDB();
-  renderAdminPage('structure');
+  renderPage('structure');
 }
 
 async function deleteStructure(id){
-  if(!confirm('Hapus anggota?')) return;
-  await supabase.from('structure').delete().eq('id', id);
+  if(!confirm('Hapus?')) return;
+  await sb.from('structure').delete().eq('id',id);
   await loadDB();
-  renderAdminPage('structure');
+  renderPage('structure');
 }
 
-// ============== ADMIN MENU CLICKS ==============
-document.querySelectorAll('.admin-menu a[data-page]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    e.preventDefault();
-    renderAdminPage(a.dataset.page);
+// ============ EVENT LISTENERS (PENTING!) ============
+document.addEventListener('DOMContentLoaded', function(){
+  // Tombol Login di Navbar - PASTI BERFUNGSI
+  const btnLogin = document.getElementById('btnLogin');
+  if(btnLogin){
+    btnLogin.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openModal();
+    });
+  }
+  
+  // Tombol Close Modal
+  const btnClose = document.getElementById('btnCloseModal');
+  if(btnClose){
+    btnClose.addEventListener('click', closeModal);
+  }
+  
+  // Klik di luar modal untuk tutup
+  const modal = document.getElementById('loginModal');
+  if(modal){
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) closeModal();
+    });
+  }
+  
+  // Form Login
+  const loginForm = document.getElementById('loginForm');
+  if(loginForm){
+    loginForm.addEventListener('submit', doLogin);
+  }
+  
+  // Logout
+  const btnLogout = document.getElementById('btnLogout');
+  if(btnLogout){
+    btnLogout.addEventListener('click', function(e){
+      e.preventDefault();
+      doLogout();
+    });
+  }
+  
+  // View Site
+  const btnView = document.getElementById('btnViewSite');
+  if(btnView){
+    btnView.addEventListener('click', function(e){
+      e.preventDefault();
+      showPublic();
+    });
+  }
+  
+  // Admin menu clicks
+  document.querySelectorAll('.admin-menu a[data-page]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      renderPage(a.dataset.page);
+    });
+  });
+  
+  // Init
+  setDate();
+  loadDB().then(()=>{
+    const saved = getSession();
+    if(saved){
+      session = saved;
+      showAdmin();
+    } else {
+      showPublic();
+    }
   });
 });
-
-// ============== INIT ==============
-(async function init(){
-  setDate();
-  await loadDB();
-  const savedSession = getSession();
-  if(savedSession){
-    session = savedSession;
-    showAdmin();
-  } else {
-    showPublic();
-  }
-})();
 </script>
 </body>
 </html>
