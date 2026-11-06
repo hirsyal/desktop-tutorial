@@ -32,12 +32,10 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .section-header p{color:var(--muted);font-size:16px}
 .section-header .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--blue-700);text-transform:uppercase;margin-bottom:8px}
 
-/* TOPBAR */
 .topbar{background:var(--navy);color:#fff;font-size:13px}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;padding:10px 20px}
 .topbar .socials a{color:#fff;margin-left:14px;opacity:.8}
 
-/* NAVBAR */
 .navbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .navbar .container{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
 .brand{display:flex;align-items:center;gap:12px}
@@ -50,7 +48,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .nav-cta{background:var(--blue-700)!important;color:#fff!important;padding:10px 18px!important;font-weight:600!important;cursor:pointer!important}
 .nav-cta:hover{background:var(--blue-800)!important;text-decoration:none!important}
 
-/* BREAKING */
 .breaking{background:var(--blue-700);color:#fff;padding:10px 0;overflow:hidden}
 .breaking .container{display:flex;align-items:center;gap:16px}
 .breaking-label{background:#fff;color:var(--blue-700);padding:4px 12px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:1.5px}
@@ -58,7 +55,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .breaking-ticker span{display:inline-block;animation:ticker 30s linear infinite;padding-left:100%}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 
-/* HERO */
 .hero{background:linear-gradient(135deg,var(--blue-900),var(--blue-700));color:#fff;padding:80px 0}
 .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
 .hero-content .tag{display:inline-block;background:rgba(255,255,255,.15);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:20px}
@@ -74,7 +70,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .btn-blue:hover{background:var(--blue-800);text-decoration:none}
 .hero-visual{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:30px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:14px}
 
-/* CARDS */
 .news-grid,.highlight-grid,.division-grid,.structure-grid{display:grid;gap:24px}
 .news-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
 .highlight-grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
@@ -82,7 +77,8 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .structure-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue-100),var(--blue-400));display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px}
+.card-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--blue-100),var(--blue-400));display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
 .card-body{padding:20px;flex:1;display:flex;flex-direction:column}
 .card-meta{font-size:12px;color:var(--muted);margin-bottom:10px}
 .card-meta .cat{color:var(--blue-700);font-weight:700;text-transform:uppercase}
@@ -103,7 +99,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .person-card .role{font-size:13px;color:var(--blue-700);font-weight:600}
 .person-card .div{font-size:12px;color:var(--muted)}
 
-/* PROFILE */
 .profile-section{background:var(--bg-soft)}
 .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .profile-content h2{font-family:var(--font-serif);font-size:32px;color:var(--navy);margin-bottom:16px}
@@ -115,7 +110,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .stat .lbl{font-size:12px;color:var(--muted);text-transform:uppercase}
 .profile-visual{background:linear-gradient(135deg,var(--blue-100),var(--blue-300));border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:var(--blue-800);font-size:18px;font-weight:600;text-align:center;padding:40px}
 
-/* FOOTER */
 .footer{background:var(--navy);color:#fff;padding:60px 0 20px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 .footer h4{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;color:var(--blue-300)}
@@ -125,7 +119,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .footer ul li{margin-bottom:8px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.6);flex-wrap:wrap;gap:12px}
 
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
 .modal-overlay.active{display:flex!important}
 .modal{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:32px;box-shadow:var(--shadow-lg);position:relative}
@@ -140,14 +133,12 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 .btn-full{width:100%;justify-content:center;padding:14px}
 .form-hint{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
 
-/* TOAST */
 .toast-container{position:fixed;top:20px;right:20px;z-index:2000;display:flex;flex-direction:column;gap:10px}
 .toast{background:#fff;border-left:4px solid var(--blue-700);padding:14px 18px;border-radius:10px;box-shadow:var(--shadow-lg);min-width:260px;font-size:14px;animation:slideIn .3s}
 .toast.success{border-left-color:var(--success)}
 .toast.error{border-left-color:var(--danger)}
 @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* ADMIN */
 .admin-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
 .admin-sidebar{background:var(--navy);color:#fff;padding:24px 0;position:sticky;top:0;height:100vh;overflow-y:auto}
 .admin-sidebar .brand-sm{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px}
@@ -187,7 +178,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="container">
     <div id="topbarDate">Memuat...</div>
@@ -199,7 +189,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
   </div>
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="container">
     <div class="brand">
@@ -215,12 +204,11 @@ input,textarea,select{font-family:inherit;font-size:inherit}
       <a href="#kegiatan">Kegiatan</a>
       <a href="#divisi">Divisi</a>
       <a href="#tentang">Tentang</a>
-      <a href="#" id="btnLogin" class="nav-cta">🔐 Masuk Admin</a>
+      <a href="javascript:void(0)" onclick="openModal()" class="nav-cta">🔐 Masuk Admin</a>
     </div>
   </div>
 </nav>
 
-<!-- BREAKING -->
 <div class="breaking">
   <div class="container">
     <div class="breaking-label">BREAKING</div>
@@ -228,7 +216,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
   </div>
 </div>
 
-<!-- PUBLIC VIEW -->
 <div id="publicView">
 
 <section class="hero" id="beranda">
@@ -311,45 +298,43 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 
 </div>
 
-<!-- ADMIN VIEW -->
 <div id="adminView" style="display:none">
 <div class="admin-layout">
   <aside class="admin-sidebar">
     <div class="brand-sm"><h3>DIGCITY PRESS</h3><p>Admin Panel</p></div>
     <div class="section-label">UTAMA</div>
     <ul class="admin-menu">
-      <li><a href="#" data-page="dashboard" class="active">📊 Dashboard</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('dashboard')" data-page="dashboard">📊 Dashboard</a></li>
     </ul>
     <div class="section-label">KONTEN</div>
     <ul class="admin-menu">
-      <li><a href="#" data-page="articles">📝 Artikel</a></li>
-      <li><a href="#" data-page="editor">✏️ Editor Baru</a></li>
-      <li><a href="#" data-page="categories">🏷️ Kategori</a></li>
-      <li><a href="#" data-page="events">📅 Kegiatan</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('articles')" data-page="articles">📝 Artikel</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('editor')" data-page="editor">✏️ Editor Baru</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('categories')" data-page="categories">🏷️ Kategori</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('events')" data-page="events">📅 Kegiatan</a></li>
     </ul>
     <div class="section-label">PENGATURAN</div>
     <ul class="admin-menu">
-      <li><a href="#" data-page="users">👥 Pengguna</a></li>
-      <li><a href="#" data-page="profile">🏢 Profil</a></li>
-      <li><a href="#" data-page="structure">👔 Struktur</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('users')" data-page="users">👥 Pengguna</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('profile')" data-page="profile">🏢 Profil</a></li>
+      <li><a href="javascript:void(0)" onclick="renderPage('structure')" data-page="structure">👔 Struktur</a></li>
     </ul>
     <div class="section-label">AKUN</div>
     <ul class="admin-menu">
-      <li><a href="#" id="btnLogout">🚪 Keluar</a></li>
-      <li><a href="#" id="btnViewSite">🌐 Lihat Situs</a></li>
+      <li><a href="javascript:void(0)" onclick="doLogout()">🚪 Keluar</a></li>
+      <li><a href="javascript:void(0)" onclick="showPublic()">🌐 Lihat Situs</a></li>
     </ul>
   </aside>
   <main class="admin-main" id="adminMain"></main>
 </div>
 </div>
 
-<!-- LOGIN MODAL -->
 <div class="modal-overlay" id="loginModal">
   <div class="modal">
-    <div class="modal-close" id="btnCloseModal">✕</div>
+    <div class="modal-close" onclick="closeModal()">✕</div>
     <h3>Masuk Admin</h3>
     <p class="sub">Login ke panel admin DIGCITY PRESS</p>
-    <form id="loginForm">
+    <form onsubmit="doLogin(event)">
       <div class="form-group"><label>Username</label><input type="text" id="loginUser" required placeholder="admin" /></div>
       <div class="form-group"><label>Password</label><input type="password" id="loginPass" required placeholder="admin123" /></div>
       <button type="submit" class="btn btn-blue btn-full">🔐 Masuk</button>
@@ -360,7 +345,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 
 <div class="toast-container" id="toastContainer"></div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -383,7 +367,6 @@ input,textarea,select{font-family:inherit;font-size:inherit}
 </footer>
 
 <script>
-// ============ SUPABASE ============
 const SB_URL = 'https://yjbhrcucyzlepswnsxut.supabase.co';
 const SB_KEY = 'sb_publishable_CsDnbyuF60ccRkasOXrAZA_4BQgEfoA';
 const sb = window.supabase.createClient(SB_URL, SB_KEY);
@@ -392,7 +375,6 @@ let DB = { articles:[], categories:[], divisions:[], users:[], events:[], profil
 let session = null;
 let currentPage = 'dashboard';
 
-// ============ TOAST ============
 function toast(msg, type='info'){
   const c = document.getElementById('toastContainer');
   const t = document.createElement('div');
@@ -402,15 +384,13 @@ function toast(msg, type='info'){
   setTimeout(()=>t.remove(), 3500);
 }
 
-// ============ DATE ============
 function setDate(){
   const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
   const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
   const d = new Date();
-  document.getElementById('topbarDate').textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  document.getElementById('topbarDate').textContent = days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
 }
 
-// ============ LOAD DB ============
 async function loadDB(){
   try {
     const [a,c,d,u,e,p,s] = await Promise.all([
@@ -430,12 +410,10 @@ async function loadDB(){
   } catch(err){ console.error(err); toast('Gagal load data','error'); }
 }
 
-// ============ SESSION ============
 function getSession(){ const s=localStorage.getItem('dc_session'); return s?JSON.parse(s):null; }
 function setSession(u){ session=u; localStorage.setItem('dc_session',JSON.stringify(u)); }
 function clearSession(){ session=null; localStorage.removeItem('dc_session'); }
 
-// ============ MODAL ============
 function openModal(){ 
   const m = document.getElementById('loginModal');
   m.classList.add('active');
@@ -447,29 +425,32 @@ function closeModal(){
   m.style.display = 'none';
 }
 
-// ============ LOGIN ============
 async function doLogin(e){
   e.preventDefault();
   const username = document.getElementById('loginUser').value.trim();
   const password = document.getElementById('loginPass').value;
   
-  const { data: user, error } = await sb
-    .from('users')
-    .select('*')
-    .eq('username', username)
-    .eq('password_hash', password)
-    .eq('active', true)
-    .single();
-  
-  if(error || !user){
-    toast('Username atau password salah','error');
-    return;
+  try {
+    const { data: user, error } = await sb
+      .from('users')
+      .select('*')
+      .eq('username', username)
+      .eq('password_hash', password)
+      .eq('active', true)
+      .single();
+    
+    if(error || !user){
+      alert('Username atau password salah!\n\nCoba:\n- admin / admin123\n- hirsyal / digcity26\n- nazwa / digcity26');
+      return;
+    }
+    
+    setSession(user);
+    toast('Selamat datang, ' + user.name + '!','success');
+    closeModal();
+    setTimeout(showAdmin, 500);
+  } catch(err){
+    alert('Error: ' + err.message);
   }
-  
-  setSession(user);
-  toast(`Selamat datang, ${user.name}!`,'success');
-  closeModal();
-  setTimeout(showAdmin, 500);
 }
 
 function doLogout(){
@@ -478,7 +459,6 @@ function doLogout(){
   toast('Berhasil keluar','success');
 }
 
-// ============ VIEWS ============
 function showPublic(){
   document.getElementById('publicView').style.display = 'block';
   document.getElementById('adminView').style.display = 'none';
@@ -491,31 +471,24 @@ function showAdmin(){
   renderPage(currentPage);
 }
 
-// ============ RENDER PUBLIC ============
 async function renderPublic(){
   await loadDB();
   
-  // Profile
   if(DB.profile && DB.profile.name){
     document.getElementById('profileName').textContent = DB.profile.name;
     document.getElementById('profileJargon').textContent = DB.profile.jargon || 'DIGCITY, GO FIGHT WIN!';
     document.getElementById('profileHistory').textContent = DB.profile.history || '';
     document.getElementById('profileVision').textContent = DB.profile.vision || '';
-    document.getElementById('footerDesc').textContent = `Portal berita resmi ${DB.profile.name} — ${DB.profile.address||''}`;
+    document.getElementById('footerDesc').textContent = 'Portal berita resmi ' + DB.profile.name + ' — ' + (DB.profile.address||'');
   }
   
-  // Stats
   document.getElementById('statNews').textContent = DB.articles.length;
   document.getElementById('statEv').textContent = DB.events.length;
   document.getElementById('statDiv').textContent = DB.divisions.length;
   
-  // Breaking
   const latest = DB.articles.find(a=>a.status==='published');
-  document.getElementById('breakingText').textContent = latest 
-    ? `🔥 ${latest.title}` 
-    : 'Selamat datang di DIGCITY PRESS — Portal Berita Resmi';
+  document.getElementById('breakingText').textContent = latest ? '🔥 ' + latest.title : 'Selamat datang di DIGCITY PRESS — Portal Berita Resmi';
   
-  // News
   const newsGrid = document.getElementById('newsGrid');
   const published = DB.articles.filter(a=>a.status==='published').slice(0,6);
   if(published.length===0){
@@ -523,176 +496,73 @@ async function renderPublic(){
   } else {
     newsGrid.innerHTML = published.map(a=>{
       const cat = DB.categories.find(c=>c.id===a.category_id);
-      return `<article class="card">
-        <div class="card-img">${a.featured_image?`<img src="${a.featured_image}" style="width:100%;height:100%;object-fit:cover">`:'📰'}</div>
-        <div class="card-body">
-          <div class="card-meta"><span class="cat">${cat?cat.name:'Umum'}</span> • ${a.author_name||'Admin'}</div>
-          <h3 class="card-title">${a.title}</h3>
-          <p class="card-excerpt">${a.excerpt||a.subtitle||''}</p>
-          <div class="card-footer">${new Date(a.published_at||a.created_at).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}</div>
-        </div>
-      </article>`;
+      return '<article class="card"><div class="card-img">' + (a.featured_image?'<img src="'+a.featured_image+'" alt="'+a.title+'">':'📰') + '</div><div class="card-body"><div class="card-meta"><span class="cat">'+(cat?cat.name:'Umum')+'</span> • '+(a.author_name||'Admin')+'</div><h3 class="card-title">'+a.title+'</h3><p class="card-excerpt">'+(a.excerpt||a.subtitle||'')+'</p><div class="card-footer">'+new Date(a.published_at||a.created_at).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})+'</div></div></article>';
     }).join('');
   }
   
-  // Events
   const hlGrid = document.getElementById('highlightGrid');
   const events = DB.events.slice(0,4);
-  hlGrid.innerHTML = events.length===0 
-    ? '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada kegiatan.</div>'
-    : events.map(ev=>`<div class="highlight-card"><div class="icon">📅</div><h3>${ev.title}</h3><p>${ev.description||''}</p><span class="date">${ev.date?new Date(ev.date).toLocaleDateString('id-ID'):'-'}</span></div>`).join('');
+  hlGrid.innerHTML = events.length===0 ? '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)">Belum ada kegiatan.</div>' : events.map(ev=>'<div class="highlight-card"><div class="icon">📅</div><h3>'+ev.title+'</h3><p>'+(ev.description||'')+'</p><span class="date">'+(ev.date?new Date(ev.date).toLocaleDateString('id-ID'):'-')+'</span></div>').join('');
   
-  // Divisions
-  document.getElementById('divisionGrid').innerHTML = DB.divisions.map(d=>`
-    <div class="division-card"><span class="code">${d.code}</span><div class="icon-big">${d.icon||'📌'}</div><h3>${d.name}</h3><p>${d.description||''}</p></div>
-  `).join('');
+  document.getElementById('divisionGrid').innerHTML = DB.divisions.map(d=>'<div class="division-card"><span class="code">'+d.code+'</span><div class="icon-big">'+(d.icon||'📌')+'</div><h3>'+d.name+'</h3><p>'+(d.description||'')+'</p></div>').join('');
   
-  // Structure
   document.getElementById('structureGrid').innerHTML = DB.structure.map(s=>{
     const init = s.name.split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase();
-    return `<div class="person-card"><div class="person-avatar">${init}</div><h4>${s.name}</h4><div class="role">${s.role}</div><div class="div">${s.division||''}</div></div>`;
+    return '<div class="person-card"><div class="person-avatar">'+init+'</div><h4>'+s.name+'</h4><div class="role">'+s.role+'</div><div class="div">'+(s.division||'')+'</div></div>';
   }).join('');
   
-  // Footer cats
-  document.getElementById('footerCats').innerHTML = DB.categories.slice(0,4).map(c=>`<li>${c.name}</li>`).join('');
+  document.getElementById('footerCats').innerHTML = DB.categories.slice(0,4).map(c=>'<li>'+c.name+'</li>').join('');
 }
 
-// ============ ADMIN PAGES ============
 function renderPage(page){
   currentPage = page;
   document.querySelectorAll('.admin-menu a').forEach(a=>a.classList.toggle('active', a.dataset.page===page));
   const m = document.getElementById('adminMain');
   
   if(page==='dashboard'){
-    m.innerHTML = `<div class="admin-header"><h2>Dashboard</h2><div>Halo, <strong>${session.name}</strong> (${session.role})</div></div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px">
-        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">${DB.articles.length}</div><div style="color:var(--muted);font-size:13px">Artikel</div></div>
-        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--success)">${DB.articles.filter(a=>a.status==='published').length}</div><div style="color:var(--muted);font-size:13px">Published</div></div>
-        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--navy)">${DB.users.length}</div><div style="color:var(--muted);font-size:13px">Pengguna</div></div>
-        <div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">${DB.events.length}</div><div style="color:var(--muted);font-size:13px">Kegiatan</div></div>
-      </div>
-      <div class="admin-card"><h3>Selamat datang!</h3><p style="color:var(--muted)">Gunakan menu sidebar untuk mengelola konten. Semua perubahan tersimpan otomatis ke database.</p></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Dashboard</h2><div>Halo, <strong>'+session.name+'</strong> ('+session.role+')</div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px"><div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">'+DB.articles.length+'</div><div style="color:var(--muted);font-size:13px">Artikel</div></div><div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--success)">'+DB.articles.filter(a=>a.status==='published').length+'</div><div style="color:var(--muted);font-size:13px">Published</div></div><div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--navy)">'+DB.users.length+'</div><div style="color:var(--muted);font-size:13px">Pengguna</div></div><div class="admin-card" style="text-align:center"><div style="font-size:32px;font-weight:800;color:var(--blue-700)">'+DB.events.length+'</div><div style="color:var(--muted);font-size:13px">Kegiatan</div></div></div><div class="admin-card"><h3>Selamat datang!</h3><p style="color:var(--muted)">Gunakan menu sidebar untuk mengelola konten. Semua perubahan tersimpan otomatis ke database.</p></div>';
   }
   
   else if(page==='articles'){
-    m.innerHTML = `<div class="admin-header"><h2>Artikel</h2><button class="btn btn-blue" onclick="renderPage('editor')">+ Artikel Baru</button></div>
-      <div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>KATEGORI</th><th>STATUS</th><th>TANGGAL</th><th>AKSI</th></tr></thead><tbody>
-      ${DB.articles.length===0?'<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Belum ada artikel</td></tr>':''}
-      ${DB.articles.map(a=>{
-        const cat = DB.categories.find(c=>c.id===a.category_id);
-        const badge = a.status==='published'?'<span class="badge badge-green">PUBLISHED</span>':a.status==='draft'?'<span class="badge badge-gray">DRAFT</span>':'<span class="badge badge-blue">REVIEW</span>';
-        return `<tr><td><strong>${a.title}</strong></td><td>${cat?cat.name:'-'}</td><td>${badge}</td><td>${new Date(a.created_at).toLocaleDateString('id-ID')}</td><td><button class="action-btn edit" onclick="editArticle('${a.id}')">✏️</button><button class="action-btn delete" onclick="deleteArticle('${a.id}')">🗑️</button></td></tr>`;
-      }).join('')}
-      </tbody></table></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Artikel</h2><button class="btn btn-blue" onclick="renderPage(\'editor\')">+ Artikel Baru</button></div><div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>KATEGORI</th><th>STATUS</th><th>TANGGAL</th><th>AKSI</th></tr></thead><tbody>' + (DB.articles.length===0?'<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Belum ada artikel</td></tr>':'') + DB.articles.map(a=>{
+      const cat = DB.categories.find(c=>c.id===a.category_id);
+      const badge = a.status==='published'?'<span class="badge badge-green">PUBLISHED</span>':a.status==='draft'?'<span class="badge badge-gray">DRAFT</span>':'<span class="badge badge-blue">REVIEW</span>';
+      return '<tr><td><strong>'+a.title+'</strong></td><td>'+(cat?cat.name:'-')+'</td><td>'+badge+'</td><td>'+new Date(a.created_at).toLocaleDateString('id-ID')+'</td><td><button class="action-btn edit" onclick="editArticle(\''+a.id+'\')">✏️</button><button class="action-btn delete" onclick="deleteArticle(\''+a.id+'\')">🗑️</button></td></tr>';
+    }).join('') + '</tbody></table></div>';
   }
   
   else if(page==='editor'){
-    m.innerHTML = `<div class="admin-header"><h2>Artikel Baru</h2><button class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="renderPage('articles')">← Kembali</button></div>
-      <form id="articleForm" class="admin-card">
-        <div class="form-group"><label>Judul *</label><input type="text" id="af_title" required /></div>
-        <div class="form-group"><label>Subtitle</label><input type="text" id="af_subtitle" /></div>
-        <div class="form-group"><label>Excerpt</label><textarea id="af_excerpt" rows="2"></textarea></div>
-        <div class="form-group"><label>Konten *</label><textarea id="af_content" rows="10" required></textarea></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div class="form-group"><label>Kategori</label><select id="af_cat">${DB.categories.map(c=>`<option value="${c.id}">${c.name}</option>`).join('')}</select></div>
-          <div class="form-group"><label>Divisi</label><select id="af_div">${DB.divisions.map(d=>`<option value="${d.id}">${d.name}</option>`).join('')}</select></div>
-        </div>
-        <div class="form-group"><label>URL Gambar</label><input type="text" id="af_img" placeholder="https://..." /></div>
-        <div class="form-group"><label>Penulis</label><input type="text" id="af_author" value="${session.name}" /></div>
-        <div style="display:flex;gap:10px;margin-top:20px">
-          <button type="button" class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="saveArticle('draft')">💾 Draft</button>
-          <button type="button" class="btn btn-blue" onclick="saveArticle('published')">🚀 Publish</button>
-        </div>
-      </form>`;
+    m.innerHTML = '<div class="admin-header"><h2>Artikel Baru</h2><button class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="renderPage(\'articles\')">← Kembali</button></div><form class="admin-card" onsubmit="saveArticle(event)"><div class="form-group"><label>Judul *</label><input type="text" id="af_title" required /></div><div class="form-group"><label>Subtitle</label><input type="text" id="af_subtitle" /></div><div class="form-group"><label>Excerpt</label><textarea id="af_excerpt" rows="2"></textarea></div><div class="form-group"><label>Konten *</label><textarea id="af_content" rows="10" required></textarea></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="form-group"><label>Kategori</label><select id="af_cat"><option value="">-- Pilih --</option>'+DB.categories.map(c=>'<option value="'+c.id+'">'+c.name+'</option>').join('')+'</select></div><div class="form-group"><label>Divisi</label><select id="af_div"><option value="">-- Pilih --</option>'+DB.divisions.map(d=>'<option value="'+d.id+'">'+d.name+'</option>').join('')+'</select></div></div><div class="form-group"><label>URL Gambar</label><input type="text" id="af_img" placeholder="https://..." /></div><div class="form-group"><label>Penulis</label><input type="text" id="af_author" value="'+session.name+'" /></div><div style="display:flex;gap:10px;margin-top:20px"><button type="button" class="btn btn-ghost" style="border:1px solid var(--line);color:var(--ink)" onclick="saveArticleAs(\'draft\')">💾 Draft</button><button type="button" class="btn btn-blue" onclick="saveArticleAs(\'published\')">🚀 Publish</button></div></form>';
   }
   
   else if(page==='categories'){
-    m.innerHTML = `<div class="admin-header"><h2>Kategori</h2></div>
-      <div class="admin-card"><h3>Tambah Kategori</h3>
-        <div style="display:grid;grid-template-columns:2fr 2fr 1fr auto;gap:10px;align-items:end">
-          <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="cat_name" /></div>
-          <div class="form-group" style="margin:0"><label>Slug</label><input type="text" id="cat_slug" /></div>
-          <div class="form-group" style="margin:0"><label>Tipe</label><select id="cat_type"><option value="article">Article</option><option value="event">Event</option></select></div>
-          <button class="btn btn-blue" onclick="addCategory()" style="height:42px">+ Tambah</button>
-        </div>
-      </div>
-      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>SLUG</th><th>TIPE</th><th>AKSI</th></tr></thead><tbody>
-      ${DB.categories.map(c=>`<tr><td><strong>${c.name}</strong></td><td>${c.slug}</td><td><span class="badge badge-blue">${c.type}</span></td><td><button class="action-btn delete" onclick="deleteCategory('${c.id}')">🗑️</button></td></tr>`).join('')}
-      </tbody></table></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Kategori</h2></div><div class="admin-card"><h3>Tambah Kategori</h3><div style="display:grid;grid-template-columns:2fr 2fr 1fr auto;gap:10px;align-items:end"><div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="cat_name" /></div><div class="form-group" style="margin:0"><label>Slug</label><input type="text" id="cat_slug" /></div><div class="form-group" style="margin:0"><label>Tipe</label><select id="cat_type"><option value="article">Article</option><option value="event">Event</option></select></div><button class="btn btn-blue" onclick="addCategory()" style="height:42px">+ Tambah</button></div></div><div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>SLUG</th><th>TIPE</th><th>AKSI</th></tr></thead><tbody>'+DB.categories.map(c=>'<tr><td><strong>'+c.name+'</strong></td><td>'+c.slug+'</td><td><span class="badge badge-blue">'+c.type+'</span></td><td><button class="action-btn delete" onclick="deleteCategory(\''+c.id+'\')">🗑️</button></td></tr>').join('')+'</tbody></table></div>';
   }
   
   else if(page==='events'){
-    m.innerHTML = `<div class="admin-header"><h2>Kegiatan</h2></div>
-      <div class="admin-card"><h3>Tambah Kegiatan</h3>
-        <div class="form-group"><label>Judul</label><input type="text" id="ev_title" /></div>
-        <div class="form-group"><label>Deskripsi</label><textarea id="ev_desc" rows="3"></textarea></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div class="form-group"><label>Tanggal</label><input type="datetime-local" id="ev_date" /></div>
-          <div class="form-group"><label>Lokasi</label><input type="text" id="ev_loc" /></div>
-        </div>
-        <button class="btn btn-blue" onclick="addEvent()">+ Tambah</button>
-      </div>
-      <div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>TANGGAL</th><th>LOKASI</th><th>AKSI</th></tr></thead><tbody>
-      ${DB.events.length===0?'<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted)">Belum ada kegiatan</td></tr>':''}
-      ${DB.events.map(e=>`<tr><td><strong>${e.title}</strong></td><td>${e.date?new Date(e.date).toLocaleDateString('id-ID'):'-'}</td><td>${e.location||'-'}</td><td><button class="action-btn delete" onclick="deleteEvent('${e.id}')">🗑️</button></td></tr>`).join('')}
-      </tbody></table></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Kegiatan</h2></div><div class="admin-card"><h3>Tambah Kegiatan</h3><div class="form-group"><label>Judul</label><input type="text" id="ev_title" /></div><div class="form-group"><label>Deskripsi</label><textarea id="ev_desc" rows="3"></textarea></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="form-group"><label>Tanggal</label><input type="datetime-local" id="ev_date" /></div><div class="form-group"><label>Lokasi</label><input type="text" id="ev_loc" /></div></div><button class="btn btn-blue" onclick="addEvent()">+ Tambah</button></div><div class="admin-card"><table class="data-table"><thead><tr><th>JUDUL</th><th>TANGGAL</th><th>LOKASI</th><th>AKSI</th></tr></thead><tbody>'+(DB.events.length===0?'<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted)">Belum ada kegiatan</td></tr>':'')+DB.events.map(e=>'<tr><td><strong>'+e.title+'</strong></td><td>'+(e.date?new Date(e.date).toLocaleDateString('id-ID'):'-')+'</td><td>'+(e.location||'-')+'</td><td><button class="action-btn delete" onclick="deleteEvent(\''+e.id+'\')">🗑️</button></td></tr>').join('')+'</tbody></table></div>';
   }
   
   else if(page==='users'){
-    m.innerHTML = `<div class="admin-header"><h2>Pengguna</h2></div>
-      <div class="admin-card"><h3>Tambah Pengguna</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div class="form-group"><label>Nama</label><input type="text" id="u_name" /></div>
-          <div class="form-group"><label>Username</label><input type="text" id="u_user" /></div>
-          <div class="form-group"><label>Password</label><input type="text" id="u_pass" /></div>
-          <div class="form-group"><label>Email</label><input type="email" id="u_email" /></div>
-          <div class="form-group"><label>Role</label><select id="u_role"><option value="contributor">Contributor</option><option value="writer">Writer</option><option value="editor">Editor</option><option value="super_admin">Super Admin</option></select></div>
-        </div>
-        <button class="btn btn-blue" onclick="addUser()">+ Tambah</button>
-      </div>
-      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>USERNAME</th><th>ROLE</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody>
-      ${DB.users.map(u=>`<tr><td><strong>${u.name}</strong></td><td>${u.username}</td><td><span class="badge badge-blue">${u.role}</span></td><td><span class="badge ${u.active?'badge-green':'badge-red'}">${u.active?'AKTIF':'NONAKTIF'}</span></td><td><button class="action-btn delete" onclick="deleteUser('${u.id}')">🗑️</button></td></tr>`).join('')}
-      </tbody></table></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Pengguna</h2></div><div class="admin-card"><h3>Tambah Pengguna</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="form-group"><label>Nama</label><input type="text" id="u_name" /></div><div class="form-group"><label>Username</label><input type="text" id="u_user" /></div><div class="form-group"><label>Password</label><input type="text" id="u_pass" /></div><div class="form-group"><label>Email</label><input type="email" id="u_email" /></div><div class="form-group"><label>Role</label><select id="u_role"><option value="contributor">Contributor</option><option value="writer">Writer</option><option value="editor">Editor</option><option value="super_admin">Super Admin</option></select></div></div><button class="btn btn-blue" onclick="addUser()">+ Tambah</button></div><div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>USERNAME</th><th>ROLE</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody>'+DB.users.map(u=>'<tr><td><strong>'+u.name+'</strong></td><td>'+u.username+'</td><td><span class="badge badge-blue">'+u.role+'</span></td><td><span class="badge '+(u.active?'badge-green':'badge-red')+'">'+(u.active?'AKTIF':'NONAKTIF')+'</span></td><td><button class="action-btn delete" onclick="deleteUser(\''+u.id+'\')">🗑️</button></td></tr>').join('')+'</tbody></table></div>';
   }
   
   else if(page==='profile'){
     const p = DB.profile||{};
-    m.innerHTML = `<div class="admin-header"><h2>Profil Organisasi</h2></div>
-      <form id="profileForm" class="admin-card">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div class="form-group"><label>Nama</label><input type="text" id="p_name" value="${p.name||''}" /></div>
-          <div class="form-group"><label>Nama Singkat</label><input type="text" id="p_short" value="${p.short_name||''}" /></div>
-          <div class="form-group"><label>Jargon</label><input type="text" id="p_jargon" value="${p.jargon||''}" /></div>
-          <div class="form-group"><label>Email</label><input type="email" id="p_email" value="${p.email||''}" /></div>
-          <div class="form-group"><label>Telepon</label><input type="text" id="p_phone" value="${p.phone||''}" /></div>
-          <div class="form-group"><label>Alamat</label><input type="text" id="p_addr" value="${p.address||''}" /></div>
-        </div>
-        <div class="form-group"><label>Values</label><textarea id="p_val" rows="2">${p.values||''}</textarea></div>
-        <div class="form-group"><label>Sejarah</label><textarea id="p_hist" rows="4">${p.history||''}</textarea></div>
-        <div class="form-group"><label>Visi</label><textarea id="p_vis" rows="3">${p.vision||''}</textarea></div>
-        <button type="submit" class="btn btn-blue">💾 Simpan</button>
-      </form>`;
-    document.getElementById('profileForm').onsubmit = saveProfile;
+    m.innerHTML = '<div class="admin-header"><h2>Profil Organisasi</h2></div><form class="admin-card" onsubmit="saveProfile(event)"><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="form-group"><label>Nama</label><input type="text" id="p_name" value="'+(p.name||'')+'" /></div><div class="form-group"><label>Nama Singkat</label><input type="text" id="p_short" value="'+(p.short_name||'')+'" /></div><div class="form-group"><label>Jargon</label><input type="text" id="p_jargon" value="'+(p.jargon||'')+'" /></div><div class="form-group"><label>Email</label><input type="email" id="p_email" value="'+(p.email||'')+'" /></div><div class="form-group"><label>Telepon</label><input type="text" id="p_phone" value="'+(p.phone||'')+'" /></div><div class="form-group"><label>Alamat</label><input type="text" id="p_addr" value="'+(p.address||'')+'" /></div></div><div class="form-group"><label>Values</label><textarea id="p_val" rows="2">'+(p.values||'')+'</textarea></div><div class="form-group"><label>Sejarah</label><textarea id="p_hist" rows="4">'+(p.history||'')+'</textarea></div><div class="form-group"><label>Visi</label><textarea id="p_vis" rows="3">'+(p.vision||'')+'</textarea></div><button type="submit" class="btn btn-blue">💾 Simpan</button></form>';
   }
   
   else if(page==='structure'){
-    m.innerHTML = `<div class="admin-header"><h2>Struktur Organisasi</h2></div>
-      <div class="admin-card"><h3>Tambah Anggota</h3>
-        <div style="display:grid;grid-template-columns:2fr 2fr 2fr auto;gap:10px;align-items:end">
-          <div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="s_name" /></div>
-          <div class="form-group" style="margin:0"><label>Jabatan</label><input type="text" id="s_role" /></div>
-          <div class="form-group" style="margin:0"><label>Divisi</label><input type="text" id="s_div" /></div>
-          <button class="btn btn-blue" onclick="addStructure()" style="height:42px">+ Tambah</button>
-        </div>
-      </div>
-      <div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>JABATAN</th><th>DIVISI</th><th>AKSI</th></tr></thead><tbody>
-      ${DB.structure.map(s=>`<tr><td><strong>${s.name}</strong></td><td>${s.role}</td><td>${s.division||'-'}</td><td><button class="action-btn delete" onclick="deleteStructure('${s.id}')">🗑️</button></td></tr>`).join('')}
-      </tbody></table></div>`;
+    m.innerHTML = '<div class="admin-header"><h2>Struktur Organisasi</h2></div><div class="admin-card"><h3>Tambah Anggota</h3><div style="display:grid;grid-template-columns:2fr 2fr 2fr auto;gap:10px;align-items:end"><div class="form-group" style="margin:0"><label>Nama</label><input type="text" id="s_name" /></div><div class="form-group" style="margin:0"><label>Jabatan</label><input type="text" id="s_role" /></div><div class="form-group" style="margin:0"><label>Divisi</label><input type="text" id="s_div" /></div><button class="btn btn-blue" onclick="addStructure()" style="height:42px">+ Tambah</button></div></div><div class="admin-card"><table class="data-table"><thead><tr><th>NAMA</th><th>JABATAN</th><th>DIVISI</th><th>AKSI</th></tr></thead><tbody>'+DB.structure.map(s=>'<tr><td><strong>'+s.name+'</strong></td><td>'+s.role+'</td><td>'+(s.division||'-')+'</td><td><button class="action-btn delete" onclick="deleteStructure(\''+s.id+'\')">🗑️</button></td></tr>').join('')+'</tbody></table></div>';
   }
 }
 
-// ============ CRUD FUNCTIONS ============
-async function saveArticle(status){
+async function saveArticle(e){
+  e.preventDefault();
+  saveArticleAs('draft');
+}
+
+async function saveArticleAs(status){
   const data = {
     title: document.getElementById('af_title').value.trim(),
     subtitle: document.getElementById('af_subtitle').value.trim(),
@@ -844,75 +714,16 @@ async function deleteStructure(id){
   renderPage('structure');
 }
 
-// ============ EVENT LISTENERS (PENTING!) ============
-document.addEventListener('DOMContentLoaded', function(){
-  // Tombol Login di Navbar - PASTI BERFUNGSI
-  const btnLogin = document.getElementById('btnLogin');
-  if(btnLogin){
-    btnLogin.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      openModal();
-    });
+// INIT
+setDate();
+loadDB().then(()=>{
+  const saved = getSession();
+  if(saved){
+    session = saved;
+    showAdmin();
+  } else {
+    showPublic();
   }
-  
-  // Tombol Close Modal
-  const btnClose = document.getElementById('btnCloseModal');
-  if(btnClose){
-    btnClose.addEventListener('click', closeModal);
-  }
-  
-  // Klik di luar modal untuk tutup
-  const modal = document.getElementById('loginModal');
-  if(modal){
-    modal.addEventListener('click', function(e){
-      if(e.target === modal) closeModal();
-    });
-  }
-  
-  // Form Login
-  const loginForm = document.getElementById('loginForm');
-  if(loginForm){
-    loginForm.addEventListener('submit', doLogin);
-  }
-  
-  // Logout
-  const btnLogout = document.getElementById('btnLogout');
-  if(btnLogout){
-    btnLogout.addEventListener('click', function(e){
-      e.preventDefault();
-      doLogout();
-    });
-  }
-  
-  // View Site
-  const btnView = document.getElementById('btnViewSite');
-  if(btnView){
-    btnView.addEventListener('click', function(e){
-      e.preventDefault();
-      showPublic();
-    });
-  }
-  
-  // Admin menu clicks
-  document.querySelectorAll('.admin-menu a[data-page]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      renderPage(a.dataset.page);
-    });
-  });
-  
-  // Init
-  setDate();
-  loadDB().then(()=>{
-    const saved = getSession();
-    if(saved){
-      session = saved;
-      showAdmin();
-    } else {
-      showPublic();
-    }
-  });
 });
 </script>
 </body>
