@@ -431,21 +431,26 @@ async function doLogin(e){
   const password = document.getElementById('loginPass').value;
   
   try {
-    const { data: user, error } = await sb
+    const { data, error } = await sb
       .from('users')
       .select('*')
       .eq('username', username)
       .eq('password_hash', password)
-      .eq('active', true)
-      .single();
+      .eq('active', true);
     
-    if(error || !user){
-      alert('Username atau password salah!\n\nCoba:\n- admin / admin123\n- hirsyal / digcity26\n- nazwa / digcity26');
+    if(error){
+      alert('Database error: ' + error.message);
       return;
     }
     
+    if(!data || data.length === 0){
+      alert('User tidak ditemukan!\n\nCoba:\n- admin / admin123\n- hirsyal / digcity26');
+      return;
+    }
+    
+    const user = data[0];
     setSession(user);
-    toast('Selamat datang, ' + user.name + '!','success');
+    alert('Login berhasil! Selamat datang, ' + user.name);
     closeModal();
     setTimeout(showAdmin, 500);
   } catch(err){
